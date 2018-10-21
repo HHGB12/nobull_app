@@ -15,20 +15,12 @@
     <header class="navbar is-fixed">
       <%= render 'layouts/navigation/navbar/navbar' %>
     </header> 
-    <div class="has-slide-menu is-fixed-slide-menu-sidebar has-responsive-slide-menu">
-      <aside class="slide-menu-sidebar sidebar-nav" data-target="slide-menu.sidebar">
-        <%= render 'layouts/navigation/sidebar/sidebar' %>
-      </aside> 
-      <a data-action="slide-menu#toggleSidebar" class="slide-menu-overlay"></a>
-      <div class="slide-menu-content">
-        <main>
-          <%#= render 'layouts/shared/alerts' %>
-          <%= yield %>
-        </main>
-        <footer class="appliction-layout-footer">
-          <%#= render 'layouts/shared/footer' %>
-        </footer>
-      </div>
-    </div>
+    <main>
+      <%#= render 'layouts/shared/alerts' %>
+      <%= yield %>
+    </main>
+    <footer class="pages-layout-footer">
+      <%#= render 'layouts/shared/footer' %>
+    </footer>
   </body>
 </html>
