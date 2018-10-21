@@ -1,0 +1,18 @@
+.navbar {
+  background: $bg-color;
+
+  &.is-fixed {
+
+    &~.has-slide-menu {
+      padding-top: $navbar-height;
+    }
+  }
+
+  a.btn.btn-link {
+    color: $link-color-light;
+
+    &:hover {
+      color: $link-color-dark;
+    }
+  }
+}

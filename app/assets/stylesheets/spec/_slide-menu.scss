@@ -1,0 +1,112 @@
+// Off canvas menu. Relies on JS to add and remove an active class 
+// on the slide-menu-sidebar node.
+$slide-menu-breakpoint: $size-md !default;
+$slide-menu-width: 12rem;
+// Set to 0 unless navbarheight is already declared.
+$sidebar-top-offset: $navbar-height;
+
+.has-slide-menu {
+  display: flex;
+  flex-flow: nowrap;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  .slide-menu-toggle {
+    display: block;
+    position: absolute;
+    top: $layout-spacing;
+    transition: none;
+    z-index: $zindex-0;
+    left: $layout-spacing;
+  }
+
+  .slide-menu-sidebar {
+    background: $bg-color;
+    bottom: 0;
+    min-width: $slide-menu-width;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    transition: transform .3s ease;
+    z-index: $zindex-2;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &.is-fixed-slide-menu-sidebar {
+    .slide-menu-sidebar {
+      top: 0+$sidebar-top-offset;
+    }
+  }
+
+  .slide-menu-content {
+    flex: 1 1 auto;
+    height: 100%;
+    padding: $layout-spacing $layout-spacing $layout-spacing 0.5rem;
+  }
+
+  .slide-menu-overlay {
+    background: rgba($dark-color, .2);
+    border-color: transparent;
+    border-radius: 0;
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .slide-menu-sidebar {
+    &.active {
+      transform: translateX(0);
+      z-index: $zindex-3;
+    }
+
+    &.active~.slide-menu-overlay {
+      display: block;
+      z-index: $zindex-1;
+    }
+  }
+}
+
+// Responsive layout
+@media (min-width: $slide-menu-breakpoint) {
+  .slide-menu-toggle {
+    display: none;
+  }
+
+  .has-slide-menu {
+
+    &.has-responsive-slide-menu {
+      .slide-menu-sidebar {
+        flex: 0 0 auto;
+        position: relative;
+        transform: none;
+      }
+
+      &.is-fixed-slide-menu-sidebar {
+        .slide-menu-sidebar {
+          position: fixed;
+          top: 0+$sidebar-top-offset;
+          bottom: 0;
+          width: $slide-menu-width;
+        }
+
+        .slide-menu-content {
+          margin-left: $slide-menu-width;
+        }
+      }
+
+
+
+      .slide-menu-overlay {
+        display: none !important;
+      }
+
+    }
+  }
+}

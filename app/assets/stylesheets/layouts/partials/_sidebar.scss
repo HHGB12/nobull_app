@@ -1,0 +1,73 @@
+aside.sidebar-nav {
+  ul.nav {
+    background: lighten($bg-color, 5%);
+    padding: 0.3rem;
+    margin: $unit-2 $unit-1;
+    box-shadow: $box-shaddow;
+    font-size: $unit-4;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    h6 {
+      color: lighten($dark-color, 20%);
+      margin-bottom: 0;
+    }
+
+    li {
+      line-height: $unit-2;
+      // background: $bg-color-light;
+      padding: $unit-2 $unit-1;
+      box-shadow: $box-shaddow-light;
+    }
+
+    li:hover {
+      background: darken($bg-color, 3%);
+
+
+    }
+
+    a {
+      color: $link-color-light;
+
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+        top: -0.4rem;
+
+      }
+
+      &.name {
+        // font-size: 0.rem;
+        color: $primary-color-light;
+
+
+        &:hover {
+          color: $link-color;
+
+          i {
+            top: -0.25rem;
+          }
+        }
+      }
+    }
+
+    &.single-location {
+      li.nav-item.btn {
+        &>a {
+          color: white;
+        }
+
+        &:hover {
+          background-color: $primary-color-light;
+        }
+      }
+    }
+
+  }
+}

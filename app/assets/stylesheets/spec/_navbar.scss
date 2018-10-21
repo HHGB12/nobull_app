@@ -1,0 +1,60 @@
+// Navbar
+.navbar {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: $navbar-height;
+
+  &.is-fixed {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: $zindex-3;
+  }
+
+  .navbar-section {
+    align-items: center;
+    display: flex;
+    flex: 1 0 0;
+    align-self: flex-start;
+    height: 100%;
+
+    &:not(:first-child):last-child {
+      justify-content: flex-end;
+    }
+  }
+
+  .navbar-center {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    min-width: $unit-10;
+  }
+
+  .navbar-brand {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: $font-size-lg;
+    text-decoration: none;
+    color: $primary-color-dark;
+
+    .brand-logo {
+      flex: 3 0 auto;
+      height: $navbar-height;
+      justify-content: center;
+
+      >img {
+        height: inherit;
+      }
+    }
+
+    .brand-text {
+      flex: 1 0 auto;
+    }
+  }
+
+
+
+}

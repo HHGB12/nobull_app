@@ -1,0 +1,86 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+// Variables and mixins
+@import "spec/variables";
+@import "spec/mixins";
+
+// Reset and dependencies
+@import "spec/normalize";
+@import "spec/base";
+
+// Experimental Elements
+@import "spec/exp/off-canvas";
+@import "spec/exp/timelines";
+
+// Elements
+@import "spec/typography";
+@import "spec/tables";
+@import "spec/responsive-tables";
+@import "spec/buttons";
+@import "spec/forms";
+@import "spec/labels";
+@import "spec/codes";
+@import "spec/media";
+
+// Layout
+@import "spec/layout";
+@import "spec/navbar";
+
+// Components
+@import "spec/accordions";
+@import "spec/avatars";
+@import "spec/badges";
+@import "spec/breadcrumbs";
+@import "spec/bars";
+@import "spec/cards";
+@import "spec/chips";
+@import "spec/dropdowns";
+@import "spec/empty";
+@import "spec/menus";
+@import "spec/modals";
+@import "spec/navs";
+@import "spec/pagination";
+@import "spec/panels";
+@import "spec/popovers";
+@import "spec/steps";
+@import "spec/tabs";
+@import "spec/tiles";
+@import "spec/toasts";
+@import "spec/tooltips";
+@import "spec/slide-menu";
+
+// Utility classes
+@import "spec/animations";
+@import "spec/utilities";
+
+@import 'spec/spec-icons';
+
+// Experimentals
+// @import 'spec/spec-exp';
+@import "spec/exp/progress";
+
+
+
+// Import outside packages 
+@import 'trix/dist/trix';
+// Import Layout Styles
+@import 'layouts/application_layout';
+@import 'layouts/partials/sidebar';
+@import 'layouts/partials/navbar';
+// Import Controller Specific Styles
+@import 'controllers/pages';
