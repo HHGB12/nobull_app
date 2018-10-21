@@ -30,11 +30,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Authentication - devise
+gem 'devise'
+# Role - Rolify Adds roles to users. - https://github.com/RolifyCommunity/rolify
+# gem 'rolify', '~> 5.2'
+# Authorization - Pundit
+# gem 'pundit', '~> 1.1'
+# Administrate -  Used to add an admin dashboard - https://github.com/thoughtbot/administrate
+gem "administrate"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+ gem 'bootsnap', '>= 1.3.1', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,12 +51,21 @@ group :development, :test do
 end
 
 group :development do
+  # This will give me a better error page in development. Second is to support the first.
+  gem "better_errors"
+  gem "binding_of_caller"
+  # Lets me view arays as tables
+  gem 'table_print'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+    # Adds pry, awesome print and Pry Cooline
+  gem 'jazz_fingers'
+  # Adds the pry-rails to add pry to rails
+  gem 'pry-rails'
 end
 
 
