@@ -1,0 +1,117 @@
+<%= form_with(model: website, local: true) do |form| %>
+  <% if website.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(website.errors.count, "error") %> prohibited this website from being saved:</h2>
+
+      <ul>
+      <% website.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_name %>
+    <%= form.text_field :business_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :has_current_site %>
+    <%= form.check_box :has_current_site %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_website %>
+    <%= form.text_field :current_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_address %>
+    <%= form.text_field :business_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailing_address %>
+    <%= form.text_field :mailing_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :physical_or_mailing %>
+    <%= form.text_field :physical_or_mailing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_phone %>
+    <%= form.text_field :business_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_phone2 %>
+    <%= form.text_field :business_phone2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_fax %>
+    <%= form.text_field :business_fax %>
+  </div>
+
+  <div class="field">
+    <%= form.label :business_email_address %>
+    <%= form.text_field :business_email_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founded %>
+    <%= form.text_field :founded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founder %>
+    <%= form.text_field :founder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about_us %>
+    <%= form.text_area :about_us %>
+  </div>
+
+  <div class="field">
+    <%= form.label :services %>
+    <%= form.text_area :services %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pricing %>
+    <%= form.text_area :pricing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_page_link %>
+    <%= form.text_field :facebook_page_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goolge_business_link %>
+    <%= form.text_field :goolge_business_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_profile_link %>
+    <%= form.text_field :twitter_profile_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin_link %>
+    <%= form.text_field :linkedin_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

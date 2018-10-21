@@ -1,0 +1,104 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @website.user %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @website.business_name %>
+</p>
+
+<p>
+  <strong>Has current site:</strong>
+  <%= @website.has_current_site %>
+</p>
+
+<p>
+  <strong>Current website:</strong>
+  <%= @website.current_website %>
+</p>
+
+<p>
+  <strong>Business address:</strong>
+  <%= @website.business_address %>
+</p>
+
+<p>
+  <strong>Mailing address:</strong>
+  <%= @website.mailing_address %>
+</p>
+
+<p>
+  <strong>Physical or mailing:</strong>
+  <%= @website.physical_or_mailing %>
+</p>
+
+<p>
+  <strong>Business phone:</strong>
+  <%= @website.business_phone %>
+</p>
+
+<p>
+  <strong>Business phone2:</strong>
+  <%= @website.business_phone2 %>
+</p>
+
+<p>
+  <strong>Business fax:</strong>
+  <%= @website.business_fax %>
+</p>
+
+<p>
+  <strong>Business email address:</strong>
+  <%= @website.business_email_address %>
+</p>
+
+<p>
+  <strong>Founded:</strong>
+  <%= @website.founded %>
+</p>
+
+<p>
+  <strong>Founder:</strong>
+  <%= @website.founder %>
+</p>
+
+<p>
+  <strong>About us:</strong>
+  <%= @website.about_us %>
+</p>
+
+<p>
+  <strong>Services:</strong>
+  <%= @website.services %>
+</p>
+
+<p>
+  <strong>Pricing:</strong>
+  <%= @website.pricing %>
+</p>
+
+<p>
+  <strong>Facebook page link:</strong>
+  <%= @website.facebook_page_link %>
+</p>
+
+<p>
+  <strong>Goolge business link:</strong>
+  <%= @website.goolge_business_link %>
+</p>
+
+<p>
+  <strong>Twitter profile link:</strong>
+  <%= @website.twitter_profile_link %>
+</p>
+
+<p>
+  <strong>Linkedin link:</strong>
+  <%= @website.linkedin_link %>
+</p>
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>

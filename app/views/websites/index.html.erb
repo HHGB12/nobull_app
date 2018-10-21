@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Websites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Business name</th>
+      <th>Has current site</th>
+      <th>Current website</th>
+      <th>Business address</th>
+      <th>Mailing address</th>
+      <th>Physical or mailing</th>
+      <th>Business phone</th>
+      <th>Business phone2</th>
+      <th>Business fax</th>
+      <th>Business email address</th>
+      <th>Founded</th>
+      <th>Founder</th>
+      <th>About us</th>
+      <th>Services</th>
+      <th>Pricing</th>
+      <th>Facebook page link</th>
+      <th>Goolge business link</th>
+      <th>Twitter profile link</th>
+      <th>Linkedin link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @websites.each do |website| %>
+      <tr>
+        <td><%= website.user %></td>
+        <td><%= website.business_name %></td>
+        <td><%= website.has_current_site %></td>
+        <td><%= website.current_website %></td>
+        <td><%= website.business_address %></td>
+        <td><%= website.mailing_address %></td>
+        <td><%= website.physical_or_mailing %></td>
+        <td><%= website.business_phone %></td>
+        <td><%= website.business_phone2 %></td>
+        <td><%= website.business_fax %></td>
+        <td><%= website.business_email_address %></td>
+        <td><%= website.founded %></td>
+        <td><%= website.founder %></td>
+        <td><%= website.about_us %></td>
+        <td><%= website.services %></td>
+        <td><%= website.pricing %></td>
+        <td><%= website.facebook_page_link %></td>
+        <td><%= website.goolge_business_link %></td>
+        <td><%= website.twitter_profile_link %></td>
+        <td><%= website.linkedin_link %></td>
+        <td><%= link_to 'Show', website %></td>
+        <td><%= link_to 'Edit', edit_website_path(website) %></td>
+        <td><%= link_to 'Destroy', website, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Website', new_website_path %>

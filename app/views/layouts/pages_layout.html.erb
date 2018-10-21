@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ReviewApp</title>
+    <title>NoBull</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
     <%= yield(:head) -%>
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %> application_layout" data-controller="slide-menu">
+  <body class="<%= controller_name %> <%= action_name %> pages_layout" data-controller="slide-menu">
     <header class="navbar is-fixed">
       <%= render 'layouts/navigation/navbar/navbar' %>
     </header> 

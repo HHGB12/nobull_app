@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  layout "pages_layout"
   def about
   end
 
