@@ -8,6 +8,23 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+    <div class="field">
+    <%= f.label :business_name %><br />
+    <%= f.text_field :business_name, autocomplete: "Your Business Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :personal_phone_number %><br />
+    <%= f.text_field :personal_phone_number, autocomplete: "Your Personal Phone Number" %>
+  </div>
+  <div class="field">
+    <%= f.label :has_current_website %><br />
+    <%= f.check_box :has_current_website %>
+  </div>
+  <div class="field">
+    <%= f.label :current_website %><br />
+    <%= f.text_field :current_website, autocomplete: "Your Current website" %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

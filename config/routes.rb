@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
   
   
-  resources :services_contents
-  resources :about_contents
-  resources :integrations
-  resource :websites  
-  resource :website_contents
-  resource :business_details
+  resources :services_contents, only: [:update, :edit, :show]
+  resources :about_contents, only: [:update, :edit, :show]
+  resources :integrations, only: [:update, :edit, :show]
+  resources :website_contents, only: [:update, :edit, :show]
+  resources :business_details, only: [:update, :edit, :show]
   namespace :admin do
       resources :users
     root to: "users#index"
