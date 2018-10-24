@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @website_content.user %>
+</p>
+
+<p>
+  <strong>Founder:</strong>
+  <%= @website_content.founder %>
+</p>
+
+<p>
+  <strong>Founded:</strong>
+  <%= @website_content.founded %>
+</p>
+
+<p>
+  <strong>About us:</strong>
+  <%= @website_content.about_us %>
+</p>
+
+<p>
+  <strong>Background story:</strong>
+  <%= @website_content.background_story %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @website_content.team %>
+</p>
+
+<p>
+  <strong>Services:</strong>
+  <%= @website_content.services %>
+</p>
+
+<p>
+  <strong>Pricing:</strong>
+  <%= @website_content.pricing %>
+</p>
+
+<p>
+  <strong>Message from founder:</strong>
+  <%= @website_content.message_from_founder %>
+</p>
+
+<p>
+  <strong>Other info:</strong>
+  <%= @website_content.other_info %>
+</p>
+
+<%= link_to 'Edit', edit_website_content_path(@website_content) %> |
+<%= link_to 'Back', website_contents_path %>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   
   
+  resources :website_contents
   resources :business_details
   namespace :admin do
       resources :users

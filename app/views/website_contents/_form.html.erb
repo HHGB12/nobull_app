@@ -1,0 +1,67 @@
+<%= form_with(model: website_content, local: true) do |form| %>
+  <% if website_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(website_content.errors.count, "error") %> prohibited this website_content from being saved:</h2>
+
+      <ul>
+      <% website_content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founder %>
+    <%= form.text_field :founder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :founded %>
+    <%= form.text_field :founded %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about_us %>
+    <%= form.text_area :about_us %>
+  </div>
+
+  <div class="field">
+    <%= form.label :background_story %>
+    <%= form.text_area :background_story %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team %>
+    <%= form.text_area :team %>
+  </div>
+
+  <div class="field">
+    <%= form.label :services %>
+    <%= form.text_area :services %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pricing %>
+    <%= form.text_area :pricing %>
+  </div>
+
+  <div class="field">
+    <%= form.label :message_from_founder %>
+    <%= form.text_area :message_from_founder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other_info %>
+    <%= form.text_area :other_info %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
