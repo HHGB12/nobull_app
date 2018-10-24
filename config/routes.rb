@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
+  
+  
+  
+  resources :business_details
   namespace :admin do
-    resources :users
-    resources :websites  
+      resources :users
     root to: "users#index"
   end
   root to: "pages#index"
-  resources :websites
+  resources :websites do
+    resource :information
+    resource :sitecontents
+  end
   
   get 'pages/about'
   get 'pages/index'
