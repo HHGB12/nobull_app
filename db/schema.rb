@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_130027) do
+ActiveRecord::Schema.define(version: 2018_10_24_132631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,7 +93,14 @@ ActiveRecord::Schema.define(version: 2018_10_24_130027) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "business_name"
+    t.string "personal_phone_number"
+    t.boolean "has_current_website"
+    t.string "current_website"
+    t.index ["business_name"], name: "index_users_on_business_name"
+    t.index ["current_website"], name: "index_users_on_current_website"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["has_current_website"], name: "index_users_on_has_current_website"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -115,22 +122,9 @@ ActiveRecord::Schema.define(version: 2018_10_24_130027) do
     t.index ["user_id"], name: "index_website_contents_on_user_id"
   end
 
-  create_table "websites", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "business_name"
-    t.boolean "has_current_website"
-    t.string "current_website_link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["business_name"], name: "index_websites_on_business_name"
-    t.index ["current_website_link"], name: "index_websites_on_current_website_link"
-    t.index ["user_id"], name: "index_websites_on_user_id"
-  end
-
   add_foreign_key "about_contents", "users"
   add_foreign_key "business_details", "users"
   add_foreign_key "integrations", "users"
   add_foreign_key "services_contents", "users"
   add_foreign_key "website_contents", "users"
-  add_foreign_key "websites", "users"
 end
