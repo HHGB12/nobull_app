@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :websites
+  namespace :admin do
+    resources :users
+    resources :websites  
+    root to: "users#index"
+  end
   root to: "pages#index"
+  resources :websites
+  
   get 'pages/about'
   get 'pages/index'
   get 'pages/contact'

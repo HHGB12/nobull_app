@@ -1,2 +1,2 @@
-json.extract! website, :id, :user_id, :business_name, :has_current_site, :current_website, :business_address, :mailing_address, :physical_or_mailing, :business_phone, :business_phone2, :business_fax, :business_email_address, :founded, :founder, :about_us, :services, :pricing, :facebook_page_link, :goolge_business_link, :twitter_profile_link, :linkedin_link, :created_at, :updated_at
+json.extract! website, :id, :user_id, :business_name, :has_current_website, :current_website_link, :created_at, :updated_at
 json.url website_url(website, format: :json)

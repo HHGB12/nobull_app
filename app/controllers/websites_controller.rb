@@ -69,6 +69,6 @@ class WebsitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def website_params
-      params.require(:website).permit(:user_id, :business_name, :has_current_site, :current_website, :business_address, :mailing_address, :physical_or_mailing, :business_phone, :business_phone2, :business_fax, :business_email_address, :founded, :founder, :about_us, :services, :pricing, :facebook_page_link, :goolge_business_link, :twitter_profile_link, :linkedin_link)
+      params.require(:website).permit(:user_id, :business_name, :has_current_website, :current_website_link)
     end
 end

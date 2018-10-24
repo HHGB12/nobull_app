@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_133126) do
+ActiveRecord::Schema.define(version: 2018_10_24_092653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,36 +30,12 @@ ActiveRecord::Schema.define(version: 2018_10_21_133126) do
   create_table "websites", force: :cascade do |t|
     t.bigint "user_id"
     t.string "business_name"
-    t.boolean "has_current_site"
-    t.string "current_website"
-    t.string "business_address"
-    t.string "mailing_address"
-    t.string "physical_or_mailing"
-    t.string "business_phone"
-    t.string "business_phone2"
-    t.string "business_fax"
-    t.string "business_email_address"
-    t.string "founded"
-    t.string "founder"
-    t.text "about_us"
-    t.text "services"
-    t.text "pricing"
-    t.string "facebook_page_link"
-    t.string "goolge_business_link"
-    t.string "twitter_profile_link"
-    t.string "linkedin_link"
+    t.boolean "has_current_website"
+    t.string "current_website_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_address"], name: "index_websites_on_business_address"
-    t.index ["business_email_address"], name: "index_websites_on_business_email_address"
-    t.index ["business_fax"], name: "index_websites_on_business_fax"
     t.index ["business_name"], name: "index_websites_on_business_name"
-    t.index ["business_phone"], name: "index_websites_on_business_phone"
-    t.index ["business_phone2"], name: "index_websites_on_business_phone2"
-    t.index ["current_website"], name: "index_websites_on_current_website"
-    t.index ["has_current_site"], name: "index_websites_on_has_current_site"
-    t.index ["mailing_address"], name: "index_websites_on_mailing_address"
-    t.index ["physical_or_mailing"], name: "index_websites_on_physical_or_mailing"
+    t.index ["current_website_link"], name: "index_websites_on_current_website_link"
     t.index ["user_id"], name: "index_websites_on_user_id"
   end
 
