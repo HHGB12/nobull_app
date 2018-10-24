@@ -1,0 +1,92 @@
+<%= form_with(model: integration, local: true) do |form| %>
+  <% if integration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(integration.errors.count, "error") %> prohibited this integration from being saved:</h2>
+
+      <ul>
+      <% integration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_page_link %>
+    <%= form.text_field :facebook_page_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_facebook_profile %>
+    <%= form.check_box :update_facebook_profile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goolge_business_link %>
+    <%= form.text_field :goolge_business_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_google_business %>
+    <%= form.check_box :update_google_business %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_profile_link %>
+    <%= form.text_field :twitter_profile_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_twitter_profile %>
+    <%= form.check_box :update_twitter_profile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_username %>
+    <%= form.text_field :twitter_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_password %>
+    <%= form.text_field :twitter_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin_page_link %>
+    <%= form.text_field :linkedin_page_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_linkedin_page %>
+    <%= form.check_box :update_linkedin_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :yelp_page_link %>
+    <%= form.text_field :yelp_page_link %>
+  </div>
+
+  <div class="field">
+    <%= form.label :update_yelp_page %>
+    <%= form.check_box :update_yelp_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :yelp_email_address %>
+    <%= form.text_field :yelp_email_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :yelp_password %>
+    <%= form.text_field :yelp_password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

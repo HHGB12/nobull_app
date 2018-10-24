@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @integration.user %>
+</p>
+
+<p>
+  <strong>Facebook page link:</strong>
+  <%= @integration.facebook_page_link %>
+</p>
+
+<p>
+  <strong>Update facebook profile:</strong>
+  <%= @integration.update_facebook_profile %>
+</p>
+
+<p>
+  <strong>Goolge business link:</strong>
+  <%= @integration.goolge_business_link %>
+</p>
+
+<p>
+  <strong>Update google business:</strong>
+  <%= @integration.update_google_business %>
+</p>
+
+<p>
+  <strong>Twitter profile link:</strong>
+  <%= @integration.twitter_profile_link %>
+</p>
+
+<p>
+  <strong>Update twitter profile:</strong>
+  <%= @integration.update_twitter_profile %>
+</p>
+
+<p>
+  <strong>Twitter username:</strong>
+  <%= @integration.twitter_username %>
+</p>
+
+<p>
+  <strong>Twitter password:</strong>
+  <%= @integration.twitter_password %>
+</p>
+
+<p>
+  <strong>Linkedin page link:</strong>
+  <%= @integration.linkedin_page_link %>
+</p>
+
+<p>
+  <strong>Update linkedin page:</strong>
+  <%= @integration.update_linkedin_page %>
+</p>
+
+<p>
+  <strong>Yelp page link:</strong>
+  <%= @integration.yelp_page_link %>
+</p>
+
+<p>
+  <strong>Update yelp page:</strong>
+  <%= @integration.update_yelp_page %>
+</p>
+
+<p>
+  <strong>Yelp email address:</strong>
+  <%= @integration.yelp_email_address %>
+</p>
+
+<p>
+  <strong>Yelp password:</strong>
+  <%= @integration.yelp_password %>
+</p>
+
+<%= link_to 'Edit', edit_integration_path(@integration) %> |
+<%= link_to 'Back', integrations_path %>

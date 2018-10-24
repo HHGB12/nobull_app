@@ -1,10 +1,10 @@
-<%= form_with(model: website_content, local: true) do |form| %>
-  <% if website_content.errors.any? %>
+<%= form_with(model: about_content, local: true) do |form| %>
+  <% if about_content.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(website_content.errors.count, "error") %> prohibited this website_content from being saved:</h2>
+      <h2><%= pluralize(about_content.errors.count, "error") %> prohibited this about_content from being saved:</h2>
 
       <ul>
-      <% website_content.errors.full_messages.each do |message| %>
+      <% about_content.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -39,16 +39,6 @@
   <div class="field">
     <%= form.label :team %>
     <%= form.text_area :team %>
-  </div>
-
-  <div class="field">
-    <%= form.label :services %>
-    <%= form.text_area :services %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pricing %>
-    <%= form.text_area :pricing %>
   </div>
 
   <div class="field">

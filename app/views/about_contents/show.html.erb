@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @about_content.user %>
+</p>
+
+<p>
+  <strong>Founder:</strong>
+  <%= @about_content.founder %>
+</p>
+
+<p>
+  <strong>Founded:</strong>
+  <%= @about_content.founded %>
+</p>
+
+<p>
+  <strong>About us:</strong>
+  <%= @about_content.about_us %>
+</p>
+
+<p>
+  <strong>Background story:</strong>
+  <%= @about_content.background_story %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @about_content.team %>
+</p>
+
+<p>
+  <strong>Message from founder:</strong>
+  <%= @about_content.message_from_founder %>
+</p>
+
+<p>
+  <strong>Other info:</strong>
+  <%= @about_content.other_info %>
+</p>
+
+<%= link_to 'Edit', edit_about_content_path(@about_content) %> |
+<%= link_to 'Back', about_contents_path %>
