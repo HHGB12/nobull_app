@@ -1,24 +1,93 @@
 
+
 <ul class="nav single-location">
-  <div class="divider text-center" data-content="Hey There"></div>
-    <li class="nav-item btn btn-primary btn-lg">
-      <%= link_to root_path do  %>
-        <i class="icon icon-plus"></i> New Review Request
-        <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to root_path do  %>
-        <i class="icon icon-time"></i> Past Review Requests
-        <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to root_path do  %>
-        <i class="icon icon-link"></i> Manage Review Sites
-        <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to root_path do  %>
-        <i class="icon icon-link"></i> Manage
-        <% end %>
-    </li>
+  <div class="divider text-center" data-content="Hey There! 👋"></div>
+    <% if user_signed_in? %>
+      <li class="nav-item btn btn-primary">
+        <%= link_to dashboard_path do  %>
+          <i class="icon icon-time"></i>  Submission Status
+          <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to edit_user_registration_path do  %>
+          <i class="icon icon-people"></i> Your Account
+          <% end %>
+      </li>
+      <li class="nav-item">
+        <span class="name"> Contact Info</span>
+        <div class="status"> Status: 
+          <% if current_user.business_details_complete? %>
+            <span class="complete">Complete ✔️</span>
+          <% else %>
+            <span class="in-progress">In Progress</span>
+          <% end %>
+        </div>
+        <div class="links">
+          <%= link_to business_detail_path(current_user.business_detail) do %>
+            <i class="icon icon-link"></i> Show
+          <% end %>
+          |
+          <%= link_to edit_business_detail_path(current_user.business_detail) do %>
+            <i class="icon icon-edit"></i> Edit
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="name"> Website Content</span>
+        <div class="status"> Status: 
+          <% if current_user.about_contents_complete? %>
+            <span class="complete">Complete ✔️</span>
+          <% else %>
+            <span class="in-progress">In Progress</span>
+          <% end %>
+        </div>
+        <div class="links"> 
+          <%= link_to about_content_path(current_user.about_content) do %>
+            <i class="icon icon-link"></i> Show
+          <% end %>
+          |
+          <%= link_to edit_about_content_path(current_user.about_content) do %>
+            <i class="icon icon-edit"></i> Edit
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="name"> Services & Pricing Content</span>
+        <div class="status"> Status: 
+          <% if current_user.services_contents_complete? %>
+            <span class="complete">Complete ✔️</span>
+          <% else %>
+            <span class="in-progress">In Progress</span>
+          <% end %>
+        </div>
+        <div class="links">
+          <%= link_to services_content_path(current_user.services_content) do %>
+            <i class="icon icon-link"></i> Show
+          <% end %>
+          |
+          <%= link_to edit_services_content_path(current_user.services_content) do %>
+            <i class="icon icon-edit"></i> Edit
+          <% end %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <span class="name"> Integrations</span>
+        <div class="status"> Status: 
+          <% if current_user.integrations_complete? %>
+            <span class="complete">Complete ✔️</span>
+          <% else %>
+            <span class="in-progress">In Progress</span>
+          <% end %>
+        </div>
+        <div class="links">
+          <%= link_to integration_path(current_user.integration) do %>
+            <i class="icon icon-link"></i> Show
+          <% end %>
+          |
+          <%= link_to edit_integration_path(current_user.integration) do %>
+            <i class="icon icon-edit"></i> Edit
+          <% end %>
+        </div>
+      </li>
+    <% end %>  
 </ul>

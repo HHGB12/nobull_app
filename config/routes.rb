@@ -4,15 +4,19 @@ Rails.application.routes.draw do
   resources :services_contents, only: [:update, :edit, :show]
   resources :about_contents, only: [:update, :edit, :show]
   resources :integrations, only: [:update, :edit, :show]
-  resources :website_contents, only: [:update, :edit, :show]
   resources :business_details, only: [:update, :edit, :show]
   namespace :admin do
       resources :users
     root to: "users#index"
   end
-  root to: "pages#index"
+  authenticated :user do
+    root to: "pages#dashboard"
+  end
+  unauthenticated :user do
+    root "pages#visitor"
+  end
   
-  
+  get 'dashboard', to: "pages#dashboard"
   get 'pages/about'
   get 'pages/index'
   get 'pages/contact'

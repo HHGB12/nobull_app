@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_132631) do
+ActiveRecord::Schema.define(version: 2018_10_25_100710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_132631) do
     t.text "other_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["founded"], name: "index_about_contents_on_founded"
     t.index ["founder"], name: "index_about_contents_on_founder"
     t.index ["user_id"], name: "index_about_contents_on_user_id"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_132631) do
     t.string "business_email_address2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["business_address"], name: "index_business_details_on_business_address"
     t.index ["business_email_address"], name: "index_business_details_on_business_email_address"
     t.index ["business_phone"], name: "index_business_details_on_business_phone"
@@ -72,6 +74,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_132631) do
     t.string "yelp_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["user_id"], name: "index_integrations_on_user_id"
   end
 
@@ -82,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_10_24_132631) do
     t.text "other_info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_complete", default: false, null: false
     t.index ["user_id"], name: "index_services_contents_on_user_id"
   end
 
@@ -97,34 +101,23 @@ ActiveRecord::Schema.define(version: 2018_10_24_132631) do
     t.string "personal_phone_number"
     t.boolean "has_current_website"
     t.string "current_website"
+    t.boolean "about_contents_complete", default: false, null: false
+    t.boolean "business_details_complete", default: false, null: false
+    t.boolean "integrations_complete", default: false, null: false
+    t.boolean "services_contents_complete", default: false, null: false
+    t.index ["about_contents_complete"], name: "index_users_on_about_contents_complete"
+    t.index ["business_details_complete"], name: "index_users_on_business_details_complete"
     t.index ["business_name"], name: "index_users_on_business_name"
     t.index ["current_website"], name: "index_users_on_current_website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["has_current_website"], name: "index_users_on_has_current_website"
+    t.index ["integrations_complete"], name: "index_users_on_integrations_complete"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "website_contents", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "founder"
-    t.string "founded"
-    t.text "about_us"
-    t.text "background_story"
-    t.text "team"
-    t.text "services"
-    t.text "pricing"
-    t.text "message_from_founder"
-    t.text "other_info"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["founded"], name: "index_website_contents_on_founded"
-    t.index ["founder"], name: "index_website_contents_on_founder"
-    t.index ["user_id"], name: "index_website_contents_on_user_id"
+    t.index ["services_contents_complete"], name: "index_users_on_services_contents_complete"
   end
 
   add_foreign_key "about_contents", "users"
   add_foreign_key "business_details", "users"
   add_foreign_key "integrations", "users"
   add_foreign_key "services_contents", "users"
-  add_foreign_key "website_contents", "users"
 end

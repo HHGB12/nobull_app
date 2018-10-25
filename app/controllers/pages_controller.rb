@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
-  layout "pages_layout"
+  layout "pages_layout", except: :dashboard
+  before_action :authenticate_user!, only: :dashboard
+  def dashboard
+  end
   def about
   end
 

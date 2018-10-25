@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+  <%= link_to  edit_user_registration_path, class: 'btn btn-link' do %>
+    <i class="icon icon-people"></i>
+    <span>Account</span>
+  <% end %>
+<% else %>
+  <%= link_to  new_user_registration_path, class: 'btn btn-link' do %>
+    <span class="icon">
+      <i class="fal fa-user-plus"></i>
+    </span>
+    <span>Sign Up</span>
+  <% end %>
+<% end %>
+

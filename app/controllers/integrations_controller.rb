@@ -1,41 +1,17 @@
 class IntegrationsController < ApplicationController
   before_action :set_integration, only: [:show, :edit, :update, :destroy]
-
-  # GET /integrations
-  # GET /integrations.json
-  def index
-    @integrations = Integration.all
-  end
+  before_action :authenticate_user!
 
   # GET /integrations/1
   # GET /integrations/1.json
   def show
   end
 
-  # GET /integrations/new
-  def new
-    @integration = Integration.new
-  end
 
   # GET /integrations/1/edit
   def edit
   end
 
-  # POST /integrations
-  # POST /integrations.json
-  def create
-    @integration = Integration.new(integration_params)
-
-    respond_to do |format|
-      if @integration.save
-        format.html { redirect_to @integration, notice: 'Integration was successfully created.' }
-        format.json { render :show, status: :created, location: @integration }
-      else
-        format.html { render :new }
-        format.json { render json: @integration.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
   # PATCH/PUT /integrations/1
   # PATCH/PUT /integrations/1.json
@@ -69,6 +45,6 @@ class IntegrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def integration_params
-      params.require(:integration).permit(:user_id, :facebook_page_link, :update_facebook_profile, :goolge_business_link, :update_google_business, :twitter_profile_link, :update_twitter_profile, :twitter_username, :twitter_password, :linkedin_page_link, :update_linkedin_page, :yelp_page_link, :update_yelp_page, :yelp_email_address, :yelp_password)
+      params.require(:integration).permit(:user_id, :facebook_page_link, :update_facebook_profile, :goolge_business_link, :update_google_business, :twitter_profile_link, :update_twitter_profile, :twitter_username, :twitter_password, :linkedin_page_link, :update_linkedin_page, :yelp_page_link, :update_yelp_page, :yelp_email_address, :yelp_password, :is_complete)
     end
 end
