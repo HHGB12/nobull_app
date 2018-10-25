@@ -2,7 +2,11 @@
   <div class="container box">
       <header class="box-header column col-12">
         <div class="box-title h5">Site Submission Status</div>
-        <%= render 'pages/dashboard/submit' %>
+        <% if current_user.is_submitted? %>
+          <%= render 'pages/dashboard/submited' %>
+        <% else %>
+          <%= render 'pages/dashboard/submiter' %>
+        <% end %>
       </header>
       <main class="box-body column col-12">
         <div class="columns no-margin-offset">

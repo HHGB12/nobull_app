@@ -1,0 +1,45 @@
+
+  <p class=" subtitle">
+    Once everything everything is complete, you'll be able to press the big submit button below. That'll lock your application from further edits and send me (Rich, your friendly website developer) an email that you're ready to proceed!
+  </p>
+<div class="column col-12">
+  <div class="columns">
+    <div class="column col-10 col-mx-auto">
+      <progress class="progress" value="<%= calc_completeness %>" max="100"></progress>
+      <div class="is-flex-centered">
+        <h3 class="h6">Current Progress: <strong><%= calc_completeness %>%</strong></h3>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+<%= form_with(model: @user) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this business_detail from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :is_submitted, value: true %>
+
+  <div class="mt-4">
+    <% if is_complete? %>
+      <p class="text-center">Great work! Looks like everything is ship shape! Once you hit submit, it'll lock everything up and send it to me so I can get started. Ready for this? 😸 </p>
+      <div class="actions">
+        <%= form.submit "Submit your site", class: 'btn btn-primary is-centered' %>
+      </div>
+    <% else %>
+      <p class="text-center">You'll be able to submit it to me once everything is complete!
+      <br> Having troubles? Get in touch.</p>
+      <button class="btn disabled is-centered" tabindex="-1">Submit Your Site</button>
+    <% end %>
+  </div>
+<% end %>

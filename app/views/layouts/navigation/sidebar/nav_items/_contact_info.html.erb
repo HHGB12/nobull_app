@@ -1,0 +1,14 @@
+<li class="nav-item">
+  <span class="name"> Contact Info</span>
+  <div class="status ">
+    <% if current_user.business_details_complete? %>
+      <%= link_to business_detail_path(current_user.business_detail) do %>
+        Status: <span class="complete">Complete ✅</span>
+      <% end %>
+    <% else %>
+      <%= link_to edit_business_detail_path(current_user.business_detail) do %>
+        Status: <span class="in-progress">In Progress</span><i class="icon icon-edit"></i>
+        <% end %>
+    <% end %>
+  </div>
+</li>

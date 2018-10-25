@@ -16,4 +16,8 @@ module ApplicationHelper
     end
     return completeness
   end
+
+  def is_complete?
+     calc_completeness() == 100
+  end
 end

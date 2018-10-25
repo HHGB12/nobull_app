@@ -1,0 +1,14 @@
+<li class="nav-item">
+  <span class="name"> Website Content</span>
+  <div class="status ">
+    <% if current_user.about_contents_complete? %>
+      <%= link_to about_content_path(current_user.about_content) do %>
+        Status: <span class="complete">Complete ✅</span>
+      <% end %>
+    <% else %>
+      <%= link_to edit_about_content_path(current_user.about_content) do %>
+        Status: <span class="in-progress">In Progress</span><i class="icon icon-edit"></i>
+        <% end %>
+    <% end %>
+  </div>
+</li>

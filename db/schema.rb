@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_152623) do
+ActiveRecord::Schema.define(version: 2018_10_25_203549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,8 +105,8 @@ ActiveRecord::Schema.define(version: 2018_10_25_152623) do
     t.boolean "business_details_complete", default: false, null: false
     t.boolean "integrations_complete", default: false, null: false
     t.boolean "services_contents_complete", default: false, null: false
-    t.integer "progress", default: 0
     t.boolean "is_submitted", default: false, null: false
+    t.string "name"
     t.index ["about_contents_complete"], name: "index_users_on_about_contents_complete"
     t.index ["business_details_complete"], name: "index_users_on_business_details_complete"
     t.index ["business_name"], name: "index_users_on_business_name"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_152623) do
     t.index ["has_current_website"], name: "index_users_on_has_current_website"
     t.index ["integrations_complete"], name: "index_users_on_integrations_complete"
     t.index ["is_submitted"], name: "index_users_on_is_submitted"
-    t.index ["progress"], name: "index_users_on_progress"
+    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["services_contents_complete"], name: "index_users_on_services_contents_complete"
   end

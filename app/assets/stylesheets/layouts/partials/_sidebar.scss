@@ -41,10 +41,14 @@ aside.sidebar-nav {
 
         &.name {
           display: block;
+          text-align: center;
           font-weight: 600;
         }
 
-        &.status {}
+      }
+
+      .status {
+        text-align: center;
       }
 
       .status {
