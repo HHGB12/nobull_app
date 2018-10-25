@@ -1,0 +1,40 @@
+<div class="row column col-12 columns no-margin-offset">
+  <div class="column col-12">
+    <h3 class="h5 title is-flex-centered">Services & Pricing Content</h3>
+    <p class=" subtitle is-flex-centered">
+      This will be used on your "Pricing" or "Services" page (depending on what you submit). It will be used
+      by your soon-to-be-customers™ (that just found your snazzy new site) to decide if you're the right fit for them.
+    </p>
+  </div>
+  <div class="column col-12">
+    <div class="columns">
+      <% if current_user.services_contents_complete? %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-centered">
+            Status: <span class="complete">Complete ✅</span>
+          </div>
+        </div>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link">
+            <%= link_to services_content_path(current_user.services_content) do %>
+              <i class="icon icon-edit"></i> See Pricing/Services
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-flex-centered">
+            Status: <span class="in-progress">Needs work</span> 🚧
+          </div>  
+        </div>  
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link">
+            <%= link_to edit_services_content_path(current_user.services_content) do %>
+              <i class="icon icon-edit"></i> Fill Out Pricing & Services
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,40 @@
+<div class="row column col-12 columns no-margin-offset">
+  <div class="column col-12">
+    <h3 class="h5 title is-flex-centered">Website Content</h3>
+    <p class=" subtitle is-flex-centered">
+      This is the actual "stuff" that will be on your website. It'll either be shown on the homepage or possibly on an About Us Page. Things such as a bit of your businesses 
+      history, your team or whatever else you want people to know about your business. 
+    </p>
+  </div>
+  <div class="column col-12">
+    <div class="columns">
+      <% if current_user.about_contents_complete? %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-centered">
+            Status: <span class="complete">Complete ✅</span>
+          </div>
+        </div>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link is-centered">
+            <%= link_to about_content_path(current_user.about_content) do %>
+              <i class="icon icon-edit"></i> See Submitted Content
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-flex-centered">
+            Status: <span class="in-progress">Needs work</span> 🚧
+          </div>  
+        </div>  
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link">
+            <%= link_to edit_about_content_path(current_user.about_content) do %>
+              <i class="icon icon-edit"></i> Fill Out Website Content
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>  

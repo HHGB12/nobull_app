@@ -53,14 +53,16 @@ aside.sidebar-nav {
 
         span.complete {
           background-color: $success-color;
-          padding: $unit-h;
+          padding: $unit-h $unit-1;
           border-radius: $border-radius;
+          color: darken($success-color, 30%);
         }
 
         span.in-progress {
           background-color: $warning-color;
           padding: $unit-h;
           border-radius: $border-radius;
+          color: darken($warning-color, 30%);
         }
       }
 

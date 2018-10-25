@@ -1,0 +1,41 @@
+<div class="row column col-12 columns no-margin-offset">
+  <div class="column col-12">
+    <h3 class="h5 title is-flex-centered">Integrations</h3>
+    <p class=" subtitle is-flex-centered">
+      I'll use this provided information to add meta-data 
+      (header tags and the likes - stuff Google likes to see which ranks websites that have it higher) and social sites to your new site. I'll also go through and make 
+      sure all the data is the same across all the sites you provide me - something else Google and other search engines like to see. 
+    </p>
+  </div>
+  <div class="column col-12">
+    <div class="columns">
+      <% if current_user.integrations_complete? %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-centered">
+            Status: <span class="complete">Complete ✅</span>
+          </div>
+        </div>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link">
+            <%= link_to integration_path(current_user.integration) do %>
+              <i class="icon icon-edit"></i> See Provided Integrations
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="status is-flex-centered">
+            Status: <span class="in-progress">Needs work</span> 🚧
+          </div>  
+        </div>  
+        <div class="column col-5 col-md-12 col-mx-auto">
+          <div class="row-link">
+            <%= link_to edit_integration_path(current_user.integration) do %>
+              <i class="icon icon-edit"></i> Fill Out Integration Data
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>  

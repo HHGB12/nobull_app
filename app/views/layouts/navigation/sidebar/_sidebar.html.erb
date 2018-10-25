@@ -9,15 +9,10 @@
           <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to edit_user_registration_path do  %>
-          <i class="icon icon-people"></i> Your Account
-          <% end %>
-      </li>
-      <li class="nav-item">
         <span class="name"> Contact Info</span>
         <div class="status"> Status: 
           <% if current_user.business_details_complete? %>
-            <span class="complete">Complete ✔️</span>
+            <span class="complete">Complete ✅</span>
           <% else %>
             <span class="in-progress">In Progress</span>
           <% end %>
@@ -26,17 +21,20 @@
           <%= link_to business_detail_path(current_user.business_detail) do %>
             <i class="icon icon-link"></i> Show
           <% end %>
-          |
-          <%= link_to edit_business_detail_path(current_user.business_detail) do %>
-            <i class="icon icon-edit"></i> Edit
+          <% unless current_user.is_submitted? %>
+            |
+            <%= link_to edit_business_detail_path(current_user.business_detail) do %>
+              <i class="icon icon-edit"></i> Edit
+            <% end %>
           <% end %>
+          
         </div>
       </li>
       <li class="nav-item">
         <span class="name"> Website Content</span>
         <div class="status"> Status: 
           <% if current_user.about_contents_complete? %>
-            <span class="complete">Complete ✔️</span>
+            <span class="complete">Complete ✅</span>
           <% else %>
             <span class="in-progress">In Progress</span>
           <% end %>
@@ -45,9 +43,11 @@
           <%= link_to about_content_path(current_user.about_content) do %>
             <i class="icon icon-link"></i> Show
           <% end %>
-          |
-          <%= link_to edit_about_content_path(current_user.about_content) do %>
-            <i class="icon icon-edit"></i> Edit
+          <% unless current_user.is_submitted? %>
+            |
+            <%= link_to edit_about_content_path(current_user.about_content) do %>
+              <i class="icon icon-edit"></i> Edit
+            <% end %>
           <% end %>
         </div>
       </li>
@@ -55,7 +55,7 @@
         <span class="name"> Services & Pricing Content</span>
         <div class="status"> Status: 
           <% if current_user.services_contents_complete? %>
-            <span class="complete">Complete ✔️</span>
+            <span class="complete">Complete ✅</span>
           <% else %>
             <span class="in-progress">In Progress</span>
           <% end %>
@@ -64,9 +64,11 @@
           <%= link_to services_content_path(current_user.services_content) do %>
             <i class="icon icon-link"></i> Show
           <% end %>
-          |
-          <%= link_to edit_services_content_path(current_user.services_content) do %>
-            <i class="icon icon-edit"></i> Edit
+          <% unless current_user.is_submitted? %>
+            |
+            <%= link_to edit_services_content_path(current_user.services_content) do %>
+              <i class="icon icon-edit"></i> Edit
+            <% end %>
           <% end %>
         </div>
       </li>
@@ -74,7 +76,7 @@
         <span class="name"> Integrations</span>
         <div class="status"> Status: 
           <% if current_user.integrations_complete? %>
-            <span class="complete">Complete ✔️</span>
+            <span class="complete">Complete ✅</span>
           <% else %>
             <span class="in-progress">In Progress</span>
           <% end %>
@@ -83,9 +85,11 @@
           <%= link_to integration_path(current_user.integration) do %>
             <i class="icon icon-link"></i> Show
           <% end %>
-          |
-          <%= link_to edit_integration_path(current_user.integration) do %>
-            <i class="icon icon-edit"></i> Edit
+          <% unless current_user.is_submitted? %>
+            |
+            <%= link_to edit_integration_path(current_user.integration) do %>
+              <i class="icon icon-edit"></i> Edit
+            <% end %>
           <% end %>
         </div>
       </li>

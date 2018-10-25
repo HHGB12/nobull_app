@@ -1,0 +1,41 @@
+<div class="row column col-12 columns no-margin-offset">
+            <div class="column col-12">
+              <h3 class="h5 title is-flex-centered">Contact Info</h3>
+              <p class=" subtitle is-flex-centered">
+                This is where you give me all the contact information about your
+                business. It's pretty important stuff - it'll be used to help people 
+                to get in touch with you!
+              </p>
+            </div>
+            <div class="column col-12">
+              <div class="columns">
+                <% if current_user.business_details_complete? %>
+                  <div class="column col-5 col-md-12 col-mx-auto">
+                    <div class="status is-centered">
+                      Status: <span class="complete">Complete ✅</span>
+                    </div>
+                  </div>
+                  <div class="column col-5 col-md-12 col-mx-auto">
+                    <div class="row-link">
+                      <%= link_to business_detail_path(current_user.business_detail) do %>
+                        <i class="icon icon-edit"></i> See Contact Info
+                      <% end %>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="column col-5 col-md-12 col-mx-auto">
+                    <div class="status is-flex-centered">
+                      Status: <span class="in-progress">Needs work</span> 🚧
+                    </div>  
+                  </div>  
+                  <div class="column col-5 col-md-12 col-mx-auto">
+                    <div class="row-link">
+                      <%= link_to edit_business_detail_path(current_user.business_detail) do %>
+                        <i class="icon icon-edit"></i> Fill out Contact Info
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>  
