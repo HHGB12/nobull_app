@@ -1,7 +1,7 @@
 
 <ul class="nav single-location">
   <% if user_signed_in? %>
-    <div class="divider text-center" data-content="Hey There <%= current_user.name %>👋"></div>
+    <div class="divider text-center" data-content="Hey there <%= current_user.name %>! 👋"></div>
     <% if is_complete? && current_user.is_submitted %>
       <li class="nav-item btn btn-primary">
         <%= link_to dashboard_path do  %>
