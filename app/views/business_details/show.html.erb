@@ -1,63 +1,20 @@
-<p id="notice"><%= notice %></p>
+<header class="box-header column col-12">
+  <div class="box-title h5">Details Details Details!</div>
+  <p class="subtitle">Details</p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'show_content', business_detail: @business_detail %>
+  </div>
+</section>
+<footer class="box-footer column col-12">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Edit Contact Info', edit_business_detail_path(@business_detail), class: 'btn' %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Contact Info</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>
 
-<p>
-  <strong>User:</strong>
-  <%= @business_detail.user %>
-</p>
-
-<p>
-  <strong>Business address:</strong>
-  <%= @business_detail.business_address %>
-</p>
-
-<p>
-  <strong>Mailing address:</strong>
-  <%= @business_detail.mailing_address %>
-</p>
-
-<p>
-  <strong>Physical or mailing:</strong>
-  <%= @business_detail.physical_or_mailing %>
-</p>
-
-<p>
-  <strong>Other address info:</strong>
-  <%= @business_detail.other_address_info %>
-</p>
-
-<p>
-  <strong>Business phone:</strong>
-  <%= @business_detail.business_phone %>
-</p>
-
-<p>
-  <strong>Business phone2:</strong>
-  <%= @business_detail.business_phone2 %>
-</p>
-
-<p>
-  <strong>Business phone3:</strong>
-  <%= @business_detail.business_phone3 %>
-</p>
-
-<p>
-  <strong>Business fax:</strong>
-  <%= @business_detail.business_fax %>
-</p>
-
-<p>
-  <strong>Business phone info:</strong>
-  <%= @business_detail.business_phone_info %>
-</p>
-
-<p>
-  <strong>Business email address:</strong>
-  <%= @business_detail.business_email_address %>
-</p>
-
-<p>
-  <strong>Business email address2:</strong>
-  <%= @business_detail.business_email_address2 %>
-</p>
-
-<%= link_to 'Edit', edit_business_detail_path(@business_detail) %> 

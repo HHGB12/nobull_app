@@ -1,5 +1,19 @@
-<h1>Editing Business Detail</h1>
-
-<%= render 'form', business_detail: @business_detail %>
-
-<%= link_to 'Show', @business_detail %> |
+<header class="box-header column col-12">
+  <div class="box-title h5">Details Details Details!</div>
+  <p class="subtitle">Details</p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', business_detail: @business_detail %>
+  </div>
+</section>
+<footer class="box-footer column col-12">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Contact Info', business_detail_path(@business_detail), class: 'btn' %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Contact Info</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>

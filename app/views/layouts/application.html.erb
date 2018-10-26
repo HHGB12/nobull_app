@@ -21,9 +21,10 @@
       </aside> 
       <a data-action="slide-menu#toggleSidebar" class="slide-menu-overlay"></a>
       <div class="slide-menu-content">
-        <main>
-          <%#= render 'layouts/shared/alerts' %>
-          <%= yield %>
+        <main class="column col-8 col-md-12 col-mx-auto">
+          <div class="container box">
+            <%= yield %>
+          </div>
         </main>
         <footer class="appliction-layout-footer">
           <%#= render 'layouts/shared/footer' %>

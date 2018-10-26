@@ -1,21 +1,16 @@
-<main class="column col-8 col-md-12 col-mx-auto">
-  <div class="container box">
-      <header class="box-header column col-12">
-        <div class="box-title h5">Site Submission Status</div>
-        <% if current_user.is_submitted? %>
-          <%= render 'pages/dashboard/submited' %>
-        <% else %>
-          <%= render 'pages/dashboard/submiter' %>
-        <% end %>
-      </header>
-      <main class="box-body column col-12">
-        <div class="columns no-margin-offset">
-          
-          <%= render 'pages/dashboard/business_details' %>
-          <%= render 'pages/dashboard/about_contents' %>
-          <%= render 'pages/dashboard/services_contents' %>
-          <%= render 'pages/dashboard/integrations' %>
-        </div>
-      </main>
+<header class="box-header column col-12">
+  <div class="box-title h5">Site Submission Status</div>
+  <% if current_user.is_submitted? %>
+    <%= render 'pages/dashboard/submited' %>
+  <% else %>
+    <%= render 'pages/dashboard/submiter' %>
+  <% end %>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'pages/dashboard/business_details' %>
+    <%= render 'pages/dashboard/about_contents' %>
+    <%= render 'pages/dashboard/services_contents' %>
+    <%= render 'pages/dashboard/integrations' %>
   </div>
-</main>
+</section>
