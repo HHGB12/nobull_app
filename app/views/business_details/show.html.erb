@@ -9,7 +9,7 @@
 </section>
 <footer class="box-footer column col-12">
   <% unless current_user.is_submitted? %>
-    <%= link_to 'Make a change to your Contact Info', edit_business_detail_path(@business_detail), class: 'btn' %> 
+    <%= link_to 'Make a change to your Contact Info', edit_business_detail_path(@business_detail), class: 'btn text-center is-centered' %> 
   <% else %>
     <button class="btn" disabled="" tabindex="-1">Edit Contact Info</button> 
     <p>

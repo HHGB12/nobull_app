@@ -14,7 +14,7 @@
 
 
     <div class="divider text-center" data-content="Google Business"></div>
-    <div id="google" data-controller="toggle-hidden">
+    <div id="google" data-controller="integrations-toggle">
       <div class="form-group">
         <div class="col-4 col-sm-11">
           <%= form.label :goolge_business_link, 'Your Google Business Link', class: 'form-label' %>
@@ -53,12 +53,12 @@
         </div>
         <div class="col-7 col-sm-12 text-centered">
           <label class="form-switch input-lg">
-            <%= form.check_box :update_google_business, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <%= form.check_box :update_google_business, class: 'input-lg', 'data-action': 'integrations-toggle#toggleHidden', 'data-target': 'integrations-toggle.checkbox' %>
             <i class="form-icon input-lg"></i>
           </label>
         </div>
       </div>
-      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+      <div class="d-hide" data-target="integrations-toggle.hiddenObject">
         <p>
           Ready to make sure all your data matches? Great, we are too. For us to do this though, we're going to need
           access to your google business page. Don't worry, sharing access is fairly painless.
@@ -80,7 +80,7 @@
     </div>
 
     <div class="divider text-center" data-content="Facebook"></div>
-    <div id="facebook" data-controller="toggle-hidden">
+    <div id="facebook" data-controller="integrations-toggle">
       <div class="form-group">
         <div class="col-5 col-sm-12">
           <%= form.label :facebook_page_link, 'Your Facebook Page Link', class: 'form-label' %>
@@ -107,12 +107,12 @@
         </div>
         <div class="col-7 col-sm-12 text-centered">
           <label class="form-switch input-lg">
-            <%= form.check_box :update_facebook_profile, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <%= form.check_box :update_facebook_profile, class: 'input-lg', 'data-action': 'integrations-toggle#toggleHidden', 'data-target': 'integrations-toggle.checkbox' %>
             <i class="form-icon input-lg"></i>
           </label>
         </div>
       </div>
-      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+      <div class="d-hide" data-target="integrations-toggle.hiddenObject">
         <p>
           Good news! Facebook makes it somewhat painless to share your Facebook Business Page. Which means I can get in there, update it, and make Google happy because 
           all your data will match across the internet! Wooo!
@@ -134,7 +134,7 @@
     </div>
 
     <div class="divider text-center" data-content="LinkedIn"></div>
-    <div id="linkedin" data-controller="toggle-hidden">
+    <div id="linkedin" data-controller="integrations-toggle">
       <div class="form-group">
         <div class="col-5 col-sm-12">
           <%= form.label :linked_page_link, 'Your LinkedIn Business Page Link', class: 'form-label' %>
@@ -161,12 +161,12 @@
         </div>
         <div class="col-7 col-sm-12 text-centered">
           <label class="form-switch input-lg">
-            <%= form.check_box :update_linkedin_page, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <%= form.check_box :update_linkedin_page, class: 'input-lg', 'data-action': 'integrations-toggle#toggleHidden', 'data-target': 'integrations-toggle.checkbox' %>
             <i class="form-icon input-lg"></i>
           </label>
         </div>
       </div>
-      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+      <div class="d-hide" data-target="integrations-toggle.hiddenObject">
         <p>
           Want me to make sure the information is the same on your LinkedIn page as it is everywhere else? No worries - can do (and Google will love that we did! 🎉).
         </p>
@@ -187,13 +187,13 @@
     </div>
 
     <div class="divider text-center" data-content="Twitter"></div>
-    <div id="twitter" data-controller="toggle-hidden">
+    <div id="twitter" data-controller="integrations-toggle">
       <div class="form-group">
         <div class="col-5 col-sm-12">
           <%= form.label :twitter_username, 'Your Twitter Username', class: 'form-label' %>
         </div>
         <div class="col-7 col-sm-12">
-          <%= form.text_field :twitter_username, placeholder: 'https://twitter.com/RichJDSmith', class: 'form-input' %>
+          <%= form.text_field :twitter_username, placeholder: '@RichJDSmith', class: 'form-input' %>
         </div>
       </div>
       <div class="form-group">
@@ -214,12 +214,12 @@
         </div>
         <div class="col-7 col-sm-12 text-centered">
           <label class="form-switch input-lg">
-            <%= form.check_box :update_twitter_profile, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <%= form.check_box :update_twitter_profile, class: 'input-lg', 'data-action': 'integrations-toggle#toggleHidden', 'data-target': 'integrations-toggle.checkbox' %>
             <i class="form-icon input-lg"></i>
           </label>
         </div>
       </div>
-      <div class="d-hide" data-target=toggle-hidden.hiddenObject>
+      <div class="d-hide" data-target=integrations-toggle.hiddenObject>
         <p>Bad news bears. Twitter doesn't make it easy to share access to your account. Actually, they make it impossible.</p>
         <p>Which means, for me to update your profile, you're going to actually have to share your password.😳</p>
         <p>What I'd recommend you do, is go onto Twitter, <a target="_blank" rel="noopener noreferrer"href="https://twitter.com/settings/password">update your password</a> to something silly like "NoBullIsBestBull", then share that new password with me below. Once I'm done, you can go back and change it back.</p>
@@ -236,7 +236,7 @@
     </div>
 
     <div class="divider text-center" data-content="Yelp"></div>
-    <div id="yelp" data-controller="toggle-hidden">
+    <div id="yelp" data-controller="integrations-toggle">
       <div class="form-group">
         <div class="col-5 col-sm-12">
           <%= form.label :yelp_page_link, 'Your Yelp Page Link', class: 'form-label' %>
@@ -263,12 +263,12 @@
         </div>
         <div class="col-7 col-sm-12 text-centered">
           <label class="form-switch input-lg">
-            <%= form.check_box :update_yelp_page, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <%= form.check_box :update_yelp_page, class: 'input-lg', 'data-action': 'integrations-toggle#toggleHidden', 'data-target': 'integrations-toggle.checkbox' %>
             <i class="form-icon input-lg"></i>
           </label>
         </div>
       </div>
-      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+      <div class="d-hide" data-target="integrations-toggle.hiddenObject">
       <p>Yelp is kind of a terrible company, but besides their mafia-like practices, they make it a bit of a pain to share account access.</p>
       <p>
           Here's the deal: I can either just use your Yelp account email and password and log in with that, or you can share account access. 
@@ -285,7 +285,7 @@
           <div class="col-7 col-sm-12 text-centered">
             <label class="form-checkbox input-lg">
               <%= form.check_box :shared_yelp_access %>
-              <i class="form-icon input-lg"></i>I shared Facebook Access
+              <i class="form-icon input-lg"></i>I shared my Yelp Page Access
             </label>
           </div>
         </div>
@@ -331,6 +331,9 @@
           <i class="form-icon input-lg"></i>
         </label>
       </div>
+    </div>
+    <div class="form-group actions col-12">
+      <%= form.submit 'Save Integrations Info', class: 'btn btn-primary form-inline input-group-btn is-full-width' %>
     </div>
   <% end %>
 </div>

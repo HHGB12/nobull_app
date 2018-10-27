@@ -45,6 +45,6 @@ class BusinessDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def business_detail_params
-      params.require(:business_detail).permit(:user_id, :business_address, :mailing_address, :physical_or_mailing, :other_address_info, :business_phone, :business_phone2, :business_phone3, :business_fax, :business_phone_info, :business_email_address, :business_email_address2, :is_complete)
+      params.require(:business_detail).permit(:user_id, :business_address, :mailing_address, :city, :region, :postal_code, :physical_or_mailing, :other_address_info, :business_phone, :business_phone2, :business_phone3, :business_fax, :business_phone_info, :business_email_address, :business_email_address2, :is_complete)
     end
 end

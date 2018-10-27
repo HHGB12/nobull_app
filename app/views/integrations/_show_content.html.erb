@@ -1,0 +1,154 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Submitted Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong> Goolge Business Link</strong></td>
+      <td>
+        <% if @integration.goolge_business_link.blank? %>
+          Not Submitted
+        <% else %>
+          <a href="<%= @integration.goolge_business_link %>">Link to Google Page</a>    
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Want It Updated?</td>
+      <td><% if @integration.update_google_business %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared Google Page Access</td>
+      <td><% if @integration.shared_google_access %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td><strong> Facebook Business Page Link</strong></td>
+      <td>
+        <% if @integration.facebook_page_link.blank? %>
+          Not Submitted
+        <% else %>
+          <a href="<%= @integration.facebook_page_link %>">Link to Facebook Page</a>    
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Want It Updated?</td>
+      <td><% if @integration.update_facebook_profile %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared Facebook Page Access</td>
+      <td><% if @integration.shared_facebook_access %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td><strong> LinkedIn Business Link</strong></td>
+      <td>
+        <% if @integration.linkedin_page_link.blank? %>
+          Not Submitted
+        <% else %>
+          <a href="<%= @integration.linkedin_page_link %>">Link to LinkedIn Page</a>    
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Want It Updated?</td>
+      <td><% if @integration.update_linkedin_page %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared LinkedIn Page Access</td>
+      <td><% if @integration.shared_linkedin_access %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td><strong> Twitter Profile Link</strong></td>
+      <td>
+        <% if @integration.twitter_username.blank? %>
+          Not Submitted
+        <% else %>
+          <a href="https://twitter.com/<%= @integration.twitter_username %>">Link to Twitter Profile</a>    
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Want It Updated?</td>
+      <td><% if @integration.update_twitter_profile %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared Twitter Password?</td>
+      <td><% unless @integration.twitter_password.blank? %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td><strong> Yelp Business Profile Link</strong></td>
+      <td>
+        <% if @integration.yelp_page_link.blank? %>
+          Not Submitted
+        <% else %>
+          <a href="<%= @integration.yelp_page_link %>">Link to Yelp Business Page</a>    
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Want It Updated?</td>
+      <td><% if @integration.update_yelp_page %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared Yelp Page Access</td>
+      <td><% if @integration.shared_yelp_access %>
+        ✅
+      <% else %>
+        ❌
+      <% end %></td>
+    </tr>
+    <tr>
+      <td>Shared Yelp Email/Password</td>
+      <td><% unless @integration.yelp_email_address.blank? && @integration.yelp_password.blank? %>
+          ✅
+        <% else %>
+          ❌
+        <% end %></td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
