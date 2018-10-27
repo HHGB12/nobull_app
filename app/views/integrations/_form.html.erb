@@ -1,96 +1,336 @@
-<%= form_with(model: integration, local: true) do |form| %>
-  <% if integration.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(integration.errors.count, "error") %> prohibited this integration from being saved:</h2>
 
-      <ul>
-      <% integration.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div data-controller="autocomplete" class="column col-12">
+  <%= form_with(model: integration, class: 'form-horizontal') do |form| %>
+    <% if integration.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(integration.errors.count, "error") %> prohibited this integration from being saved:</h2>
+        <ul>
+        <% integration.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="divider text-center" data-content="Google Business"></div>
+    <div id="google" data-controller="toggle-hidden">
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <%= form.label :goolge_business_link, 'Your Google Business Link', class: 'form-label' %>
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Wondering what this link is? Go to <a target="_blank" rel="noopener noreferrer"href="https://www.google.com/maps/">Google Maps</a>, find your business, then click the share button on the right hand side - below the directions button. Paste that share link in here. I'll do the rest! 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12">
+          <%= form.text_field :goolge_business_link, placeholder: 'https://goo.gl/maps/blahblahblah', class: 'form-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <p>Update Google Business Page Data?</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch If you want us to update your Google Business data.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :update_google_business, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+        <p>
+          Ready to make sure all your data matches? Great, we are too. For us to do this though, we're going to need
+          access to your google business page. Don't worry, sharing access is fairly painless.
+        </p>
+        <p>
+          Google actually has some instructions for you to use on how to actually share your account. <a target="_blank" rel="noopener noreferrer"href="https://support.google.com/business/answer/3403100?hl=en-GB">You can see them here. </a> 
+          When you get to the "Enter the name or email address of the user you'd like to add." step, enter the following email address: <strong>rjdsmith@gmail.com</strong>
+        </p>
+        <p>Once you have shared access to your account, click the "I shared my Google Business Page Access" (don't cheat - only click it once you actually have shared the account. No worries, there's no rush!)</p>
+        <div class="form-group">
+          <div class="col-12 text-centered">
+            <label class="form-checkbox input-lg">
+              <%= form.check_box :shared_google_access %>
+              <i class="form-icon input-lg"></i>I shared my Google Business Page Access
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider text-center" data-content="Facebook"></div>
+    <div id="facebook" data-controller="toggle-hidden">
+      <div class="form-group">
+        <div class="col-5 col-sm-12">
+          <%= form.label :facebook_page_link, 'Your Facebook Page Link', class: 'form-label' %>
+        </div>
+        <div class="col-7 col-sm-12">
+          <%= form.text_field :facebook_page_link, placeholder: 'https://www.facebook.com/nobullco', class: 'form-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <p>Update Facebook Profile Data?</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch If you want us to update your facebook data.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :update_facebook_profile, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+        <p>
+          Good news! Facebook makes it somewhat painless to share your Facebook Business Page. Which means I can get in there, update it, and make Google happy because 
+          all your data will match across the internet! Wooo!
+        </p>
+        <p>
+          To do so, Facebook has a handy-dandy guide explaining exactly what to do. <a target="_blank" rel="noopener noreferrer"href="https://www.facebook.com/help/323502271070625/">Check it out here</a>, and click the "How do I manage roles for my Page?"
+          option for instructions.
+        </p>
+        <p>Once you have shared access to your account, click the "I shared my Facebook Page Access" (don't cheat - only click it once you actually have shared the account. No worries, there's no rush!)</p>
+        <div class="form-group">
+          <div class="col-7 col-sm-12 text-centered">
+            <label class="form-checkbox input-lg">
+              <%= form.check_box :shared_facebook_access %>
+              <i class="form-icon input-lg"></i>I shared Facebook Access
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider text-center" data-content="LinkedIn"></div>
+    <div id="linkedin" data-controller="toggle-hidden">
+      <div class="form-group">
+        <div class="col-5 col-sm-12">
+          <%= form.label :linked_page_link, 'Your LinkedIn Business Page Link', class: 'form-label' %>
+        </div>
+        <div class="col-7 col-sm-12">
+          <%= form.text_field :linkedin_page_link, placeholder: 'https://www.linkedin.com/company/nobullco/', class: 'form-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <p>Update LinkedIn Business Page Data?</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch If you want us to update your LinkedIn Business Page data.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :update_linkedin_page, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+        <p>
+          Want me to make sure the information is the same on your LinkedIn page as it is everywhere else? No worries - can do (and Google will love that we did! 🎉).
+        </p>
+        <p>
+          To make this happen, we first need to be connected on LinkedIn. <a target="_blank" rel="noopener noreferrer"href="https://www.linkedin.com/in/richardjdsmith/">You can see my profile here.</a> Send me a request! Once we
+          are connected on LinkedIn, you can add me as one of your LinkedIn page admins. Instructions on how to do so can be found <a target="_blank" rel="noopener noreferrer"href="https://www.linkedin.com/help/linkedin/answer/37594/adding-or-removing-admins-on-your-company-page?lang=en">here.</a>
+        </p>
+        <p>Once you have shared access to your account, click the "I shared my LinkedIn Business Page Access" (don't cheat - only click it once you actually have shared the account. No worries, there's no rush!)</p>
+        <div class="form-group">
+          <div class="col-7 col-sm-12 text-centered">
+            <label class="form-checkbox input-lg">
+              <%= form.check_box :shared_linkedin_access %>
+              <i class="form-icon input-lg"></i>I shared my LinkedIn Business Page Access
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider text-center" data-content="Twitter"></div>
+    <div id="twitter" data-controller="toggle-hidden">
+      <div class="form-group">
+        <div class="col-5 col-sm-12">
+          <%= form.label :twitter_username, 'Your Twitter Username', class: 'form-label' %>
+        </div>
+        <div class="col-7 col-sm-12">
+          <%= form.text_field :twitter_username, placeholder: 'https://twitter.com/RichJDSmith', class: 'form-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <p>Update Twitter Profile Data?</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch If you want us to update your Twitter profile to make sure it matches the rest of your social sites.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :update_twitter_profile, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+      <div class="d-hide" data-target=toggle-hidden.hiddenObject>
+        <p>Bad news bears. Twitter doesn't make it easy to share access to your account. Actually, they make it impossible.</p>
+        <p>Which means, for me to update your profile, you're going to actually have to share your password.😳</p>
+        <p>What I'd recommend you do, is go onto Twitter, <a target="_blank" rel="noopener noreferrer"href="https://twitter.com/settings/password">update your password</a> to something silly like "NoBullIsBestBull", then share that new password with me below. Once I'm done, you can go back and change it back.</p>
+        <p>Voila! Now neither of us knows eachothers 'never-ever-reused-password' 😉.</p>
+        <div class="form-group mb-2">
+          <div class="col-5 col-sm-12">
+            <%= form.label :twitter_password,'Twitter Password', class: 'form-label' %>
+          </div>
+          <div class="col-7 col-sm-12">
+            <%= form.text_field :twitter_password, class: 'form-input' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider text-center" data-content="Yelp"></div>
+    <div id="yelp" data-controller="toggle-hidden">
+      <div class="form-group">
+        <div class="col-5 col-sm-12">
+          <%= form.label :yelp_page_link, 'Your Yelp Page Link', class: 'form-label' %>
+        </div>
+        <div class="col-7 col-sm-12">
+          <%= form.text_field :yelp_page_link, placeholder: 'https://www.yelp.com/biz/no-bull-co', class: 'form-input' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-4 col-sm-11">
+          <p>Update Yelp Page Data?</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch if you want us to make sure the data on your Yelp business page matches the info on all your other pages. It's great for search engine ranking!.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-7 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :update_yelp_page, class: 'input-lg', 'data-action': 'toggle-hidden#toggleHidden' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+      <div class="d-hide" data-target="toggle-hidden.hiddenObject">
+      <p>Yelp is kind of a terrible company, but besides their mafia-like practices, they make it a bit of a pain to share account access.</p>
+      <p>
+          Here's the deal: I can either just use your Yelp account email and password and log in with that, or you can share account access. 
+          If you choose the first option, I reccomend you log in to yelp, change your password to something temporary like "RichFromNoBull"
+          and once I am done, you go back and change it to what it was or whatever you want. Then your favorite password is still safe and sound!
+      </p>
+      <p>
+          Alternatively, you can actually just grant me access without sharing your password. To do so, Yelp has provided
+          some handy dandy instructions <a target="_blank" rel="noopener noreferrer"href="https://www.yelp-support.com/article/How-do-I-set-up-additional-logins-for-my-Yelp-Business-Account?l=en_US">here.</a>
+          If you do this instead of sharing your email and password, just leave the email and password fields blank.
+        </p>
+        <p>If you do share access instead of your email and password, just click the "I shared my Yelp Page Access" (don't cheat - only click it once you actually have shared the account. No worries, there's no rush!)</p>
+        <div class="form-group">
+          <div class="col-7 col-sm-12 text-centered">
+            <label class="form-checkbox input-lg">
+              <%= form.check_box :shared_yelp_access %>
+              <i class="form-icon input-lg"></i>I shared Facebook Access
+            </label>
+          </div>
+        </div>
+        <span class="is-centered text-center my-2">~ OR ~</span>
+        <div class="form-group">
+          <div class="col-5 col-sm-12">
+            <%= form.label :yelp_email_address,'Yelp Account Email Address', class: 'form-label'%>
+          </div>
+          <div class="col-7 col-sm-12">
+            <%= form.text_field :yelp_email_address, class: 'form-input'%>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-5 col-sm-12">
+            <%= form.label :yelp_password,'Yelp Account Password', class: 'form-label'%>
+          </div>
+          <div class="col-7 col-sm-12">
+            <%= form.text_field :yelp_password, class: 'form-input'%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 col-sm-11">
+        <p class="title">Mark Integrations Data Complete</p> 
+      </div>
+      <div class="col-1">
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Hit this switch once you're sure you've entered everything correctly. Don't worry though, you can come back and change it right up until you submit the whole site 😊
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-7 col-sm-12 text-centered">
+        <label class="form-switch input-lg">
+          <%= form.check_box :is_complete, class: 'input-lg' %>
+          <i class="form-icon input-lg"></i>
+        </label>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :facebook_page_link %>
-    <%= form.text_field :facebook_page_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_facebook_profile %>
-    <%= form.check_box :update_facebook_profile %>
-  </div>
-
-  <div class="field">
-    <%= form.label :goolge_business_link %>
-    <%= form.text_field :goolge_business_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_google_business %>
-    <%= form.check_box :update_google_business %>
-  </div>
-
-  <div class="field">
-    <%= form.label :twitter_profile_link %>
-    <%= form.text_field :twitter_profile_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_twitter_profile %>
-    <%= form.check_box :update_twitter_profile %>
-  </div>
-
-  <div class="field">
-    <%= form.label :twitter_username %>
-    <%= form.text_field :twitter_username %>
-  </div>
-
-  <div class="field">
-    <%= form.label :twitter_password %>
-    <%= form.text_field :twitter_password %>
-  </div>
-
-  <div class="field">
-    <%= form.label :linkedin_page_link %>
-    <%= form.text_field :linkedin_page_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_linkedin_page %>
-    <%= form.check_box :update_linkedin_page %>
-  </div>
-
-  <div class="field">
-    <%= form.label :yelp_page_link %>
-    <%= form.text_field :yelp_page_link %>
-  </div>
-
-  <div class="field">
-    <%= form.label :update_yelp_page %>
-    <%= form.check_box :update_yelp_page %>
-  </div>
-
-  <div class="field">
-    <%= form.label :yelp_email_address %>
-    <%= form.text_field :yelp_email_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :yelp_password %>
-    <%= form.text_field :yelp_password %>
-  </div>
-  <div class="field">
-    <%= form.label :is_complete %>
-    <%= form.check_box :is_complete %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,62 +1,61 @@
-<p id="notice"><%= notice %></p>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Submitted Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Business address:</td>
+      <td><%= @business_detail.business_address %></td>
+    </tr>
 
-<p>
-  <strong>User:</strong>
-  <%= @business_detail.user %>
-</p>
+    <tr>
+      <td>Mailing address:</td>
+      <td><%= @business_detail.mailing_address %></td>
+    </tr>
 
-<p>
-  <strong>Business address:</strong>
-  <%= @business_detail.business_address %>
-</p>
+    <tr>
+      <td>Other address info:</td>
+      <td><%= @business_detail.other_address_info %></td>
+    </tr>
 
-<p>
-  <strong>Mailing address:</strong>
-  <%= @business_detail.mailing_address %>
-</p>
+    <tr>
+      <td>Business phone:</td>
+      <td><%= @business_detail.business_phone %></td>
+    </tr>
 
-<p>
-  <strong>Physical or mailing:</strong>
-  <%= @business_detail.physical_or_mailing %>
-</p>
+    <tr>
+      <td>Business phone2:</td>
+      <td><%= @business_detail.business_phone2 %></td>
+    </tr>
 
-<p>
-  <strong>Other address info:</strong>
-  <%= @business_detail.other_address_info %>
-</p>
+    <tr>
+      <td>Business phone3:</td>
+      <td><%= @business_detail.business_phone3 %></td>
+    </tr>
 
-<p>
-  <strong>Business phone:</strong>
-  <%= @business_detail.business_phone %>
-</p>
+    <tr>
+      <td>Business fax:</td>
+      <td><%= @business_detail.business_fax %></td>
+    </tr>
 
-<p>
-  <strong>Business phone2:</strong>
-  <%= @business_detail.business_phone2 %>
-</p>
+    <tr>
+      <td>Business phone info:</td>
+      <td><%= @business_detail.business_phone_info %></td>
+    </tr>
 
-<p>
-  <strong>Business phone3:</strong>
-  <%= @business_detail.business_phone3 %>
-</p>
+    <tr>
+      <td>Business email address:</td>
+      <td><%= @business_detail.business_email_address %></td>
+    </tr>
 
-<p>
-  <strong>Business fax:</strong>
-  <%= @business_detail.business_fax %>
-</p>
+    <tr>
+      <td>Business email address2:</td>
+      <td><%= @business_detail.business_email_address2 %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Business phone info:</strong>
-  <%= @business_detail.business_phone_info %>
-</p>
-
-<p>
-  <strong>Business email address:</strong>
-  <%= @business_detail.business_email_address %>
-</p>
-
-<p>
-  <strong>Business email address2:</strong>
-  <%= @business_detail.business_email_address2 %>
-</p>
 

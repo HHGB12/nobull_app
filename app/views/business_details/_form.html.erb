@@ -1,77 +1,195 @@
-<%= form_with(model: business_detail) do |form| %>
-  <% if business_detail.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(business_detail.errors.count, "error") %> prohibited this business_detail from being saved:</h2>
+<div data-controller="autocomplete" class="column col-12">
+  <%= form_with(model: business_detail, class: 'form-horizontal') do |form| %>
+    <% if business_detail.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(business_detail.errors.count, "error") %> prohibited this business_detail from being saved:</h2>
 
-      <ul>
-      <% business_detail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% business_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_address, 'Your Business Address', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_address, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 col-sm-11">
+        <%= form.label :mailing_address,'Your Mailing Address', class: 'form-label' %>
+      </div>
+      <div class="col-1">
+        <div class="popover popover-right">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                In case it's different
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :mailing_address, class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :city, class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :city, class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :region,'Province/State', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :region, class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :postal_code,'Postal Code', class: 'form-label'%>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :postal_code, class: 'form-input'%>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-4 col-sm-11">
+        <%= form.label :other_address_info,'Other Address Info', class: 'form-label' %>
+        </div>
+        <div class="col-1">
+          <div class="popover popover-right">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Let us know if there should be notes to visitors, only to use your mailing address or anything else address related that is important!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_area :other_address_info, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_phone,'Business Phone Number', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_phone, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_phone2,'2nd Phone Number', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_phone2, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_phone3,'3rd Phone Number', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_phone3, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_fax,'Fax Number', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_fax, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-4 col-sm-11">
+        <%= form.label :business_phone_info,'Other Phone Info', class: 'form-label' %>
+      </div>
+      <div class="col-1">
+        <div class="popover popover-right">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Anything you want mentioned to do with phones. For example, the second one you entered is a Toll Free? Or perhaps direct lines to your teams? Anything goes here!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_area :business_phone_info, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_email_address,'Main Business Email Address', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_email_address, class: 'form-input' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-5 col-sm-12">
+        <%= form.label :business_email_address2,'Alt Business Email Address', class: 'form-label' %>
+      </div>
+      <div class="col-7 col-sm-12">
+        <%= form.text_field :business_email_address2, class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-4 col-sm-11">
+        <p class="title">Mark Contact Info Complete</p> 
+      </div>
+      <div class="col-1">
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Hit this switch once you're sure you've entered everything correctly. Don't worry though, you can come back and change it right up until you submit the whole site 😊
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-7 col-sm-12 text-centered">
+        <label class="form-switch input-lg">
+          <%= form.check_box :is_complete, class: 'input-lg' %>
+          <i class="form-icon input-lg"></i>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group actions col-12">
+      <%= form.submit 'Save Contact Info', class: 'btn btn-primary form-inline input-group-btn is-full-width' %>
     </div>
   <% end %>
-
-
-  <div class="field">
-    <%= form.label :business_address %>
-    <%= form.text_field :business_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :mailing_address %>
-    <%= form.text_field :mailing_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :physical_or_mailing %>
-    <%= form.text_field :physical_or_mailing %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other_address_info %>
-    <%= form.text_area :other_address_info %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_phone %>
-    <%= form.text_field :business_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_phone2 %>
-    <%= form.text_field :business_phone2 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_phone3 %>
-    <%= form.text_field :business_phone3 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_fax %>
-    <%= form.text_field :business_fax %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_phone_info %>
-    <%= form.text_area :business_phone_info %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_email_address %>
-    <%= form.text_field :business_email_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :business_email_address2 %>
-    <%= form.text_field :business_email_address2 %>
-  </div>
-  <div class="field">
-    <%= form.label :is_complete %>
-    <%= form.check_box :is_complete %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

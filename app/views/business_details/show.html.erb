@@ -1,6 +1,6 @@
 <header class="box-header column col-12">
-  <div class="box-title h5">Details Details Details!</div>
-  <p class="subtitle">Details</p>
+  <div class="box-title h5">Preview Submitted Data</div>
+  <p class="subtitle">You can see what has been saved here. Take a peek and make sure everything looks right, because it's the info that we're going to be building your site off of, so it's kind of important 😉 </p>
 </header>
 <section class="box-body column col-12">
   <div class="columns no-margin-offset">       
@@ -9,7 +9,7 @@
 </section>
 <footer class="box-footer column col-12">
   <% unless current_user.is_submitted? %>
-    <%= link_to 'Edit Contact Info', edit_business_detail_path(@business_detail), class: 'btn' %> 
+    <%= link_to 'Make a change to your Contact Info', edit_business_detail_path(@business_detail), class: 'btn' %> 
   <% else %>
     <button class="btn" disabled="" tabindex="-1">Edit Contact Info</button> 
     <p>

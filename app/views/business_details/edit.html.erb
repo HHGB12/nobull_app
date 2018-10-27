@@ -7,9 +7,10 @@
     <%= render 'form', business_detail: @business_detail %>
   </div>
 </section>
-<footer class="box-footer column col-12">
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
   <% unless current_user.is_submitted? %>
-    <%= link_to 'Preview Contact Info', business_detail_path(@business_detail), class: 'btn' %> 
+    <%= link_to 'Preview Contact Info', business_detail_path(@business_detail), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
   <% else %>
     <button class="btn" disabled="" tabindex="-1">Edit Contact Info</button> 
     <p>

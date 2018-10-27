@@ -1,5 +1,28 @@
-<h1>Editing Integration</h1>
 
-<%= render 'form', integration: @integration %>
+<header class="box-header column col-12">
+  <div class="box-title h5">Integrations Details</div>
+  <p>What the heck are integrations?🤔 Don't worry, I'll break it down into two parts.</p>
+  <p>First, they are links to all your businesses social accounts. You know, Facebook, LinkedIn, Twitter, Yelp etc. Whatever social sites you share here, I will make sure links to them are added to your new website. Part one - simple right?</p>
+  <p>Part two is a bit more complex. First, it means me adding hidden meta-data (info only search engines can read) to your website so that Google/Bing/Facebook make your new website show up (or rank) higher in their search results. Which hopefully translates to more sales for you!</p>
+  <p>Secondly, I make sure that the information (Name, Phone, Address etc.) on those social profiles is <em>identical</em> to the info on your website. It may seem small, but it actually has a massive effect on how well Google and other search engines rank you. 🤗</p>
 
-<%= link_to 'Show', @integration %> |
+  <p>Just a heads up, because doing this integrations work is very time consuming, whatever info that you don't acurately submit here on the website request submission (say you decide you don't want to do it now, or don't care about it now) won't be included. I'll happily do it at a later date, but I'll have to charge you at my billable rate ($80/hr), and it tends to take around 4 hours. So trust me when I tell you now, it's much better (and cheaper) to just go track any of those account logins down now and share them, than it is to wait and 'do it later.' 😊 </p>
+
+  <p>Oh, and don't worry about filling all or any of these in. They are all optional. If your business doesn't have a Twitter account, don't fret - most businesses don't need one. Mine certainly does not. The only one I would make sure you have (because it helps with Google ranking) is a <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/business/">Google Business Account.</a> If you don't already have one, go get one - it's important. </p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', integration: @integration %>
+  </div>
+</section>
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Integrations Data', integration_path(@integration), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Integrations Data</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_205035) do
+ActiveRecord::Schema.define(version: 2018_10_26_162122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2018_10_25_205035) do
     t.bigint "user_id"
     t.string "business_address"
     t.string "mailing_address"
-    t.string "physical_or_mailing"
     t.text "other_address_info"
     t.string "business_phone"
     t.string "business_phone2"
@@ -48,11 +47,13 @@ ActiveRecord::Schema.define(version: 2018_10_25_205035) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_complete", default: false, null: false
+    t.string "city"
+    t.string "region"
+    t.string "postal_code"
     t.index ["business_address"], name: "index_business_details_on_business_address"
     t.index ["business_email_address"], name: "index_business_details_on_business_email_address"
     t.index ["business_phone"], name: "index_business_details_on_business_phone"
     t.index ["mailing_address"], name: "index_business_details_on_mailing_address"
-    t.index ["physical_or_mailing"], name: "index_business_details_on_physical_or_mailing"
     t.index ["user_id"], name: "index_business_details_on_user_id"
   end
 
@@ -62,7 +63,6 @@ ActiveRecord::Schema.define(version: 2018_10_25_205035) do
     t.boolean "update_facebook_profile"
     t.string "goolge_business_link"
     t.boolean "update_google_business"
-    t.string "twitter_profile_link"
     t.boolean "update_twitter_profile"
     t.string "twitter_username"
     t.string "twitter_password"
@@ -75,6 +75,10 @@ ActiveRecord::Schema.define(version: 2018_10_25_205035) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_complete", default: false, null: false
+    t.boolean "shared_google_access"
+    t.boolean "shared_yelp_access"
+    t.boolean "shared_facebook_access"
+    t.boolean "shared_linkedin_access"
     t.index ["user_id"], name: "index_integrations_on_user_id"
   end
 
