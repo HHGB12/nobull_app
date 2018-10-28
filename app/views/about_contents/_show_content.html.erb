@@ -1,0 +1,68 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>Submitted Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong> Business Founder</strong></td>
+      <td>
+        <%= @about_content.founder %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong> Business Founding Date</strong></td>
+      <td>
+        <%= @about_content.founded %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    About Us Content
+  </div>
+  <div class="box-body">
+    <%= sanitize @about_content.about_us %>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Background Story
+  </div>
+  <div class="box-body">
+    <%= sanitize @about_content.background_story %>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Team
+  </div>
+  <div class="box-body">
+    <%= sanitize @about_content.team %>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Message from Founder
+  </div>
+  <div class="box-body">
+    <%= sanitize @about_content.message_from_founder %>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Other Info
+  </div>
+  <div class="box-body">
+    <%= sanitize @about_content.other_info %>
+  </div>
+</div>
+
+
+
+
+

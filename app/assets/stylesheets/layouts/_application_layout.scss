@@ -13,3 +13,14 @@ footer.appliction-layout-footer {
 .slide-menu-content>main {
   min-height: 83vh;
 }
+
+.trix-button--icon-increase-nesting-level,
+.trix-button--icon-decrease-nesting-level,
+.trix-button--icon-quote,
+.trix-button--icon-code {
+  display: none;
+}
+
+trix-editor {
+  min-height: 12rem;
+}

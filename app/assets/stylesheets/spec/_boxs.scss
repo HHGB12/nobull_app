@@ -5,6 +5,10 @@
   border-radius: $border-radius;
   box-shadow: $box-shaddow-light;
 
+  &.no-shaddow {
+    box-shadow: none;
+  }
+
   .box-header,
   .box-body,
   .box-footer {

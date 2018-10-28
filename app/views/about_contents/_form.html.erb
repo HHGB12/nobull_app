@@ -1,63 +1,155 @@
-<%= form_with(model: about_content, local: true) do |form| %>
-  <% if about_content.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(about_content.errors.count, "error") %> prohibited this about_content from being saved:</h2>
+<div class="column col-12">
+  <%= form_with(model: about_content, local: true) do |form| %>
+    <% if about_content.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(about_content.errors.count, "error") %> prohibited this about_content from being saved:</h2>
 
-      <ul>
-      <% about_content.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+        <% about_content.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="columns">
+      <div class="column col-6 col-sm-12">
+        <div class="form-group">
+          <%= form.label :founder, class: 'form-label  form-inline' %>
+          <%= form.text_field :founder, class: 'form-input form-inline', placeholder: 'Rich Smith' %>
+        </div>
+      </div>
+      <div class="column col-6 col-sm-12">
+        <div class="form-group">
+          <%= form.label :founded, class: 'form-label form-inline' %>
+          <%= form.text_field :founded, class: 'form-input form-inline', placeholder: '2015' %>
+        </div>
+      </div>  
+    </div>
+
+    <div class="form-group" data-controller="text-counter">
+      <%= form.label :about_us, class: 'form-label'  do %>
+        About Us 
+        <div class="popover popover-bottom">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Use this section to tell us about your business. What do you pride yourself on? What do you do differently than your competitors?
+                What is your expertise? Do you have a moto that you try and opperate your business on?  Anything your business has done that you're particularly proud of?
+                <br>
+                Not to worry about format or spelling and gramar here. Just tell me about your business as if you were proudly telling someone you just met and I'll turn those words (actually, my wife will, she's an elegant writer!)
+                into a great "about us" section.
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-      </ul>
+      <%= form.hidden_field :about_us, class: 'form-input', "data-target": "text-counter.countField" %>
+      <trix-editor input="about_content_about_us"  data-action="keyup->text-counter#countCharacters"></trix-editor>
+      <p>I'd recomend at least 1000 characters in lenght of you writing about your business. Current character count: <span id="count" class="text-bold" data-target="text-counter.countOut"></span></p>
+    </div>
+
+    <div class="form-group" data-controller="text-counter">
+      <%= form.label :background_story, class: 'form-label'  do %>
+        Background Story
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                This section, while it seems similar, is actually a bit different than the about us. Tell me how and why you started the business? Or did you buy it? Do you know why the original founder started it? 
+                Were you the first in the area to do something? Boast about your history!
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :background_story, class: 'form-input', "data-target": "text-counter.countField" %>
+      <trix-editor input="about_content_background_story" data-action="keyup->text-counter#countCharacters"></trix-editor>
+      <p>I'd recomend a background story of at least 600 characters in lenght. Current character count: <span id="count" class="text-bold" data-target="text-counter.countOut"></span></p>
+    </div>
+
+    <div class="form-group" data-controller="text-counter">
+      <%= form.label :team, class: 'form-label'  do %>
+        Team 
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                If you're just a one-man or one-woman show, tell me a bit about yourself. If you have a team, give me 3 or so sentances on each of them. Or none of them - it's up to you.
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :team, class: 'form-input', "data-target": "text-counter.countField" %>
+      <trix-editor input="about_content_team" data-action="keyup->text-counter#countCharacters"></trix-editor>
+      <p>I'd recomend a team/owner writeup of at least 300 characters in lenght. Current character count: <span id="count" class="text-bold" data-target="text-counter.countOut"></span></p>
+    </div>
+
+    <div class="form-group" data-controller="text-counter">
+      <%= form.label :message_from_founder, class: 'form-label'  do %>
+        Message from the Founder
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                This one can be a bit cheesy, so you can either use a quote or message from the Big Cheese, or alternatively, if you have one, a nice quote from somone else. Perhaps a nice review?
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :message_from_founder, class: 'form-input', "data-target": "text-counter.countField" %>
+      <trix-editor input="about_content_message_from_founder" data-action="keyup->text-counter#countCharacters"></trix-editor>
+      <p>I'd recomend a quote of at least 50 characters in lenght. Current character count: <span id="count" class="text-bold" data-target="text-counter.countOut"></span></p>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :other_info, class: 'form-label'  do %>
+        Other Info
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Want a different section on your site? Have something else about the business you want to share? Put it here.
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :other_info, class: 'form-input' %>
+      <trix-editor input="about_content_other_info"></trix-editor>
+    </div>
+      <div class="form-group columns">
+        <div class="col-5 col-sm-11">
+          <p class="title">Mark Contact Info Complete</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch once you're sure you've entered everything correctly. Don't worry though, you can come back and change it right up until you submit the whole site 😊
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :is_complete, class: 'input-lg' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+
+    <div class="form-group actions col-12">
+      <%= form.submit 'Save Contact Info', class: 'btn btn-primary form-inline input-group-btn is-full-width' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :founder %>
-    <%= form.text_field :founder %>
-  </div>
-
-  <div class="field">
-    <%= form.label :founded %>
-    <%= form.text_field :founded %>
-  </div>
-
-  <div class="field">
-    <%= form.label :about_us %>
-    <%= form.text_area :about_us %>
-  </div>
-
-  <div class="field">
-    <%= form.label :background_story %>
-    <%= form.text_area :background_story %>
-  </div>
-
-  <div class="field">
-    <%= form.label :team %>
-    <%= form.text_area :team %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message_from_founder %>
-    <%= form.text_area :message_from_founder %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other_info %>
-    <%= form.text_area :other_info %>
-  </div>
-  <div class="field">
-    <%= form.label :is_complete %>
-    <%= form.check_box :is_complete %>
-  </div>
-
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
