@@ -1,5 +1,21 @@
-<h1>Editing About Content</h1>
 
-<%= render 'form', about_content: @about_content %>
-
-<%= link_to 'Show', @about_content %> |
+<header class="box-header column col-12">
+  <div class="box-title h5">Website Content</div>
+  <p>Ah yes, the actual magic! </p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', about_content: @about_content %>
+  </div>
+</section>
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Integrations Data', about_content_path(@about_content), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Website Content</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>
