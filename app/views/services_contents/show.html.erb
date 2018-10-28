@@ -1,19 +1,20 @@
-<p id="notice"><%= notice %></p>
+<header class="box-header column col-12">
+  <div class="box-title h5">Preview Submitted Data</div>
+  <p class="subtitle">You can see what has been saved here. Take a peek and make sure everything looks right, because it's the info that we're going to be building your site off of, so it's kind of important 😉 </p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'show_content', services_content: @services_content %>
+  </div>
+</section>
+<footer class="box-footer column col-12">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Make a change to your Services/Pricin Content', edit_services_content_path(@services_content), class: 'btn text-center is-centered' %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Services/Pricing Content</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>
 
-
-<p>
-  <strong>Services:</strong>
-  <%= @services_content.services %>
-</p>
-
-<p>
-  <strong>Pricing:</strong>
-  <%= @services_content.pricing %>
-</p>
-
-<p>
-  <strong>Other info:</strong>
-  <%= @services_content.other_info %>
-</p>
-
-<%= link_to 'Edit', edit_services_content_path(@services_content) %> 

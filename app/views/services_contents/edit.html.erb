@@ -1,5 +1,29 @@
-<h1>Editing Services Content</h1>
 
-<%= render 'form', services_content: @services_content %>
+<header class="box-header column col-12">
+  <div class="box-title h5">Services & Pricing Content</div>
+  <p>
+    With the world gone digital, people today tend to expect a lot more info before they'll visit or even call a business. The reality is, people want to know what they're getting into before they actually do. Fair enough.
+  </p>
+  <p>
+    Which is why this section is so important. While you don't need to offer prices (but if you can, most potential customers tend to appreciate it), it would certainly be best if you gave me plenty of detail to work with
+    when describing the services your business offers. 
+  </p>
+  <p>So, while filling out all fields isn't nessecary, filling out at least one, and filling it out well is. </p>
 
-<%= link_to 'Show', @services_content %> |
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', services_content: @services_content %>
+  </div>
+</section>
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Services and Pricing Content', services_content_path(@services_content), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Services and Pricing Content</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>

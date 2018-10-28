@@ -1,41 +1,98 @@
-<%= form_with(model: services_content, local: true) do |form| %>
-  <% if services_content.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(services_content.errors.count, "error") %> prohibited this services_content from being saved:</h2>
+<div class="column col-12">
+  <%= form_with(model: services_content, local: true) do |form| %>
+    <% if services_content.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(services_content.errors.count, "error") %> prohibited this services_content from being saved:</h2>
 
-      <ul>
-      <% services_content.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <ul>
+        <% services_content.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group" >
+      <%= form.label :pricing, class: 'form-label'  do %>
+        Pricing 
+        <div class="popover popover-bottom">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Use this section to share pricing. Perhaps your hourly rate? Or average amount people spend? Maybe you have a pricing list? This would be a good spot to share it (or you can email it to me.)
+              </div>
+            </div>
+          </div>
+        </div>
       <% end %>
-      </ul>
+      <%= form.hidden_field :pricing, class: 'form-input' %>
+      <trix-editor input="services_content_pricing"  ></trix-editor>
+    </div>
+    <div class="form-group" >
+      <%= form.label :services, class: 'form-label'  do %>
+        Services 
+        <div class="popover popover-bottom">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Use this section to describe (in detail, ideally) the services your business offers. Tell me why they're great as well - your would-be customers will appreciate it.
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :services, class: 'form-input' %>
+      <trix-editor input="services_content_services"  ></trix-editor>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :other_info, class: 'form-label'  do %>
+        Other Info
+        <div class="popover popover-down">
+          <i class="icon icon-message"></i>
+          <div class="popover-container">
+            <div class="card">
+              <div class="card-body">
+                Need to make mention of something else that doesn't quite fit into the above boxes? Do so here.
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <%= form.hidden_field :other_info, class: 'form-input' %>
+      <trix-editor input="services_content_other_info"></trix-editor>
+    </div>
+      <div class="form-group columns">
+        <div class="col-5 col-sm-11">
+          <p class="title">Mark Sevices and Pricing Content Complete</p> 
+        </div>
+        <div class="col-1">
+          <div class="popover popover-down">
+            <i class="icon icon-message"></i>
+            <div class="popover-container">
+              <div class="card">
+                <div class="card-body">
+                  Hit this switch once you're sure you've entered everything correctly. Don't worry though, you can come back and change it right up until you submit the whole site 😊
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-12 text-centered">
+          <label class="form-switch input-lg">
+            <%= form.check_box :is_complete, class: 'input-lg' %>
+            <i class="form-icon input-lg"></i>
+          </label>
+        </div>
+      </div>
+
+    <div class="form-group actions col-12">
+      <%= form.submit 'Save Services and Pricing Content', class: 'btn btn-primary form-inline input-group-btn is-full-width' %>
     </div>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :services %>
-    <%= form.text_area :services %>
-  </div>
 
-  <div class="field">
-    <%= form.label :pricing %>
-    <%= form.text_area :pricing %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other_info %>
-    <%= form.text_area :other_info %>
-  </div>
-  <div class="field">
-    <%= form.label :is_complete %>
-    <%= form.check_box :is_complete %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

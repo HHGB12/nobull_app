@@ -12,7 +12,7 @@
 <div class="divider" ></div>
 <footer class="box-footer column col-12 is-flex-centered">
   <% unless current_user.is_submitted? %>
-    <%= link_to 'Preview Integrations Data', about_content_path(@about_content), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+    <%= link_to 'Preview Website Content', about_content_path(@about_content), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
   <% else %>
     <button class="btn" disabled="" tabindex="-1">Edit Website Content</button> 
     <p>
