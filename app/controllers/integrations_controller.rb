@@ -1,6 +1,6 @@
 class IntegrationsController < ApplicationController
   before_action :set_integration, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_record
 
   # GET /integrations/1
   # GET /integrations/1.json
@@ -41,6 +41,10 @@ class IntegrationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_integration
       @integration = Integration.find(params[:id])
+    end
+
+    def authorize_record
+      authorize @integration
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

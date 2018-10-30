@@ -1,6 +1,6 @@
 class ServicesContentsController < ApplicationController
   before_action :set_services_content, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_record
 
 
   # GET /services_contents/1
@@ -41,6 +41,9 @@ class ServicesContentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_services_content
       @services_content = ServicesContent.find(params[:id])
+    end
+    def authorize_record
+      authorize @services_content
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

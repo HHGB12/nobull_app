@@ -1,0 +1,2 @@
+class BusinessDetailPolicy < ApplicationPolicy
+end

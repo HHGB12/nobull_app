@@ -35,7 +35,7 @@ gem 'devise'
 # Role - Rolify Adds roles to users. - https://github.com/RolifyCommunity/rolify
 # gem 'rolify', '~> 5.2'
 # Authorization - Pundit
-# gem 'pundit', '~> 1.1'
+gem 'pundit', '~> 2.0'
 # Administrate -  Used to add an admin dashboard - https://github.com/thoughtbot/administrate
 gem "administrate"
 

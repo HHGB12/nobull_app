@@ -1,0 +1,2 @@
+class IntegrationPolicy < ApplicationPolicy
+end

@@ -1,0 +1,2 @@
+class ServicesContentPolicy < ApplicationPolicy
+end

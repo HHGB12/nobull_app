@@ -1,6 +1,6 @@
 class BusinessDetailsController < ApplicationController
   before_action :set_business_detail, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_record
 
   # GET /business_details/1
   # GET /business_details/1.json
@@ -41,6 +41,9 @@ class BusinessDetailsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_business_detail
       @business_detail = BusinessDetail.find(params[:id])
+    end
+    def authorize_record
+      authorize @business_detail
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

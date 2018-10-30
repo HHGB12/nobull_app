@@ -1,6 +1,6 @@
 class AboutContentsController < ApplicationController
   before_action :set_about_content, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_record
 
   # GET /about_contents/1
   # GET /about_contents/1.json
@@ -42,6 +42,9 @@ class AboutContentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_about_content
       @about_content = AboutContent.find(params[:id])
+    end
+    def authorize_record
+      authorize @about_content
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

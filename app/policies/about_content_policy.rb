@@ -1,0 +1,2 @@
+class AboutContentPolicy < ApplicationPolicy
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_26_162122) do
+ActiveRecord::Schema.define(version: 2018_10_28_202140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_162122) do
     t.boolean "services_contents_complete", default: false, null: false
     t.boolean "is_submitted", default: false, null: false
     t.string "name"
+    t.boolean "admin", default: false, null: false
     t.index ["about_contents_complete"], name: "index_users_on_about_contents_complete"
     t.index ["business_details_complete"], name: "index_users_on_business_details_complete"
     t.index ["business_name"], name: "index_users_on_business_name"
