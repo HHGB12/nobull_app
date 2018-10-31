@@ -6,8 +6,9 @@
   <div class="columns">
     <div class="column col-10 col-mx-auto">
       <progress class="progress" value="<%= calc_completeness %>" max="100"></progress>
-      <div class="is-flex-centered">
-        <h3 class="h6">Current Progress: <strong><%= calc_completeness.round %>%</strong></h3>
+      <div class="text-center">
+        <h3 class="h6">Current Progress: <strong><%= calc_completeness.round %>%</strong> </h3>
+        <h3 class="h6 subtle"><%= nearly_done_message %></h3>
       </div>
     </div>
   </div>
@@ -37,9 +38,9 @@
         <%= form.submit "Submit your site", class: 'btn btn-primary is-centered' %>
       </div>
     <% else %>
-      <p class="text-center">You'll be able to submit it to me once everything is complete!
-      <br> Having troubles? Get in touch.</p>
       <button class="btn disabled is-centered" tabindex="-1">Submit Your Site</button>
+      <p class="text-center">You'll be able to submit it to me once everything is complete!
+      <br> Having troubles? <%= link_to 'Get in touch', pages_contact_path %>.</p>
     <% end %>
   </div>
 <% end %>
