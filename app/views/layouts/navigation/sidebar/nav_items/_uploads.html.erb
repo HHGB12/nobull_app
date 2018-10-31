@@ -1,0 +1,14 @@
+<li class="nav-item">
+  <span class="name">Images</span>
+  <div class="status ">
+    <% if current_user.uploads_complete? %>
+      <%= link_to upload_path(current_user.upload) do %>
+        Status: <span class="complete">Complete ✅</span>
+      <% end %>
+    <% else %>
+      <%= link_to edit_upload_path(current_user.upload) do %>
+        Status: <span class="in-progress">In Progress</span><i class="icon icon-edit"></i>
+        <% end %>
+    <% end %>
+  </div>
+</li>

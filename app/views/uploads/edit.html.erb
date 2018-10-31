@@ -1,0 +1,34 @@
+
+<header class="box-header column col-12">
+  <div class="box-title h5">Images</div>
+  <p >
+  # Rock a byebaby rock a bye I'm gonna rock
+    This section is where you can (and really should) upload any images you want used on your new site. I'd reccomend you put all the photos you want as possibilities in a single folder on your computer, then just select them all and drag them into the box below. 
+    There's no real limit to the number of photos you can upload below, but here's what we'd love under each section if you can:
+    <ul>
+      <li>Logo: If you have a logo that was designed and you have the files the designer gave you, upload it there. 
+          Otherwise, the best image of your logo you have.</li>
+      <li>Team: Ideally a single headshot photo of everyone working at your company.</li>
+      <li>Workspace: If you work in an office, 1-3 photos of your office (inside &/or out). If you work outside, a couple pictures of a nice jobsite.</li>
+      <li>Other Photos: This can be anything. Perhaps a job/contract you were proud of? Nice photos of where you're from? A picture of your dog is always appreciated!</li>
+    </ul>
+  </p>
+  <p>If you can't get me many photos, I will go out and get some from stock image sites, but people tend to trust businesses more when they see real photos, so at the very least a couple would be great. </p>
+
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', upload: @upload %>
+  </div>
+</section>
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Uploaded Images', upload_path(@upload), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Upload Different Images</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>

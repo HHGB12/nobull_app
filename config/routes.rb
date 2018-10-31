@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   
   resources :services_contents, only: [:update, :edit, :show]
+  resources :extra_pages, only: [:update, :edit, :show]
+  resources :uploads, only: [:update, :edit, :show]
   resources :about_contents, only: [:update, :edit, :show]
   resources :integrations, only: [:update, :edit, :show]
   resources :business_details, only: [:update, :edit, :show]

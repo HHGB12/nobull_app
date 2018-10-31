@@ -1,0 +1,20 @@
+<header class="box-header column col-12">
+  <div class="box-title h5">Preview Uploaded Images</div>
+  <p class="subtitle">You can see all the images you've uploaded here. If you don't like some, go ahead and change them out! 🤗</p>
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'show_content', upload: @upload %>
+  </div>
+</section>
+<footer class="box-footer column col-12">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Upload New/More Images', edit_upload_path(@upload), class: 'btn text-center is-centered' %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Upload New/More Images</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>
+

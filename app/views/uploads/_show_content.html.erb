@@ -1,0 +1,57 @@
+
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Your Business Logo Images
+  </div>
+  <div class="box-body">
+    <div class="columns">
+      <% @upload.logo_images.each do |file| %>
+        <div class="column col-6 col-sm-12 my-2">
+          <%= image_tag file.variant(resize: "250x250>"), class: 'img-responsive' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Images of your Team
+  </div>
+  <div class="box-body">
+    <div class="columns">
+      <% @upload.team_images.each do |file| %>
+        <div class="column col-6 col-sm-12 my-2">
+          <%= image_tag file.variant(resize: "250x250>"), class: 'img-responsive' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Images of your Workspace
+  </div>
+  <div class="box-body">
+    <div class="columns">
+      <% @upload.workspace_images.each do |file| %>
+        <div class="column col-6 col-sm-12 my-2">
+          <%= image_tag file.variant(resize: "250x250>"), class: 'img-responsive' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="box no-shaddow column col-12 my-2">
+  <div class="box-header text-bold">
+    Other Uploaded Images
+  </div>
+  <div class="box-body">
+    <div class="columns">
+      <% @upload.other_images.each do |file| %>
+        <div class="column col-6 col-sm-12 my-2">
+          <%= image_tag file.variant(resize: "250x250>"), class: 'img-responsive' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

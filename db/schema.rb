@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_202140) do
+ActiveRecord::Schema.define(version: 2018_10_31_164455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,27 @@ ActiveRecord::Schema.define(version: 2018_10_28_202140) do
     t.index ["founded"], name: "index_about_contents_on_founded"
     t.index ["founder"], name: "index_about_contents_on_founder"
     t.index ["user_id"], name: "index_about_contents_on_user_id"
+  end
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
   create_table "business_details", force: :cascade do |t|
@@ -55,6 +76,22 @@ ActiveRecord::Schema.define(version: 2018_10_28_202140) do
     t.index ["business_phone"], name: "index_business_details_on_business_phone"
     t.index ["mailing_address"], name: "index_business_details_on_mailing_address"
     t.index ["user_id"], name: "index_business_details_on_user_id"
+  end
+
+  create_table "extra_pages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "extra_pages"
+    t.text "extra_page1"
+    t.text "extra_page2"
+    t.text "extra_page3"
+    t.text "extra_page4"
+    t.text "extra_page5"
+    t.text "extra_page6"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_complete", default: true, null: false
+    t.index ["is_complete"], name: "index_extra_pages_on_is_complete"
+    t.index ["user_id"], name: "index_extra_pages_on_user_id"
   end
 
   create_table "integrations", force: :cascade do |t|
@@ -93,6 +130,15 @@ ActiveRecord::Schema.define(version: 2018_10_28_202140) do
     t.index ["user_id"], name: "index_services_contents_on_user_id"
   end
 
+  create_table "uploads", force: :cascade do |t|
+    t.bigint "user_id"
+    t.boolean "is_complete"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["is_complete"], name: "index_uploads_on_is_complete"
+    t.index ["user_id"], name: "index_uploads_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -112,11 +158,14 @@ ActiveRecord::Schema.define(version: 2018_10_28_202140) do
     t.boolean "is_submitted", default: false, null: false
     t.string "name"
     t.boolean "admin", default: false, null: false
+    t.boolean "extra_pages_complete", default: false, null: false
+    t.boolean "uploads_complete", default: false, null: false
     t.index ["about_contents_complete"], name: "index_users_on_about_contents_complete"
     t.index ["business_details_complete"], name: "index_users_on_business_details_complete"
     t.index ["business_name"], name: "index_users_on_business_name"
     t.index ["current_website"], name: "index_users_on_current_website"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["extra_pages_complete"], name: "index_users_on_extra_pages_complete"
     t.index ["has_current_website"], name: "index_users_on_has_current_website"
     t.index ["integrations_complete"], name: "index_users_on_integrations_complete"
     t.index ["is_submitted"], name: "index_users_on_is_submitted"
@@ -127,6 +176,8 @@ ActiveRecord::Schema.define(version: 2018_10_28_202140) do
 
   add_foreign_key "about_contents", "users"
   add_foreign_key "business_details", "users"
+  add_foreign_key "extra_pages", "users"
   add_foreign_key "integrations", "users"
   add_foreign_key "services_contents", "users"
+  add_foreign_key "uploads", "users"
 end

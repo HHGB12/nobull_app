@@ -1,0 +1,4 @@
+class UploadPolicy < ApplicationPolicy
+
+
+end

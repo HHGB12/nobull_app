@@ -1,15 +1,13 @@
 <div class="row column col-12 columns no-margin-offset">
   <div class="column col-12">
-    <h3 class="h5 title is-flex-centered">Integrations</h3>
+    <h3 class="h5 title is-flex-centered">Images</h3>
     <p class=" subtitle is-flex-centered">
-      I'll use this provided information to add meta-data 
-      (header tags and the likes - stuff Google likes to see which ranks websites that have it higher) and social sites to your new site. I'll also go through and make 
-      sure all the data is the same across all the sites you provide me - something else Google and other search engines like to see. 
+      This is the place where you'll upload any images you want included on your website. 
     </p>
   </div>
   <div class="column col-12">
     <div class="columns">
-      <% if current_user.integrations_complete? %>
+      <% if current_user.uploads_complete? %>
         <div class="column col-5 col-md-12 col-mx-auto">
           <div class="status is-centered">
             Status: <span class="complete">Complete ✅</span>
@@ -17,8 +15,8 @@
         </div>
         <div class="column col-5 col-md-12 col-mx-auto">
           <div class="row-link">
-            <%= link_to integration_path(current_user.integration) do %>
-              <i class="icon icon-more-vert"></i> See Provided Integrations
+            <%= link_to upload_path(current_user.upload) do %>
+              <i class="icon icon-photo"></i> See Your Uploaded Images
             <% end %>
           </div>
         </div>
@@ -30,8 +28,8 @@
         </div>  
         <div class="column col-5 col-md-12 col-mx-auto">
           <div class="row-link">
-            <%= link_to edit_integration_path(current_user.integration) do %>
-              <i class="icon icon-edit"></i> Fill Out Integration Data
+            <%= link_to edit_upload_path(current_user.upload) do %>
+              <i class="icon icon-edit"></i>Add Pages
             <% end %>
           </div>
         </div>

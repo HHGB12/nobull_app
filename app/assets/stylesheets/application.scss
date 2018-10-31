@@ -12,6 +12,8 @@
  *
 
  *= require_self
+ *= require direct_uploads
+ *= require active_storage_drag_and_drop
  
 
 
@@ -96,3 +98,4 @@
 @import 'layouts/partials/navbar';
 // Import Controller Specific Styles
 @import 'controllers/pages';
+@import 'direct_uploads'

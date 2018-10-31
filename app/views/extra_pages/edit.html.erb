@@ -1,0 +1,54 @@
+
+<header class="box-header column col-12">
+  <div class="box-title h5">Extra Pages</div>
+    <p class="">
+      Need or want more than the three pages that are included with your <em>NoBull Pint on Tap Site</em> ? Not a worry!
+    </p>
+    <p>
+      Use the selector below to choose however many extra pages you may need, then use the form(s) to tell me what you want on your extra page(s). Give me as many details as possible - it makes sure you get what you want. For example, if you want an FAQ or frequently asked questions page, you might do something like:
+      <blockquote>
+      I want a FAQ page to tell my clients how I price out my jobs.  Here are the questions and answers I want: 
+      <ol>
+        <li>How long will it take you to come to my house to write a quote? 
+          <ul>
+            <li>We try and book an apointment to see your place......</li>
+          </ul>
+        </li>
+        <li>Do you charge for a quote? 
+          <ul>
+            <li>Nope! We try and treat our customers as we'd want to be treated, that includes ......</li>
+          </ul>
+        </li>
+
+      </ol>
+      </blockquote>
+    </p>
+    <p>
+      Like I said, just try and be as explicit as you can be. Don't worry too much about your grammar - I'll clean it up for you. Just get me all the info and I'll take it from there.
+    </p>
+    <p>
+      Just a reminder, a basic <em>NoBull Pint on Tap Site</em> includes three pages in the original price: 
+      <ol>
+        <li>A (long) Homepage with business info, team info (if applicable) and history</li>
+        <li>A Prices and Services page describing what you offer</li>
+        <li>A Contact Us page that lets people get in touch with you</li>
+      </ol>
+    </p>
+
+</header>
+<section class="box-body column col-12">
+  <div class="columns no-margin-offset">       
+    <%= render 'form', extra_page: @extra_page %>
+  </div>
+</section>
+<div class="divider" ></div>
+<footer class="box-footer column col-12 is-flex-centered">
+  <% unless current_user.is_submitted? %>
+    <%= link_to 'Preview Extra Pages', extra_page_path(@extra_page), class: 'btn', method: :get, confirm: "If you have unsaved changes, they'll vanish 😤. Make sure you've hit save first!" %> 
+  <% else %>
+    <button class="btn" disabled="" tabindex="-1">Edit Extra Pages</button> 
+    <p>
+       Your Site has already been submitted. If you see a problem with your submitted data, <%= link_to 'get in touch', pages_contact_path %>
+    </p>
+  <% end %>
+</footer>

@@ -40,7 +40,14 @@ span {
     font-weight: 300;
     color: darken($gray-color, 10%);
   }
+
+  &.is-subtle {
+    color: $gray-color-dark;
+    margin-bottom: 0.1rem;
+    font-size: $font-size-sm;
+  }
 }
+
 
 .h1,
 .h2,
@@ -49,6 +56,10 @@ span {
 .h5,
 .h6 {
   font-weight: 500;
+
+  &.is-subtle {
+    font-weight: 300;
+  }
 
 }
 
@@ -104,6 +115,12 @@ h6 {
 // Paragraphs
 p {
   margin: 0 0 $line-height;
+
+  &.is-subtle {
+    margin-bottom: 0.1rem;
+    font-size: $font-size-sm;
+    color: $gray-color-dark;
+  }
 }
 
 // Semantic text elements
