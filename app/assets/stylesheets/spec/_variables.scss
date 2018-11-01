@@ -11,6 +11,9 @@ $primary-color-light: lighten($primary-color, 3%) !default;
 $secondary-color: lighten($primary-color, 37.5%) !default;
 $secondary-color-dark: darken($secondary-color, 3%) !default;
 $secondary-color-light: lighten($secondary-color, 3%) !default;
+$alternate-color: #e27b7d !default;
+$alternate-color-dark: darken($alternate-color, 3%) !default;
+$alternate-color-light: lighten($alternate-color, 3%) !default;
 
 // Gray colors
 $dark-color: #454d5d !default;
@@ -78,6 +81,7 @@ $cjk-ko-font-family: $base-font-family,
 $fallback-font-family !default;
 $body-font-family: $base-font-family,
 $fallback-font-family !default;
+$logo-font-family: "Trebuchet MS";
 
 // Unit sizes
 $unit-o: .05rem !default;

@@ -1,15 +1,15 @@
 html {
-  height: 100vh;
+  // min-height: 100vh;
 }
 
-body.application_layout {
+body.pages_layout {
   min-height: 100vh;
+
+  .navbar {
+    background-color: transparent;
+  }
 }
 
-footer.appliction-layout-footer {
-  bottom: 0;
-}
-
-.slide-menu-content>main {
-  min-height: 83vh;
-}
+// footer.pages-layout-footer {
+//   bottom: 0;
+// }

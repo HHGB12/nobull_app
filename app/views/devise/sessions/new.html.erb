@@ -1,26 +1,48 @@
-<h2>Log in</h2>
+<header class="box-header">
+  <h2 class="h4 title">Welcome Back!</h2>
+  <h3 class="h6 subtitle">You're just moments away from getting back to working on your new website! 🙌</h3>
+</header>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="box-body">
+  <%=  form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :email, 'Your Email Address:', class: 'form-label' %> 
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.email_field  :email, autofocus: true, autocomplete: "email", class: 'form-input' %>
+      </div>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :password, 'Your Password:', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :password, autocomplete: "current-password", class: 'form-input' %>
+      </div>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <% if devise_mapping.rememberable? -%>
+      <div class="form-group">
+        <div class="col-6 col-sm-12">
+          <%= f.label :remember_me, 'Remember your account?', class: 'form-label' %>
+        </div>
+        <div class="col-6 col-sm-12">
+            <%= f.check_box  :remember_me, class: 'form-input' %>
+        </div>
+      </div>
+    <% end -%>
+
+ 
+    <div class="actions">
+      <%= f.submit "Log In", class: 'btn btn-primary is-centered text-center my-8' %>
+    </div>
+  <% end %>
+</div>
+
+<footer class="box-footer column text-center col-12 ">
+  <%= render "devise/shared/links" %>
+</footer>

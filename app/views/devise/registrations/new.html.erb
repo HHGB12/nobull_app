@@ -1,49 +1,132 @@
-<h2>Sign up</h2>
+<header class="box-header">
+  <h2 class="h3 title mb-4">Sign Up to Order a New Website</h2>
+  <p>Hey there and welcome to the <strong>NoBull Website Ordering Thingy™</strong>!👋 I've tried to make things easier (for both you and I) by giving you a place where you can give me all the information about your bussines that I'll need to build you a new website. </p>
+  <p>Instead of the dreaded dozens of back-and-forth emails (with lots of lost ones in between), all the info is stored in one place, and entered at your own pace. It's only once you've completed filling it out that I get notified that you're ready to go - so nobodies time is wasted! 🍻<p>
+  <p>It should (hopefully) be a lot easier for you, and it means I can build your new custom, hand-coded website for a lot lower prices than the average web developer.</p>
+  <p>Here's how it's going to work: </p>
+    <ol>
+      <li>You're going to create an account below.</li>
+      <li>Once you do that, you'll be logged and have access to your own <strong>NoBull Website Ordering Thingy</strong></li>
+      <li>You will have five or six sections (depending on if you need any extra pages) to give me the info about your business I need to start building your new website.</li>
+      <li>Once it's filled out, the submit button will be available for you to press. Which you should. 👏</li>
+      <li>After it's pressed all that info you filled out is sent to me and I'll start building you a brand new website!</li>
+      <li>New Website → More Customers → More Sales → More 💰💵🏎</li>
+    </ol>
+  <p>Ready? Get started by filling out the form below to get access to the <strong>NoBull Website Ordering Thingy</strong>🤘</p>
+  <p>Already have an account? </p>
+  <%= link_to "Log in", new_session_path(resource_name), class: 'btn' %>
+</header>
+<div class="box-body">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="divider text-center" data-content="Account Info"></div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :name, 'What\'s your Name?', placeholder: 'Rich Smith', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.text_field  :name, autofocus: true, autocomplete: "name", class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :email, 'What\'s your Email Address?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.email_field  :email, autofocus: true, autocomplete: "email", placeholder:'rich＠nobullco.com', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :password, 'Set your new password:', class: 'form-label' %> 
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :password, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label "Your Name" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :password_confirmation, 'Confirm your new password:', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :password_confirmation, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="field">
-    <%= f.label :business_name %><br />
-    <%= f.text_field :business_name, autocomplete: "Your Business Name" %>
-  </div>
-  <div class="field">
-    <%= f.label :direct_phone_number %><br />
-    <%= f.text_field :direct_phone_number, autocomplete: "Your Personal Phone Number" %>
-  </div>
-  <div class="field">
-    <%= f.label :has_current_website %><br />
-    <%= f.check_box :has_current_website %>
-  </div>
-  <div class="field">
-    <%= f.label :current_website %><br />
-    <%= f.text_field :current_website, autocomplete: "Your Current website" %>
-  </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="divider text-center" data-content="Other Required Info"></div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :business_name, 'What\'s your Businesses Name?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :business_name, autocomplete: "Your Business Name?", placeholder: 'NoBull Software Co.', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :city, 'What city are you located in?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :city, autocomplete: "shipping locality", placeholder: 'Salmon Arm', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :region, 'And the Province/State?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :region, autocomplete: "shipping region", placeholder: 'BC', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :postal_code, 'What\'s your postal code?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :postal_code, autocomplete: "shipping postal-code", placeholder: 'V1E 4P9.', class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :direct_phone_number, "Best phone number to reach you at?", class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12 ">
+          <%= f.text_field  :direct_phone_number, autocomplete: "tel", placeholder:'250-833-0000', class: 'form-input' %>
+      </div>
+    </div>
+    <div data-controller="toggle-hidden" class="mb-2">
+      <div class="form-group">
+        <div class="col-6 col-sm-12">
+          <%= f.label :has_current_website, 'Do you already have a website?', class: 'form-label' %>
+        </div>
+        <div class="col-6 col-sm-12">
+            <%= f.check_box  :has_current_website, class: 'form-input', data: {'action': 'toggle-hidden#toggleHidden', 'target': 'toggle-hidden.toggleable'} %>
+        </div>
+      </div>
+      <div class="form-group d-hide" data-target="toggle-hidden.hiddenObject">
+        <div class="col-6 col-sm-12">
+          <%= f.label :current_website, 'Link to your current website?',  class: 'form-label' %>
+        </div>
+        <div class="col-6 col-sm-12">
+            <%= f.text_field  :current_website, placeholder:'https://nobullco.com', class: 'form-input' %>
+        </div>
+      </div>
+    </div>
 
-<%= render "devise/shared/links" %>
+
+    <div class="actions">
+      <%= f.submit "Create Account and Begin Website Order", class: 'btn btn-primary is-centered text-center my-8' %>
+    </div>
+  <% end %>
+  
+
+<footer class="box-footer column col-12 ">
+  <%= link_to "Back", :back, class: 'btn' %>
+</footer>

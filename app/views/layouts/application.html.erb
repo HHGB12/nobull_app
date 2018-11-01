@@ -15,12 +15,16 @@
     <header class="navbar is-fixed">
       <%= render 'layouts/navigation/navbar/navbar' %>
     </header> 
-    <div class="has-slide-menu is-fixed-slide-menu-sidebar has-responsive-slide-menu">
-      <aside class="slide-menu-sidebar sidebar-nav" data-target="slide-menu.sidebar">
-        <%= render 'layouts/navigation/sidebar/sidebar' %>
-      </aside> 
-      <a data-action="slide-menu#toggleSidebar" class="slide-menu-overlay"></a>
-      <div class="slide-menu-content">
+    <% if current_user %>
+      <div class="has-slide-menu is-fixed-slide-menu-sidebar has-responsive-slide-menu">
+        <aside class="slide-menu-sidebar sidebar-nav" data-target="slide-menu.sidebar">
+          <%= render 'layouts/navigation/sidebar/sidebar' %>
+        </aside> 
+        <a data-action="slide-menu#toggleSidebar" class="slide-menu-overlay"></a>
+        <div class="slide-menu-content">  
+    <% else %>
+        <div class="columns slide-menu-hidden">
+    <% end %>
         <main class="column col-8 col-md-12 col-mx-auto">
           <div class="container box">
             <%= yield %>

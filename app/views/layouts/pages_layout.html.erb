@@ -11,8 +11,8 @@
     <%= yield(:head) -%>
   </head>
 
-  <body class="<%= controller_name %> <%= action_name %> pages_layout" data-controller="slide-menu">
-    <header class="navbar is-fixed">
+  <body class="pages_layout <%= controller_name %> <%= action_name %>" data-controller="slide-menu">
+    <header class="navbar pages_layout_navbar">
       <%= render 'layouts/navigation/navbar/navbar' %>
     </header> 
     <main>

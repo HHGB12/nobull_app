@@ -30,6 +30,7 @@
     display: flex;
     flex: 0 0 auto;
     min-width: $unit-10;
+
   }
 
   .navbar-brand {
@@ -52,7 +53,19 @@
 
     .brand-text {
       flex: 1 0 auto;
+      font-family: $logo-font-family, $base-font-family;
+      color: $primary-color;
+      background-color: $alternate-color;
+      font-weight: bold;
+      font-size: $unit-8;
+      padding-left: $unit-2;
+      padding-right: $unit-2;
     }
+  }
+
+  .button-container {
+    height: 100%;
+    padding: $unit-2;
   }
 
 

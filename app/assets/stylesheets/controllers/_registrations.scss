@@ -1,0 +1,7 @@
+body.registrations,
+body.passwords,
+body.sessions {
+  &.new {
+    margin-top: $navbar-height + $unit-2;
+  }
+}

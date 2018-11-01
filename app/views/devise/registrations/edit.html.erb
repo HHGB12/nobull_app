@@ -1,60 +1,138 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<header class="box-header">
+  <h2 class="h4 title">Update your Account Info</h2>
+  <h3 class="h6 subtitle">Use this section to make any changes to your account. Not really likely you will need to, but hey, the option to change your password is here for ya!</h3>
+</header>
+<div class="box-body">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="divider text-center" data-content="Update your Business Info 🤷‍♂️"></div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :name, 'What\'s your Name?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.text_field  :name, autocomplete: "name", placeholder: 'Rich Smith', class: 'form-input' %>
+      </div>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :email, 'What\'s your Email Address?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.email_field  :email, autofocus: true, autocomplete: "email", placeholder: 'rich＠nobullco.com', class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :business_name, 'What\'s your Businesses Name?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :business_name, autocomplete: "business", placeholder:'NoBull Co.', class: 'form-input' %>
+      </div>
+    </div>
+        <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :city, 'What city are you located in?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :city, autocomplete: "shipping locality", placeholder: 'Salmon Arm', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :region, 'And the Province/State?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :region, autocomplete: "shipping region", placeholder: 'BC', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+      <%= f.label :postal_code, 'What\'s your postal code?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+        <%= f.text_field  :postal_code, autocomplete: "shipping postal-code", placeholder: 'V1E 4P9.', class: 'form-input' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :direct_phone_number, "Best phone number to reach you at?", class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12 ">
+          <%= f.text_field  :direct_phone_number, autocomplete: "phone", placeholder: '250-833-6512', class: 'form-input' %>
+      </div>
+    </div>
+    <div data-controller="toggle-hidden" class="mb-2">
+      <div class="form-group">
+        <div class="col-6 col-sm-12">
+          <%= f.label :has_current_website, 'Do you already have a website?', class: 'form-label' %>
+        </div>
+        <div class="col-6 col-sm-12">
+            <%= f.check_box  :has_current_website, class: 'form-input', data: {'action': 'toggle-hidden#toggleHidden', 'target': 'toggle-hidden.toggleable'} %>
+        </div>
+      </div>
+      <div class="form-group d-hide" data-target="toggle-hidden.hiddenObject">
+        <div class="col-6 col-sm-12">
+          <%= f.label :current_website, 'Link to your current website?', class: 'form-label' %>
+        </div>
+        <div class="col-6 col-sm-12">
+            <%= f.text_field  :current_website, placeholder: 'https://www.nobullco.com', class: 'form-input' %>
+        </div>
+    </div>
+    </div>
 
-    <div class="field">
-    <%= f.label :business_name %><br />
-    <%= f.text_field :business_name, autocomplete: "Your Business Name" %>
-  </div>
-  <div class="field">
-    <%= f.label :direct_phone_number %><br />
-    <%= f.text_field :direct_phone_number, autocomplete: "Your Personal Phone Number" %>
-  </div>
-  <div class="field">
-    <%= f.label :has_current_website %><br />
-    <%= f.check_box :has_current_website %>
-  </div>
-  <div class="field">
-    <%= f.label :current_website %><br />
-    <%= f.text_field :current_website, autocomplete: "Your Current website" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
+    <div class="divider text-center" data-content="Update your Password"></div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :password, 'Set your new password:', class: 'form-label' %> 
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :password, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+      <div class="col-6 col-sm-12 col-ml-auto">
+        <i>(leave blank if you don't want to change it)</i>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :password_confirmation, 'Confirm your new password:', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :password_confirmation, autocomplete: "new-password", class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :current_password, 'What\'s your current password?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.password_field  :current_password, autocomplete: "current-password", class: 'form-input' %>
+      </div>
+      <div class="col-6 col-sm-12 col-ml-auto">
+        <i>(we need your current password to confirm your changes)</i>
+      </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "Update Your Business & Account Info", class: 'btn btn-primary is-centered text-center my-8' %>
+    </div>
+  <% end %>
+  <div class="divider text-center" data-content="Cancel your Site Request"></div>
+  <h3 class="h4 title">Cancel Your Request</h3>
+  <h3 class="h6 subtitle">Unhappy? Sorry to hear it. We've tried to make it as easy as possible to remove everything. This will cancel your request, delete your account (we don't keep hidden data) as well as delete everything you've added/written so far.</h3>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <%= button_to "Delete Everything", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-error is-centered my-4' %>
+</div>
 
-<%= link_to "Back", :back %>
+
+<footer class="box-footer column col-12 ">
+  <%= link_to "Back", :back, class: 'btn' %>
+</footer>

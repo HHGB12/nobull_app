@@ -1,15 +1,11 @@
 <% if user_signed_in? %>
   <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-link' do %>        
-    <span class="icon">
-      <i class="fal fa-sign-out-alt"></i>
-    </span>
+    <i class="icon icon-cross"></i>
     <span>Logout</span>
   <% end %>
 <% else %>
   <%= link_to new_user_session_path, class: 'btn btn-link' do %>  
-    <span class="icon">
-      <i class="fal fa-sign-in-alt"></i>
-    </span>
+    <i class="icon icon-people"></i>
     <span>Login</span>
   <% end %>
 <% end %>

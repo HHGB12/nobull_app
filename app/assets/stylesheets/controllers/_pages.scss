@@ -29,5 +29,13 @@ body.pages.dashboard {
     display: block;
     margin: $unit-4 0;
   }
+}
 
+
+body.pages.index {
+
+  .no-bullshit {
+    font-size: 10em;
+    font-weight: 600;
+  }
 }

@@ -1,19 +1,21 @@
  
  <section class="navbar-section">
-      <button class="slide-menu-toggle btn btn-primary btn-action" data-action="slide-menu#toggleSidebar">
-        <i class="icon icon-menu"></i>
-      </button>
+      <div class="button-container d-flex is-flex-v-centered show-md">
+        <button class="slide-menu-toggle btn btn-primary btn-action " data-action="slide-menu#toggleSidebar">
+          <i class="icon icon-menu"></i>
+        </button>
+      </div>
       <%= link_to root_path, class: 'navbar-brand' do %>
+        <span class="brand-text hide-sm">
+          NoBull
+        </span>
         <div class="brand-logo">
-          <%#= image_tag 'logo.png', class: 'img-responsive', alt: 'Review_App: Get more reviews. Get better reviews.'%>
+          <%= image_tag 'nobull_logo_sm.png', class: 'img-responsive', alt: 'Review_App: Get more reviews. Get better reviews.'%>
         </div>
-          <span class="brand-text hide-sm">
-            NoBull
-          </span>
       <% end %>
   </section>
   
-  <section class="navbar-section">
-    <%= render 'layouts/navigation/navbar/login_logout_items' %> |   
+  <section class="navbar-section pr-2">
+    <%= render 'layouts/navigation/navbar/login_logout_items' %>   
     <%= render 'layouts/navigation/navbar/registration_items' %>
   </section>

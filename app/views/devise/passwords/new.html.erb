@@ -1,16 +1,27 @@
-<h2>Forgot your password?</h2>
+<header class="box-header">
+  <h2 class="h4 title">Forgot your password?</h2>
+  <h3 class="h6 subtitle">No worries. Just pop your email address in below and we'll send you a link to reset it.</h3>
+</header>
+<div class="box-body">
+  <%=  form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'form-horizontal' }) do |f| %>
+    <%= devise_error_messages! %>
+    
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="form-group">
+      <div class="col-6 col-sm-12">
+        <%= f.label :email, 'What\'s your Email Address?', class: 'form-label' %>
+      </div>
+      <div class="col-6 col-sm-12">
+          <%= f.email_field  :email, autofocus: true, autocomplete: "email", placeholder: 'rich＠nobullco.com', class: 'form-input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+ 
+    <div class="actions">
+      <%= f.submit "Send me Reset Instructions", class: 'btn btn-primary is-centered text-center my-8' %>
+    </div>
+  <% end %>
+</div>
+<footer class="box-footer column text-centered col-12 ">
+  <%= render "devise/shared/links" %>
+</footer>

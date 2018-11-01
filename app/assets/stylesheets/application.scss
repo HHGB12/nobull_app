@@ -92,10 +92,15 @@
 
 // Import outside packages 
 @import 'trix/dist/trix';
-// Import Layout Styles
-@import 'layouts/application_layout';
+// Import Shared Styles
+@import 'layouts/partials/direct_uploads';
 @import 'layouts/partials/sidebar';
 @import 'layouts/partials/navbar';
 // Import Controller Specific Styles
 @import 'controllers/pages';
-@import 'direct_uploads'
+@import 'controllers/registrations';
+// Import Layouts - This should be the last import.
+@import 'layouts/application_layout';
+@import 'layouts/pages_layout';
+// Nothing below here. Don't do it. 
+// You'll regret it as much as a no regerts tattoo.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_164455) do
+ActiveRecord::Schema.define(version: 2018_11_01_130759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,9 +160,13 @@ ActiveRecord::Schema.define(version: 2018_10_31_164455) do
     t.boolean "admin", default: false, null: false
     t.boolean "extra_pages_complete", default: false, null: false
     t.boolean "uploads_complete", default: false, null: false
+    t.string "city", default: "", null: false
+    t.string "region", default: "", null: false
+    t.string "postal_code", default: "", null: false
     t.index ["about_contents_complete"], name: "index_users_on_about_contents_complete"
     t.index ["business_details_complete"], name: "index_users_on_business_details_complete"
     t.index ["business_name"], name: "index_users_on_business_name"
+    t.index ["city"], name: "index_users_on_city"
     t.index ["current_website"], name: "index_users_on_current_website"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["extra_pages_complete"], name: "index_users_on_extra_pages_complete"
@@ -170,6 +174,8 @@ ActiveRecord::Schema.define(version: 2018_10_31_164455) do
     t.index ["integrations_complete"], name: "index_users_on_integrations_complete"
     t.index ["is_submitted"], name: "index_users_on_is_submitted"
     t.index ["name"], name: "index_users_on_name"
+    t.index ["postal_code"], name: "index_users_on_postal_code"
+    t.index ["region"], name: "index_users_on_region"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["services_contents_complete"], name: "index_users_on_services_contents_complete"
   end
