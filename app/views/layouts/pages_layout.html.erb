@@ -11,16 +11,16 @@
     <%= yield(:head) -%>
   </head>
 
-  <body class="pages_layout <%= controller_name %> <%= action_name %>" data-controller="slide-menu">
-    <header class="navbar pages_layout_navbar">
-      <%= render 'layouts/navigation/navbar/navbar' %>
+  <body class="pages_layout <%= controller_name %> <%= action_name %>" data-controller="scroll-menu" data-target="scroll-menu.body" >
+    <header class="navbar pages_layout_navbar" data-target="scroll-menu.navbar">
+      <%= render 'layouts/navigation/navbar/pages_navbar' %>
     </header> 
-    <main>
+    <main id="main">
       <%#= render 'layouts/shared/alerts' %>
       <%= yield %>
     </main>
     <footer class="pages-layout-footer">
-      <%#= render 'layouts/shared/footer' %>
+      <%= render 'layouts/footer/pages_footer' %>
     </footer>
   </body>
 </html>

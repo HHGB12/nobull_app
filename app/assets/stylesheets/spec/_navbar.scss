@@ -42,7 +42,7 @@
     color: $primary-color-dark;
 
     .brand-logo {
-      flex: 3 0 auto;
+      flex: 1 0 auto;
       height: $navbar-height;
       justify-content: center;
 
@@ -53,13 +53,16 @@
 
     .brand-text {
       flex: 1 0 auto;
-      font-family: $logo-font-family, $base-font-family;
-      color: $primary-color;
+      height: $navbar-height;
+      justify-content: center;
+
       background-color: $alternate-color;
-      font-weight: bold;
-      font-size: $unit-8;
       padding-left: $unit-2;
       padding-right: $unit-2;
+
+      >img {
+        height: inherit;
+      }
     }
   }
 

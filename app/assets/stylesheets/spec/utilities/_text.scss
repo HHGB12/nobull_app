@@ -57,8 +57,21 @@
   white-space: nowrap;
 }
 
+.text-underline,
+.is-underline {
+  text-decoration: underline;
+}
+
 .text-break {
   hyphens: auto;
   word-break: break-word;
   word-wrap: break-word;
+}
+
+ul.no-decoration {
+  list-style: none;
+}
+
+.text-alt {
+  color: $alternate-color;
 }

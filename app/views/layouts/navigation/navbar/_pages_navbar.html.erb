@@ -1,0 +1,12 @@
+ 
+ <section class="navbar-section">
+  <%= render 'layouts/navigation/navbar/navbar_brand', cached: true %>
+</section>
+<%= render 'layouts/navigation/navbar/mobile_menu' %>
+<section class="navbar-section pr-2 hide-md">
+    <%= link_to 'Pricing', pages_pricing_path, class: 'btn btn-link' %>
+    <%= link_to 'About Us', pages_about_path, class: 'btn btn-link' %>
+    <%= link_to 'Contact Us', pages_contact_path, class: 'btn btn-link' %>
+    <%= render 'layouts/navigation/navbar/login_logout_items' %>   
+    <%= render 'layouts/navigation/navbar/registration_items' %>
+</section>

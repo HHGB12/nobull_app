@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :authorize_record
   # GET /business_details/1/edit
   def edit
   end
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   # DELETE /business_details/1
   # DELETE /business_details/1.json
   def destroy
+
     @user.destroy
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'User  was successfully destroyed.' }
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def authorize_record
+      authorize @user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

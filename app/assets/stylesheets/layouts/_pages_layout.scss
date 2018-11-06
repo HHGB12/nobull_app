@@ -5,11 +5,141 @@ html {
 body.pages_layout {
   min-height: 100vh;
 
-  .navbar {
+  header.navbar {
     background-color: transparent;
-  }
-}
 
-// footer.pages-layout-footer {
-//   bottom: 0;
-// }
+    .navbar-mobile-section {
+      display: none;
+
+      @media (max-width: $size-md) {
+        display: flex;
+        flex: 1 0 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        height: $navbar-height;
+        padding-right: $unit-2;
+      }
+
+    }
+
+    .mobile-dropdown-menu {
+      margin-top: -$unit-1;
+      position: relative;
+      // top: 0;
+    }
+
+
+    &>.navbar-section>.button-container {
+      display: none !important;
+    }
+  }
+
+
+  >footer.pages-layout-footer {
+    min-height: 25vw;
+    background-color: $alternate-color;
+    // clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+
+    .right {
+      .social-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+
+
+        .social-link {
+          width: 100;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+
+          @media (max-width: $size-md) {
+            justify-content: space-between;
+          }
+
+          margin: 0.5rem auto;
+          color: $light-color;
+
+          &:hover {
+            background-color: rgba(233, 225, 251, 0.5);
+            color: $primary-color;
+            border-radius: $border-radius;
+          }
+
+          .social-icon {
+            max-width: 2rem;
+            margin-left: $unit-4;
+          }
+
+          .social-text {
+            font-size: $unit-4;
+
+          }
+
+          #after-span-email:after {
+            content: "rich@nobullco.com";
+            font-size: $unit-4;
+          }
+
+          #after-span-phone:after {
+            content: "250-833-6512";
+            font-size: $unit-4;
+          }
+
+        }
+      }
+    }
+
+    .center {
+
+      .footer-brand {
+        margin-top: 1.5rem;
+        margin-left: 15%;
+        margin-right: 15%;
+        border-top: solid 1px white;
+        border-right: solid 1px white;
+        border-bottom: solid 1px white;
+
+      }
+
+      p {
+        color: $primary-color-light;
+      }
+    }
+
+    .left {
+      .footer-nav {
+        margin-top: 1.5rem;
+        padding-right: 2rem;
+        // text-align: right;
+
+        @media (max-width: $size-sm) {
+          text-align: center;
+          padding-right: 0;
+        }
+
+        li {
+          margin: $unit-2 0;
+        }
+
+        a {
+          color: $light-color;
+
+          &:hover {
+            background-color: rgba(233, 225, 251, 0.5);
+            color: $primary-color;
+            border-radius: $border-radius;
+          }
+        }
+      }
+    }
+
+    #footer-copyright {
+      font-size: $unit-3;
+      color: $light-color;
+    }
+  }
+
+}

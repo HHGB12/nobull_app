@@ -3,7 +3,7 @@
   <div class="status ">
     <% if current_user.extra_pages_complete? %>
       <%= link_to extra_page_path(current_user.extra_page) do %>
-        Status: <span class="complete">Complete ✅</span>
+        Status: <span class="complete optional">Optional ☑️</span>
       <% end %>
     <% else %>
       <%= link_to edit_extra_page_path(current_user.extra_page) do %>

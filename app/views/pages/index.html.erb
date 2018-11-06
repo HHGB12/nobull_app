@@ -1,1 +1,309 @@
-<h1 class="no-bullshit text-center">NoBull means no bullsh*t.</h1>
+<section class="hero" >
+    <h1  class="text-center" >NoBull means no bullsh*t.</h1>
+    <div data-action="scroll@window->scroll-menu#onScroll"></div>
+</section>
+<section id="why">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-6 col-sm-11 col-mx-auto col-mx-auto">
+        <h2 data-aos="fade-in" class="h2 text-center">"You Probably Don't Need a Blog"</h2>
+      </div>
+    </div>
+    <div class="columns">
+      <div id="why-content" class="column col-6 col-sm-11 col-mx-auto col-mx-auto ">
+        <p class="larger">
+          The reality is, 90% of businesses out there really don't need more than a basic website - a place to share a bit about the business, a few pictures, what kind of services they offer and how to find them and get in touch.
+        </p>  
+        <h4 class="text-center mb-6" data-aos="fade-up" data-aos-delay="2000">That's it.</h4> 
+        <p class="larger">
+          We're not here to try and sell you on more than that - we think there's already plenty enough people out there already trying to do that.
+        </p>
+        <p class="larger">
+          Nope, instead, we at NoBull try and operate by our defacto slogan, "You probably don't need a blog." We're not really keen on trying to upsell you. Instead we may just try and convince you that less is more. We like to think of it as being <em>a fair web design company.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="triangle"></div>
+</section>
+<section id="fair">
+  <div data-aos="fade-in" data-aos-duration="1000" class="container">
+    <div class="columns">
+      <div class="column col-12 col-sm-8 col-mx-auto px-8">
+        <%= image_tag 'scale', class: 'img-responsive is-centered' %>
+      </div>
+      <div class="column col-6 col-mx-auto col-sm-11 col-mx-auto mb-10">
+        <h2  class="h2 text-center my-4">
+          A Fair Web Design Company.
+        </h2>
+        <p class="larger">
+        You may be thinking to yourself <strong>anyone can say they're a fair company - what makes you so special?</strong> 
+        Great question! 
+        </p>
+        <p class="larger">
+        The whole idea of  came about after I (Rich Smith - the face behind this business) watched my dad's business get taken for a ride when they had their website overhauled.
+        That terrible experience led to me starting a web design company as a university project based entirely on the premise of treating businesses how I wish my dad had been treated.
+        </p>
+        <p class="larger">
+          Turns out, the list on how to treat people fairly in this business isn't actually that long. 
+        </p>
+        <p class="text-center">
+          <span class="three-simple">
+            It really boils down to
+          </span>
+          <br>
+          <span class="three-simple">
+            three simple things:
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="columns mt-4 is-stretch">
+      <div class="column col-5 col-sm-11 col-mx-auto">
+        <div class="box">
+          <div class="box-header">
+            <%= image_tag 'transparent-price', class: 'img-responsive is-centered mb-2' %>
+            <h3 class="h3 text-center mt-8">
+              Be upfront on the price.
+            </h3>  
+          </div>
+          <div class="box-body text-center">
+
+            <p>
+              We're the only web development company we know of that has their prices on their website. <strong>Seriously.</strong>
+              In fact, you can go see them now if you'd like.
+            </p>
+            
+            <p>
+             We think us being upfront on our prices from the begining is kind of a big deal. Seriously, go Google a few other web design firms around you. Betcha they don't have their prices on their website. 🙃
+            </p>
+            <p>
+              It's just our little way of showing you that we're going to treat you fairly.
+            </p>
+          </div>
+          <div class="box-footer text-center">
+            <%= link_to 'See Our Prices', pages_pricing_path, class: 'btn btn-primary mb-4' %>
+          </div>
+        </div>
+      </div>
+      <div class="column col-5 col-sm-11 col-mx-auto">
+        <div class="box">
+          <div class="box-header">
+            <%= image_tag 'clean-coded', class: 'img-responsive is-centered mb-2' %>
+            <h3 class="h3 text-center mt-8">
+              Provide a great product. 
+            </h3>
+          </div>
+          <div class="box-body text-center">
+            <p>
+              We treat a new website as a means to an end - where the end means more sales for the business hiring us. 
+            </p>
+            <p>
+              We  just don't think you can fully achieve that by buying a wordpress template, cusomizing it then giving it back to the client with a smile. It's not right.
+            </p>
+            <p>
+              Which is why we <strong>hand code</strong> every site that we make. It lets us build a better website the first time. You can read more about why we hand-code all our sites below.
+            </p>
+            <br>
+          </div>
+          <div class="box-footer text-center">
+            <%= link_to 'Why We Don\'t Use WordPress', pages_why_we_hand_code_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns mt-4 is-stretch">
+      <div class="column col-11 col-sm-11 col-mx-auto">
+        <div class="box">
+          <div class="box-header">
+            <%= image_tag 'charge-fairly', class: 'img-responsive is-centered mb-2' %>
+            <h3 class="h3 text-center mt-8">
+              Charge a fair price.
+            </h3>
+          </div>
+          <div class="box-body text-center columns">
+            <div class="column col-8 col-sm-12 col-mx-auto">
+              <p>
+                Building a website just isn't rocket science. We don't think it should be priced like it is either. 
+              </p>
+              <p>
+                Instead, we believe that our prices should be based on us making a decent living and being able to support <%= link_to 'our small family.', pages_about_path %>  No more, no less.
+              </p>
+              <p>
+                To keep prices down, we've done everything we can to make the whole process as time efficient as we can.
+              </p>
+              <p>
+                While we're pretty sure we're not the cheapest option out there (you can go to India or even Fiver for that - we'll be here once you realize you get what you pay for there 😉), we're certain we're not the most expensive either. We think we're pretty fair.
+              </p>
+            </div>
+          </div>
+          <div class="box-footer text-center">
+            <%= link_to 'How We Keep Our Prices Down', pages_keeping_prices_down_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="cta">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-5 col-sm-12 px-4 mb-8">
+        <%= image_tag 'web-design', class: 'img-responsive is-centered' %>
+      </div>
+      <div class="column col-7 col-sm-12 px-8 ">
+        <h2 class="h2 text-center mb-10">
+          If what we're saying makes sense to you, <br> why not...
+        </h2>
+        <span class="d-block is-flex-centered my-3">
+          <%= link_to  new_user_registration_path, class: 'btn btn-primary btn-lg btn-outline' do %>
+              <i class="icon icon-plus"></i>
+              <span>Request A Website</span>
+          <% end %>
+        </span>
+        <span class="is-flex-centered h4">
+          - or -
+        </span>
+        <span class="d-block is-flex-centered my-3">
+          <%= link_to  pages_pricing_path, class: 'btn btn-primary btn-lg btn-outline' do %>
+              <i class="icon icon-link"></i>
+              <span>See Our Services</span>
+          <% end %>
+        </span>
+      </div>
+      
+      <div class="column col-4 col-sm-12 px-8 d-flex v-flex-centered">
+          
+      </div>
+      
+  </div>
+</section>
+<section id="past-work">
+  <div class="container">
+    <div class="columns is-stretch">
+      <div class="column col-12 text-center">
+        <h2>Some of our past work</h2>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="card-image"> <%= image_tag 'past_work/socialeyes', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'SocualEyes Lashes', 'https://socialeyeslashes.com' %> </div>
+            <div class="card-subtitle text-gray">E-Commerce Site Build</div>
+          </div>
+          <div class="card-body">This was a multi-month project rebuilding an ecommerce site from the ground up to be fast, responsive and perform well.  </div>
+        </div>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="card-image"> <%= image_tag 'past_work/chumlake', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'Chum Lake Gravel', 'http://chumlake.com' %></div>
+            <div class="card-subtitle text-gray">Full Site Build & Rebrand</div>
+          </div>
+          <div class="card-body">Not only did we build out this site from scratch, but we were put in charge of all online marketing and branding. So far, so good!</div>
+        </div>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="500">
+          <div class="card-image"> <%= image_tag 'past_work/drillgear', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'DrillGear Corp.', 'http://drillgearcorp.com' %> </div>
+            <div class="card-subtitle text-gray">Site Cleanup</div>
+          </div>
+          <div class="card-body">We were brought in to clean up a purchased template to increase search engine ranking. Sped the site up by 92%. 🏎</div>
+        </div>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="100">
+          <div class="card-image"> <%= image_tag 'past_work/markherman', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'MarkHerman', 'https://markherman.ca' %></div>
+            <div class="card-subtitle text-gray">Full Site Build & Rebrand</div>
+          </div>
+          <div class="card-body">Built a new site from scratch bringing them up on Google ("Calgary mortgage broker") from 48th average search rank position to 5.5 average position. 📈🔥</div>
+        </div>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="300">
+          <div class="card-image"> <%= image_tag 'past_work/sportsmortgage', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'SportsMortgage', 'http://sportsmortgage.ca' %></div>
+            <div class="card-subtitle text-gray">Full Site Build</div>
+          </div>
+          <div class="card-body">Brought to me as an idea from a past client, this was just a simple "online brochure" style site to be used to explain the idea of the business to differnt sports teams.</div>
+        </div>
+      </div>
+      <div class="column col-4 col-sm-12 col-md-6 mb-4 past-work">
+        <div class="card past-work-card" data-aos="zoom-in-up" data-aos-delay="500">
+          <div class="card-image"> <%= image_tag 'past_work/why-not', class: 'img-responsive' %></div>
+          <div class="card-header">
+            <!--<button class="btn btn-primary float-right"><i class="icon icon-plus"></i></button>-->
+            <div class="card-title h5"><%= link_to 'Your Business Next?', new_user_registration_path %></div>
+            <div class="card-subtitle text-gray">Up to your imagination! 😊</div>
+          </div>
+          <div class="card-body">
+          If what we're saying is resonating with you, why not it be your business here next?</div>
+          <%= link_to 'Request a website build', new_user_registration_path, class: 'btn my-4 mx-4' %>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section id="get-in-touch">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-sm-10 col-mx-auto">
+        <h2 class="h1 text-light text-center"> You're nearly at the end of this webpage.</h2>
+        <h3 class="h5 text-light is-centered">
+         Which, honestly, if you've made it this far you might as well get in touch for a quick chat to let us answer any unanswered questions.
+        </h3>
+        <h3 class="h5 text-light is-centered">
+         I mean, to have read to this point means at least a couple things that we've been saying makes sense to you. So why not see if we can make something work for you? We're really not pushy salespeople - promise 😉
+        </h3>
+      </div>
+      <div class="mt-10 column col-5 col-md-8 col-sm-12 col-mx-auto">
+        <div class="box">
+          <div class="box-header">
+            <h4 class="text-primary text-center">Speak to a real human:</h4>
+          </div>
+          <div class="box-body">
+            <h5 class="h5 is-flex-centered">Email Us:</h5>
+            <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+              <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="rich@richjdsmith.ca" readonly>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+            </div>
+            <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="rich@richjdsmith.ca" readonly>
+              <div class="input-group is-flex-centered mt-1">
+              <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+              </div>
+            </div>
+            <h6 class="h6 text-center my-4">- Or -</h6>
+            <h5 class="h5 is-flex-centered">Give us a Call:</h5>
+            <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+              <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+              <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
+            </div>
+            <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <div class="input-group is-flex-centered mt-1">
+              <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

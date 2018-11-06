@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "aos": "^3.0.0-beta.6",
     "stimulus": "^1.1.0",
     "trix": "^1.0.0"
   },

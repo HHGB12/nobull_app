@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="columns">
+    <div class="column col-sm-12 show-sm center">
+      <div class="footer-brand">
+          <%= image_tag 'nobull_logo_white', class: 'img-responsive', alt: ''%>
+      </div>
+      <p class="text-center  mx-10 mt-4">
+        NoBull Software Co. is a small, family-owned web development company based in both
+        Salmon Arm, BC and Calgary, AB - both of which are in the beautiful country of Canada. 🇨🇦
+      </p>
+      <p class="text-center  mx-10">
+        All prices listed on this site are in $CAD.
+      </p>
+      <p class="text-center mx-10">Thanks for dropping by! 😊</p>
+    </div>
+    
+    <div class="column col-4 col-sm-12 left">
+     <ul class="nav footer-nav">
+       <li class="nav-item">
+        <%= link_to 'Home', root_path %>
+       </li>
+       <li class="nav-item">
+        <%= link_to 'Our Story', pages_about_path %>
+       </li>
+       <li class="nav-item">
+        <%= link_to 'Contact Us', pages_contact_path %>
+       </li>
+       <li class="nav-item">
+        <%= link_to 'Services & Pricing', pages_pricing_path %>
+       </li>
+        <li class="nav-item">
+          <%= link_to 'Login', new_user_session_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Request New Site', new_user_registration_path %>
+        </li>
+     </ul>
+    </div>
+    <div class="column col-4 col-sm-12 hide-sm center">
+     <div class="footer-brand">
+          <%= image_tag 'nobull_logo_white', class: 'img-responsive', alt: ''%>
+      </div>
+      <p class="text-center  mx-10 mt-4">
+        NoBull Software Co. is a small, family-owned web development company based in both
+        Salmon Arm, BC and Calgary, AB - both of which are in the beautiful country of Canada. 🇨🇦
+      </p>
+      <p class="text-center  mx-10">
+        All prices listed on this site are in $CAD. 
+      </p>
+      <p class="text-center mx-10">Thanks for dropping by! 😊</p>
+    </div>
+    <div class="column col-4 col-sm-12 right">
+      <ul class="no-decoration social-links" >
+        <li> 
+          <%= link_to 'https://twitter.com/richjdsmith', class: 'social-link' do %>
+            <span class="social-text">Twitter</span> 
+            <%= image_tag 'twitter_logo', class: 'img-responsive social-icon' %>
+          <% end %>
+        </li>
+        <li> 
+          <%= link_to 'https://facebook.com/richjdsmith', class: 'social-link' do %>
+            <span class="social-text">Facebook</span> 
+            <%= image_tag 'fb_logo', class: 'img-responsive social-icon' %>
+          <% end %>
+        </li>
+        <li> 
+          <%= link_to 'tel:250-833-6176', class: 'social-link' do %>
+            <span class="social-text"id="after-span-email"></span> 
+            <%= image_tag 'email_logo', class: 'img-responsive social-icon' %>
+          <% end %>
+        </li>
+        <li> 
+          <%= link_to 'tel:250-833-6176', class: 'social-link' do %>
+            <span class="social-text" id="after-span-phone"></span> 
+            <%= image_tag 'phone_logo', class: 'img-responsive social-icon' %>
+          <% end %>
+        </li>
+        
+      </ul>
+    </div>
+    
+  </div>
+  <span class="text-center is-centered" id="footer-copyright">Copyright <%= "#{Time.now.year}" %> - NoBull Software Co. </span>
+</div>

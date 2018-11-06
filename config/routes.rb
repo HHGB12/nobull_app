@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/contact'
   get 'pages/reviews'
-  get 'pages/custom_projects'
+  get 'pages/pricing'
+  get 'pages/basic'
+  get 'pages/fancy'
+  get 'pages/custom'
+  get 'pages/why-we-hand-code', to: "pages#why_we_hand_code"
+  get 'pages/keeping-prices-down', to: "pages#keeping_prices_down"
   devise_for :users
 end

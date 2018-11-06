@@ -11,6 +11,7 @@
   float: right !important;
 }
 
+
 .relative {
   position: relative !important;
 }
@@ -29,14 +30,23 @@
   position: fixed !important;
 }
 
+.is-stretch {
+  align-items: stretch !important;
+}
+
 .is-flex-v-centered,
 .v-flex-centered {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .is-full-width {
   width: 100%;
+}
+
+.is-full-height {
+  height: 100%;
 }
 
 .is-centered,

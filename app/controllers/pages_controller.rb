@@ -17,6 +17,21 @@ class PagesController < ApplicationController
   def reviews
   end
 
-  def custom_projects
+  def pricing
+  end
+
+  def basic
+  end
+
+  def fancy
+  end
+  
+  def custom
+  end
+
+  def why_we_hand_code
+  end
+
+  def keep_prices_down
   end
 end

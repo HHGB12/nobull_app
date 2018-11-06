@@ -1,0 +1,114 @@
+<%= link_to pages_pricing_path, class: 'back' do %>
+  <span class="text-primary text-bold hide-sm">Back to Pricing</span>
+  <i class="icon icon-3x icon-cross text-primary"></i>
+<% end %>
+<section id="description">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-sm-12 col-mx-auto">
+        <div class="box">
+          <div class="box-header columns">
+            <div class="column col-8 col-md-12">
+              <h1 class=" title">A Custom Webapp</h1>
+              <h2 class="subtitle">
+                Anything from E-Commerce Sites to Custom Business Tools
+              </h2>
+            </div>
+            <div class="column col-4 col-md-12 actual-price">
+              <h2 class="title">$3500+</h2>
+            </div>
+          </div>
+          <div class="box-body">
+            <p> 
+              A custom webapp can be, well, anything that runs in a web browser! It could be building anything from making your business a tool to help send customers quotes to building you the next Facebook. 
+              Also included in this category is E-Commerce. We can help you get your business selling online through Shopify or whatever other platforms you require. 
+            </p>
+            <p>
+              Since those all of those are vastly different things, and have very different time requirements, we need to price accordingly and so as a result, you're going to have to request a custom quote for this one. We try and be as transparent on pricing as we can, but hey this stuff is complex 🤷‍♂️. 
+            </p>
+            <p>Our toolbox includes working in Ruby/Rails (our prefered language!), Elixir/Phoenix, PHP and Javascript. If you have something in mind, get in touch.</p>
+
+          </div>
+        </div>
+        <div class="buy-one mt-10">
+          <h5 class=" h5 text-light text-bold ">A great example of a Custom Webapp:</h5>
+          <div class="box my-4">
+            <div class="box-header">
+              <h5 class="h5 text-center"><%= link_to 'This Website of Course!', new_user_registration_path %> </h5>
+            </div>
+            <div class="box-body">
+              <p>
+                This website is a perfect example of writing code to solve a business problem. Building this website including its backend webapp probably took me about 50hours. 
+                However, by building a space where clients are able to upload all their photos and business information in one place will give me an estimated savings of around four hours per website I build.
+              </p>
+              <p>
+                That's only a 13-website payoff! It also means a <strong>much</strong> better experience customer experience, which hopefully results in more word-of-mouth marketing.
+              </p>
+              <p>
+                As stated, the website took roughly 50 hours to build, which means it would cost around $3250 to build. The application was built in Ruby on Rails. 
+              </p>
+              <%= image_tag 'past_work/nobull', class: 'img-responsive' %>
+              
+            </div>
+          </div>
+          
+          
+        </div>
+        <div class="Example mt-10 pb-10">
+          <h5 class=" h5 text-light text-bold ">Interested in having something custom built for you?</h5>
+          <div class="container box py-10">
+            <div class="columns">
+              <div class="column col-12">
+                <h2 class="h4  text-center"> Custom Tools and Ecommerce.</h2>
+                <p class="">
+                  If you're looking to have a specific tool or functionality built for your business, or are hoping to get more information about getting your business selling online with an E-Commerce store, 
+                  then get in touch with us! We'll explain the process in further detail and answer your questions. Remember, it never hurts to ask! 🙌
+                </p>
+                <div class="btn-group btn-group-block">
+                  <%= link_to '⏪ Go Back', :back, class: 'btn btn-lg' %>
+                  <%= link_to 'Buy Now', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+                  <%= link_to 'Home', root_path, class: 'btn btn-lg' %>
+                </div>
+                <h6 class="h6  text-center my-6">- OR - </h6>
+                <h4 class=" h6  text-center text-capitalize">Speak to a real human:</h4>
+              </div>
+              <div class="column col-8 col-md-10 col-sm-12 col-mx-auto">
+                <div class="box">
+                  <div class="box-body">
+                    <h5 class="h5 is-flex-centered">Email Us:</h5>
+                    <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+                      <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+                      <input class="form-input text-center" data-target="clipboard.source" type="text" value="rich@richjdsmith.ca" readonly>
+                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+                    </div>
+                    <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+                      <input class="form-input text-center" data-target="clipboard.source" type="text" value="rich@richjdsmith.ca" readonly>
+                      <div class="input-group is-flex-centered mt-1">
+                      <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+                      </div>
+                    </div>
+                    <h6 class="h6 text-center my-4">- Or -</h6>
+                    <h5 class="h5 is-flex-centered">Give us a Call:</h5>
+                    <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+                      <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+                      <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
+                    </div>
+                    <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+                      <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+                      <div class="input-group is-flex-centered mt-1">
+                      <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

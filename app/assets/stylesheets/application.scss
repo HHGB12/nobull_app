@@ -90,8 +90,10 @@
 
 
 
+
 // Import outside packages 
 @import 'trix/dist/trix';
+@import 'aos/dist/aos';
 // Import Shared Styles
 @import 'layouts/partials/direct_uploads';
 @import 'layouts/partials/sidebar';

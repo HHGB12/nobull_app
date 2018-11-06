@@ -1,0 +1,27 @@
+<div class="mobile-menu-controller" data-controller="toggle-menu">
+  <section class="navbar-mobile-section is-flex-v-centered" >
+    <button class="btn btn-primary" data-action="toggle-menu#toggleMenu">
+      Menu <i data-target="toggle-menu.icon" class="icon icon-arrow-down"></i>
+    </button>
+  </section>
+  <ul class="menu d-hide show-md mobile-dropdown-menu" data-target="toggle-menu.menu">
+    <li class="menu-item">
+      <%= render 'layouts/navigation/navbar/registration_items' %>
+    </li>
+    <li class="menu-item">
+      <%= render 'layouts/navigation/navbar/login_logout_items' %>   
+    </li>
+    <li class="menu-item">
+      <%= link_to 'Pricing', pages_pricing_path, class: 'btn btn-link' %>
+    </li>
+    <li class="menu-item">
+      <%= link_to 'About Us', pages_about_path, class: 'btn btn-link' %>
+    </li>
+    <li class="menu-item">
+      <%= link_to 'Contact Us', pages_contact_path, class: 'btn btn-link' %>
+    </li>
+  </ul>
+</div>
+
+
+
