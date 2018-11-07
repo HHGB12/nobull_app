@@ -1,2 +1,150 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+
+<section id="hero">
+    <!--The div element for the map -->
+  <div id="map"></div>
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      var warwick = {lat: 52.282223, lng: -1.585105};
+      var sa = {lat: 50.707845, lng: -119.287819};
+      var nfld = {lat: 48.979934, lng: -53.991318};
+      var yyc = {lat: 51.053937, lng: -114.071009};
+      var bcn = {lat: 41.387174, lng: 2.179912};
+      var ire = {lat: 54.994124, lng: -7.308660};
+      var ams = {lat: 52.365155, lng: 4.901410};
+      var tor = {lat: 43.6532, lng: -79.3832};
+      var mtl = {lat: 45.5017, lng: -73.5673};
+      var stl = {lat: 13.9094, lng: -60.9789};
+      var sat = {lat: 47.6062, lng: -122.3321};
+
+      // The map, centered at warwick
+      var marker = 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png'
+      var map = new google.maps.Map(
+          document.getElementById('map'), {
+            zoom: 3, 
+            center: nfld,
+            disableDefaultUI: true,
+            zoomControl: true,
+            mapTypeControl: false,
+            scaleControl: true,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: false
+            });
+      // The marker, positioned at Warwick
+      var wmarker = new google.maps.Marker({position: warwick, map: map, icon: marker});
+      var samarker = new google.maps.Marker({position: sa, map: map, icon: marker})
+      var yycmarker = new google.maps.Marker({position: yyc, map: map, icon: marker})
+      var bcnmarker = new google.maps.Marker({position: bcn, map: map, icon: marker})
+      var iremarker = new google.maps.Marker({position: ire, map: map, icon: marker})
+      var amsmarker = new google.maps.Marker({position: ams, map: map, icon: marker})
+      var tormarker = new google.maps.Marker({position: tor, map: map, icon: marker})
+      var mtlmarker = new google.maps.Marker({position: mtl, map: map, icon: marker})
+      var stlmarker = new google.maps.Marker({position: stl, map: map, icon: marker})
+      var satmarker = new google.maps.Marker({position: sat, map: map, icon: marker})
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGg4XH44nu8NpfeiVv-VfsxftDeAp0Ll0&callback=initMap">
+  </script>
+  <div class="hero-content">
+    <h2 class=" h1 text-center">Every Point On This Map</h2>
+    <h2 class=" h3 text-center"><span> Is a place code has been written for a NoBull client.</span></h2>
+  </div>
+</section>
+<section id="cta">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-sm-10 col-mx-auto">
+        <header>
+          <h1 class="h2 text-light text-center">NoBull Software Co. is a truly Nomad business. </h1>
+          <h2 class="h5 text-light text-center mb-10"> <em> But you really shouldn't let that scare you.</em>😊<h3>
+          <p class="text-light">The business was actually founded with the ability to work with clients remotely across the world kept in mind. It's the direction the world is moving - we're just really lucky that we get to be on the fore front of that change.</p>
+          <p class="text-light">So don't worry - just because you can't drop by our office doesn't mean we're not available to make sure you get the best service possible. </p>
+        </header>
+        <div class="content">
+          <h3 class="h2 text-light text-center">Getting in Touch</h3>
+          <p class=" text-light text-center">NoBull Software Co. is registerd in and legally opperates out of Salmon Arm, BC, Canada.🇨🇦</p>
+          <p class=" text-light text-center">Feel free to get in touch with us through whatever means you find easiest:</p>
+        </div>
+        
+      </div>
+      <div class="column col-5 col-lg-8 col-md-10 col-sm-12 col-mx-auto">
+        <div class="box">
+          <div class="box-body">
+            <div class="contact-method">
+              <h5 class="h5 is-flex-centered">Email us:</h5>
+              <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+                <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+                <input class="form-input text-center" data-target="clipboard.source" type="text" value="contact@nobullco.com" readonly>
+                <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+              </div>
+              <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+                <input class="form-input text-center" data-target="clipboard.source" type="text" value="contact@nobullco.com" readonly>
+                <div class="input-group is-flex-centered mt-1">
+                <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+                <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+                </div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <h5 class="h5 is-flex-centered">Give us a call:</h5>
+              <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+                <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+                <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+                <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
+              </div>
+              <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+                <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+                <div class="input-group is-flex-centered mt-1">
+                <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+                <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+                </div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <h5 class="h5 is-flex-centered">Check us out on:</h5>
+              <div class=" is-flex-centered" >
+                <div class="social-icons">
+                  <%= link_to 'https://twitter.com/richjdsith', target: '_blank' do %>
+                    <%= image_tag 'twitter_logo', class: 'img-responsive social-icon' %>
+                  <% end %>
+                  <%= link_to 'https://facebook.com/nobullco', target: '_blank' do %>
+                    <%= image_tag 'fb_logo', class: 'img-responsive social-icon' %>
+                  <% end %>
+                  <%= link_to 'https://linkedin.com/company/nobullco', target: '_blank' do %>
+                    <%= image_tag 'li_logo', class: 'img-responsive social-icon' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <h5 class="h5 is-flex-centered">Or send us a message/call us on:</h5>
+              <div class=" is-flex-centered" >
+                <div class="social-icons">
+                  <%= link_to 'https://wa.me/447503251189?text=Hey Rich%2C let\'s chat about NoBull!😊', target: '_blank' do %>
+                    <%= image_tag 'whatsapp_logo', class: 'img-responsive social-icon' %>
+                  <% end %>
+                  <%= link_to 'https://m.me/nobullco', target: '_blank' do %>
+                    <%= image_tag 'messenger_logo', class: 'img-responsive social-icon', target: '_blank' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="contact-method">
+              <h5 class="h5 is-flex-centered">Into snail mail? Sure, why not! 🐌📬:</h5>
+              <div class="address" >
+                <p class=" text-center"> <strong> NoBull Software Co.</strong></pclas>
+                <p class=" text-center">P.O. Box 1903</p>
+                <p class=" text-center">205-271 Ross St. NE.</p>
+                <p class=" text-center">Salmon Arm, BC, Canada</p>
+                <p class=" text-center">V1E 4P9</>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

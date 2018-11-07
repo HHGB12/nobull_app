@@ -1,0 +1,85 @@
+<section id="hero">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-md-10 col-sm-12 col-mx-auto">
+        <div class="hero-header">
+          <h1 class="h2 text-primary text-center"><span> How we keep our prices down.</span></h1>
+          <div class="second-part">
+            <h2 class="h3 text-alt text-center">A story about using custom code to keep costs down and happy customers up. From a software development company - who would have guessed? 😉</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<p id="hero-description">(The picture isn't relevant - it's just a beautiful photo of the place I grew up 😌)</p>
+<section id="content">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-md-10 col-sm-12 col-mx-auto">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="h4 text-primary text-center"><strong>👉 You are currently using a web app.</strong></h3>
+            <p>
+              The thing you're on right now <strike>may look</strike> looks like a website. It certainly seems to act like a website, but this is not in fact a website - it's more than that.
+              It's something called a Web App. If you really break that down, all it means is it's an application (program) that runs on the web. I could try and properly explain the nuances and differences between 
+              a website and a webapp, but someone else did a much better job than I ever could.
+            </p>
+            <blockquote>
+              <p>
+                This is totally personal and subjective, but I'd say that a website is defined by its content, while a web application is defined by its interaction with the user. That is, a website can plausibly consist of a static content repository that's dealt out to all visitors, while a web application depends on interaction and requires programmatic user input and data processing.
+              </p>
+              <p>For example, a news site would be a "website", but a spreadsheet or a collaborative calendar would be web "applications". The news site shows essentially the same information to all visitors, while the calendar processes individual data.</p>
+              <cite>- <a href="https://stackoverflow.com/questions/8694922/whats-the-difference-between-a-web-site-and-a-web-application">Kerrek SB</a></cite>
+            </blockquote>
+            <p>My personal definition is that when you have a website that you <em>can</em> log into, you have a webapp. Which is exactly why this website is actually a web app. We call it the <strong>NoBull Website Ordering Thingy™</strong></p>
+            <h4 class="h5  text-center"><strong><%= link_to '"...is actually a Web App"', user_session_path %> </strong></h4>
+            <p>
+              So you can log in. Big deal. You may be thinking <strong>"how the heck can that help lower your prices?"</strong>
+              Because it means we can get 95% of the information we need to build a client a website before we've started writing a line of code. Oh, and they can do it on their own time.  
+            </p>
+            <p>In terms of efficiency, this is massive!</p>
+            <div class="box ">
+              <div class="box-content">
+                <%= image_tag 'webapp_screenshot', class:'img-responsive' %>
+                <p class="text-center my-2 text-alt"> This is what the application actually looks like once you are signed in.</p>
+              </div>
+            </div>
+            <p>
+              Instead of using 15+ back and forth emails chasing down client log-in info so we can integrate their Facebook page with their new website, we've created a tool that 
+              lets them do it themselves when they have time to do it. Instead of trying to sort through the clients business info using their out-of-date website, their email signature and whatever they've posted on 
+              Facebook, they simply put it in once and we have readily available the entire time we're building the site.  
+            </p>
+            <p>
+              Yep, there is no doubt about it, we've handed some of the work back to the client.  But it's also the reason we're now able to sell something we used to have to charge $1900, for under $800. For those clients who don't want to 
+              do that, we have a more <%= link_to '\'hands-on\' option', pages_fancy_path %> for them as well, but for a higher price. But those business owners who were willing, able and happy to provide the photos they wanted used on their site from the beginning 
+              are able to get a website for less than half of what they used to have to pay. 
+            </p>
+
+            <div class="box">
+              <div class="box-content">
+                <%= image_tag 'webapp_screenshot2', class:'img-responsive' %>
+                <p class="text-center my-2 text-alt"> You're able to track your progress as you go.</p>
+              </div>
+            </div>
+            <p>
+              It may not seem like much, but having a place to collect client information from the get-go has been a masive boon to our productivity and just one more reason we're able to provide a truly
+              custom website, at prices our competitors are charging for a templated Wordpress one. Oh, and so far we've had nothing but great
+              feedback from clients as well, so that's been nice!
+            </p>
+            <p>
+            Does your business have a pain-point that could be solved with custom application specific to your needs? We happen to make them! You read more about our custom webapps <%= link_to 'here.', pages_custom_path %>
+            </p>
+
+            <h5 class="h6">You've read the whole thing! If your fears of 'how come they're so much cheaper than their competitors for a custom website?' have been put at ease, why not get in touch with us and see if we can't help get your business get more customers?</h5>
+           <div class="btn-group btn-group-block">
+            <%= link_to 'Order a Website', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+            <%= link_to 'Contact Us', pages_contact_path, class: 'btn btn-lg' %>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -32,6 +32,6 @@ class PagesController < ApplicationController
   def why_we_hand_code
   end
 
-  def keep_prices_down
+  def keeping_prices_down
   end
 end

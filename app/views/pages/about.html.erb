@@ -1,2 +1,112 @@
-<h1>Pages#about</h1>
-<p>Find me in app/views/pages/about.html.erb</p>
+<section id="hero">
+  <div class="container px-2">
+    <h1 class="h2 subtitle text-primary"><span class="bg-gray px-4">  Small Team</span></h1>
+    <h2 class="h1 text-alt"><span class="bg-gray px-4"><strong> Big </strong> Impact</span></h2>
+  </div>
+</section>
+<section id="content">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-md-10 col-sm-12 col-mx-auto">
+        <article>
+          <h2 class="h2 title">
+            Oh hey there! 👋
+          </h2>
+          <p>
+            We're the team behind NoBull! We have to confess, there's really just the three of us (dog not pictured above, don't worry, she makes an appearance below!). And honestly, our dog doesn't do much besides sleep, snort and provide moral support.
+            We're a married couple, both from Canada, in our mid-twenties and can be found currently in <strong>Warwick, Warwickshire, UK!</strong> 
+          </p>
+          <h3 class="h4">Rich Smith</h3>
+          <p>
+            Rich is the programmer behind NoBull. After studying Economics and Business, it was a bit of a surprise to everyone when he announced that he was going to be a programmer. But program he did. 
+          </p>
+          <p>
+            After spending 4 months locked away from the world in a family cabin teaching himself to code, he came back a full-stack web developer. With skills under his belt such as Ruby/Rails, PHP, Elixir/Phoenix and of course the required
+            HTML5/CSS3/JS you must know if you want to call yourself a full-stack developer, Rich is exactly that.
+          </p>
+          <p>
+            Growing up in the beautiful town of Salmon Arm, BC, Canada, Rich is a connoisseur of the outdoors - enjoying a wide range of activities from alpinism and summer hiking, to downhill skiing and whitewater kayaking. Rich is very fond of clean datasets, large breakfasts, his beautiful wife and his dog. After moving from Calgary to Barcelona in 2017, he has since moved to Warwick in the United Kingdom, taking full advantage of his ability to work from anywhere in the world with clients from across the world.
+          </p>
+          <h3 class="h4">Chanelle Mather-Shapiro</h3>
+          <p>
+            Chanelle is the part-time wordsmith or copywriter behind NoBull. With a masters in Behavioural Economics - the art of the subtle behaviour nudge - she is the one who reworks the writtern content and flow of the website ensuring it is as 
+            effective as possible in converting visitors to clients. She studied at the prestigeous Pompreau Fabreau BGSE in Barcelona and is now working as a regulator in the legal industry in the UK. She has a particular knack for reworking content and making difficult concepts easy to understand. 
+          </p>
+          <p>
+            Chanelle grew up in the lovely city Calgary, Alberta, Canada which hasn't stopped her from enjoying the outdoors just as much as her husband. Perhaps that's why they get along so well! Chanelle has recently picked up Rock Climbing, and is living with her husband (and soon her dog as well) in the cute 
+            market town of Warwick, where she commutes into Birmingham on the daily.
+          </p>
+          <h3 class="h4">Rossi the Dog</h3>
+            <p>
+              While not known for a solid work ethic, Rossi is more an 'enjoy the finer things in life' kind of gal. A chocolate lab built like a pitbull she's always been a lover of food, belly rubs, snuggles and chasing the odd squierl.
+              She is still unsure what to think about moving to the UK.
+            </p>
+
+            <blockquote>
+              <p>
+                “That's the thing about being a Labrador retriever - you were born for fun. Seldom was your loopy, freewheeling mind cluttered by contemplation, and never at all by somber worry; every day was a romp. What else could there possibly be to life? Eating was a thrill. 
+                Pissing was a treat. Shitting was a joy. And licking your own balls? Bliss. And everywhere you went were gullible humans who patted and hugged and fussed over you.” 
+              </p>
+              <cite>- Carl Hiaasen </cite>
+            </blockquote>
+
+            <%= image_tag 'rossi', class: 'img-responsive' %>
+
+        </article>
+       
+      </div>  
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-sm-10 col-mx-auto">
+        <h2 class="h4 text-light text-center">Now you know who we are, but we don't know who you are - why not introduce yourself? 😉</h2>
+        <h3 class="h5 text-light text-center mb-10">
+         Even if you're still not sold on actually buying a website, we'd love to hear from you! If anything else, just to find out how you found us and why you're visiting our site. Give us a ring or drop us an email - we're told we're very friendly!
+        </h3>
+        <h4 class=" h6 text-light text-center text-capitalize">Request a Website:</h4>
+        <div class="text-center">
+          <%= link_to 'Request Now', new_user_registration_path, class: 'btn btn-light btn-lg px-4' %>
+        </div>
+        <h6 class="h6 text-light text-center my-6">- OR - </h6>
+        <h4 class=" h6 text-light text-center text-capitalize">Speak to a real human:</h4>
+      </div>
+      <div class="column col-5 col-lg-8 col-md-10 col-sm-12 col-mx-auto">
+        <div class="box">
+          <div class="box-body">
+            <h5 class="h5 is-flex-centered">Email Us:</h5>
+            <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+              <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="contact@nobullco.com" readonly>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+            </div>
+            <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="contact@nobullco.com" readonly>
+              <div class="input-group is-flex-centered mt-1">
+              <a href="mailto:rich@nobullco.com" class="btn btn-primary input-group-btn">Email Now</a>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+              </div>
+            </div>
+            <h6 class="h6 text-center my-4">- Or -</h6>
+            <h5 class="h5 is-flex-centered">Give us a Call:</h5>
+            <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
+              <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+              <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
+            </div>
+            <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
+              <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <div class="input-group is-flex-centered mt-1">
+              <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
+              <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
