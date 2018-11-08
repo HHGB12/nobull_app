@@ -17,6 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'babel-transpiler'
 gem 'webpacker'
 gem 'aws-sdk-s3'
+gem 'sprockets', '~> 4.0.0.beta8'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
