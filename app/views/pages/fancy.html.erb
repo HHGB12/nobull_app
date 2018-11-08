@@ -127,20 +127,22 @@
           <h5 class=" h5 text-light text-bold ">Ready to Buy?</h5>
           <div class="container box py-10">
             <div class="columns">
-              <div class="column col-12">
+              <div class="column col-12 mb-10">
                 <h2 class="h4  text-center"> You're at the end, but you have options.</h2>
                 <p class="">
                   You can keep reading about what we offer, get in touch with us, or you can start the process of getting your own website from us!
                 </p>
-                <div class="btn-group btn-group-block">
+                <div class="btn-group btn-group-block ">
                   <%= link_to '⏪ Go Back', :back, class: 'btn btn-lg' %>
                   <%= link_to 'Buy Now', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
                   <%= link_to 'Read About Custom Webapps ⏩', pages_custom_path, class: 'btn btn-lg' %>
                 </div>
-                <h6 class="h6  text-center my-6">- OR - </h6>
-                <h4 class=" h6  text-center text-capitalize">Speak to a real human:</h4>
+                
               </div>
-              <div class="column col-8 col-md-10 col-sm-12 col-mx-auto">
+              <div class="column col-8 col-mx-auto mt-10">
+                <h6 class="h5 text-primary text-center ">Or you can speak with a person: </h6>
+              </div>
+              <div class="column col-8 col-md-10 col-sm-12 col-mx-auto ">
                 <div class="box">
                   <div class="box-body">
                     <h5 class="h5 is-flex-centered">Email Us:</h5>
@@ -157,18 +159,9 @@
                       </div>
                     </div>
                     <h6 class="h6 text-center my-4">- Or -</h6>
-                    <h5 class="h5 is-flex-centered">Give us a Call:</h5>
-                    <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
-                      <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
-                      <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
-                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
-                    </div>
-                    <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
-                      <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
-                      <div class="input-group is-flex-centered mt-1">
-                      <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call Now</a>
-                      <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
-                      </div>
+                    <h5 class="h5 is-flex-centered">See the other ways you can get in touch:</h5>
+                    <div class="is-flex-centered" >
+                      <%= link_to 'Contact Us Page', pages_contact_path, class: 'btn btn-alt' %>
                     </div>
                   </div>
                 </div>
