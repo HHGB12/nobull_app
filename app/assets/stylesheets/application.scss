@@ -82,7 +82,10 @@
 @import "spec/animations";
 @import "spec/utilities";
 
-@import 'spec/spec-icons';
+@import "spec/icons/icons-core";
+@import "spec/icons/icons-navigation";
+@import "spec/icons/icons-action";
+@import "spec/icons/icons-object";
 
 // Experimentals
 // @import 'spec/spec-exp';
