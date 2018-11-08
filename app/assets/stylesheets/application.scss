@@ -50,6 +50,12 @@
 @import "spec/codes";
 @import "spec/media";
 
+// Icons
+@import "spec/icons-core";
+@import "spec/icons-navigation";
+@import "spec/icons-action";
+@import "spec/icons-object";
+
 // Layout
 @import "spec/layout";
 @import "spec/navbar";
@@ -82,10 +88,7 @@
 @import "spec/animations";
 @import "spec/utilities";
 
-@import "spec/icons/icons-core";
-@import "spec/icons/icons-navigation";
-@import "spec/icons/icons-action";
-@import "spec/icons/icons-object";
+
 
 // Experimentals
 // @import 'spec/spec-exp';
