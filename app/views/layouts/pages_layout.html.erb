@@ -15,7 +15,25 @@
   <body class="pages_layout <%= controller_name %> <%= action_name %>" data-controller="scroll-menu" data-target="scroll-menu.body" >
     <header class="navbar pages_layout_navbar" data-target="scroll-menu.navbar">
       <%= render 'layouts/navigation/navbar/pages_navbar' %>
-    </header> 
+    </header>
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="1183389578410100"
+  theme_color="#6b36e7"
+  logged_in_greeting="Howdy! Rich here - feel free to send me a message if you have any questions!"
+  logged_out_greeting="Howdy! Rich here - feel free to send me a message if you have any questions!">
+</div> 
     <main id="main">
       <%#= render 'layouts/shared/alerts' %>
       <%= yield %>

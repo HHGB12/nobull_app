@@ -106,14 +106,14 @@ body.pages.index {
 
 
 
-    .h2,
-    h4 {
+    .h2 {
       color: $primary-color-light;
       font-weight: 800;
     }
 
     h4 {
-      text-decoration: underline;
+      text-decoration: none;
+      color: $primary-color-light;
     }
 
     p.larger {
