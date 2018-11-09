@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Adds meta-tags to the app for SEO - https://github.com/kpumuk/meta-tags
 gem 'meta-tags', '~> 2.10'
 
+# Adds a search engine sitemap for SEO - https://github.com/kjvarga/sitemap_generator
+gem 'sitemap_generator'
+
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 
