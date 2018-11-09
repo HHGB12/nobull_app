@@ -283,4 +283,33 @@ class PagesController < ApplicationController
                     creator: "@richjdsmith"
                   }
   end
+  def free_beer
+    set_meta_tags title: 'Our Referral Program',
+                  description: 'While we do our best to gain new customers based purely on word-of-mouth from previous happy customers, we\'re certainly appreciative of those refferals. That\'s what we have the "free beer" program. ',
+                  keywords: 'free beer, referral, wine, bourbon, local, salmon arm, calgary',
+                  index: true,
+                  follow: true,
+                  icon: [
+                    { href: "#{ActionController::Base.helpers.asset_path('favicon.ico')}"},
+                    { href: "#{ActionController::Base.helpers.asset_path('favicon-96x96.png')}", sizes: '32x32 96x96', type: 'image/png' },
+                    { href: "#{ActionController::Base.helpers.asset_path('apple-icon.png')}", rel: 'apple-touch-icon-precomposed', sizes: '32x32', type: 'image/png' },
+                  ],
+                  image_src: "#{ActionController::Base.helpers.asset_path('nobull_full_logo_fbog_dimension.png')}",
+                  og: {
+                    title: :title,
+                    site_name: :site,
+                    url: request.original_url,
+                    description: :description,
+                    image: { 
+                      url: "#{ActionController::Base.helpers.asset_path('nobull_full_logo_fbog_dimension.png')}",
+                      alt: 'NoBull Software Co. Logo',
+                      type: 'image/png'
+                    }
+                  },
+                  twitter: {
+                    card: :description,
+                    site: "@richjdsmith",
+                    creator: "@richjdsmith"
+                  }
+  end
 end
