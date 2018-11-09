@@ -47,17 +47,17 @@ class ApplicationController < ActionController::Base
     # if all else fails, fall back to default
 
     # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
-    # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || I18n.default_locale
+    I18n.locale = params[:locale] || session[:locale] || location_detected_locale
     # I18n.locale =  location_detected_locale || I18n.default_locale
-    I18n.locale =  location_detected_locale 
     # save to session
-    # session[:locale] = I18n.locale
+    session[:locale] = I18n.locale
   end
 
   # these could potentially do with a bit of tidying up
   # remember to return `nil` to indicate no match
 
   def location_detected_locale
+    location = request.location
     if location.present? && location.country_code.present? && location.country_code == "GB"
       # return nil unless I18n.available_locales.include?(location.country_code.downcase.to_sym)
       location.country_code.downcase
