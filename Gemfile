@@ -42,8 +42,12 @@ gem 'ahoy_matey'
 # Geo data to avoid api calls.
 gem 'maxminddb'
 
+# More geodata, to set locale
+gem 'geocoder'
+
 # Used to generate the uid for ahoy to date_time
 gem 'druuid'
+
 
 
 # Use ActiveStorage variant

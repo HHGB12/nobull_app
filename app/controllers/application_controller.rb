@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery
   before_action :configure_sanitized_parameters, if: :devise_controller?
+  before_action :set_locale
   after_action :verify_authorized, unless: :devise_controller?
   after_action :track_action
   
@@ -20,7 +21,13 @@ class ApplicationController < ActionController::Base
                   ]
   end
 
+ 
   
+  # def get_location_detected_locale
+  #   location = request.location
+  #   return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code)
+  #   location.country_code.include?("-") ? location.country_code : location.country_code.downcase
+  # end
 
   protected
 
@@ -30,6 +37,32 @@ class ApplicationController < ActionController::Base
   end
   def track_action
     ahoy.track "Ran action", request.path_parameters
+  end
+
+
+  def set_locale
+    # explicit param can always override existing setting
+    # otherwise, make sure to allow a user preference to override any automatic detection
+    # then detect by location, and header
+    # if all else fails, fall back to default
+    I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
+
+    # save to session
+    session[:locale] = I18n.locale
+  end
+
+  # these could potentially do with a bit of tidying up
+  # remember to return `nil` to indicate no match
+
+  def location_detected_locale
+      location = request.location
+      return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code)
+      location.country_code.include?("-") ? location.country_code : location.country_code.downcase
+  end
+
+  def header_detected_locale
+      return nil unless (request.env["HTTP_ACCEPT_LANGUAGE"] || "en").scan(/^[a-z]{2}/).first.present? && I18n.available_locales.include?((request.env["HTTP_ACCEPT_LANGUAGE"] || "en").scan(/^[a-z]{2}/).first)
+      (request.env["HTTP_ACCEPT_LANGUAGE"] || "en").scan(/^[a-z]{2}/).first
   end
 
 
