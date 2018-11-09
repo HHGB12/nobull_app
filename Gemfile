@@ -45,8 +45,6 @@ gem 'maxminddb'
 # Used to generate the uid for ahoy to date_time
 gem 'druuid'
 
-# Google analytics and facebook analytics https://github.com/railslove/rack-tracker
-gem 'rack-tracker'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
