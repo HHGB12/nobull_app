@@ -58,10 +58,13 @@ class ApplicationController < ActionController::Base
   def location_detected_locale
     if location.present? && location.country_code.present? && location.country_code == "GB"
       return nil unless I18n.available_locales.include?(location.country_code.downcase.to_sym)
+      location.country_code.downcase.to_sym
     elsif location.present? && location.region.present? && location.region == "British Columbia"
       return nil unless I18n.available_locales.include?(location.region.downcase.split.join('_').to_sym)
+      location.region.downcase.split.join('_').to_sym
     elsif location.present? && location.region.present? && location.region == "Alberta"
       return nil unless I18n.available_locales.include?(location.region.downcase.to_sym)
+      location.region.downcase.to_sym
     else 
       nil
     end
