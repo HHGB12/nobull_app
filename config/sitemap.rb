@@ -12,6 +12,7 @@ SitemapGenerator::Sitemap.create do
   add '/pages/custom', changefreq: 'weekly', priority: 0.3, host: default_host, lastmod: Time.now
   add '/pages/keeping_prices_down', changefreq: 'weekly', priority: 0.5, host: default_host, lastmod: Time.now
   add '/pages/why_we_hand_code', changefreq: 'weekly', priority: 0.5, host: default_host, lastmod: Time.now
+  add '/pages/free_beer', changefreq: 'weekly', priority: 0.5, host: default_host, lastmod: Time.now
   #
   # The root path '/' and sitemap index file are added automatically for you.
   # Links are added to the Sitemap in the order they are specified.
