@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update, :destroy]
-  before_action :authenticate_user!, :authorize_record
+  before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
   # GET /business_details/1/edit
   def edit
   end
