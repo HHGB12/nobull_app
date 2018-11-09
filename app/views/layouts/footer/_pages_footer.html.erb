@@ -84,7 +84,8 @@
     </div>
     
   </div>
-  <span class="text-center is-centered" id="footer-copyright">Copyright <%= "#{Time.now.year}" %> - NoBull Software Co. countrycode: <%= request.location.country_code %> country: <%= request.location.country %></span>
+  <span class="text-center is-centered" id="footer-copyright">Copyright <%= "#{Time.now.year}" %> - NoBull Software Co. </span>
+  <span class="text-center is-centered" id="footer-copyright"> <%= I18n.t :you_are_in %></span>
 
 </div>
 

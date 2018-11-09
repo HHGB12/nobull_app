@@ -47,7 +47,6 @@ class PagesController < ApplicationController
   
 
   def index
-    @loc =  request.location.data
     set_meta_tags title: 'Home',
                   description: 'Homepage of NoBull Software Co. - a fair, afordable web development agency with upfront prices. We work with businesses ranging from small trades contractors to law firms and engineering companies',
                   keywords: 'cheap, affordable, fair, prices, web developer, software developer, web designer, website developer, website designer, small business, calgary, alberta, salmon arm, interior, armstrong, revelstoke',

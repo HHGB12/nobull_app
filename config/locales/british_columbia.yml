@@ -1,0 +1,7 @@
+british_columbia:
+  you_are_in: "🏔"
+  basic_price: "$790"
+  basic_price_tax: "$829"
+  fancy_price: "$2300"
+  fancy_price_tax: "$2415"
+  custom_price: "$3500+"

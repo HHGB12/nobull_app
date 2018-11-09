@@ -45,8 +45,9 @@ class ApplicationController < ActionController::Base
     # otherwise, make sure to allow a user preference to override any automatic detection
     # then detect by location, and header
     # if all else fails, fall back to default
-    I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
 
+    # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
+    I18n.locale = params[:locale] || session[:locale] || location_detected_locale || I18n.default_locale
     # save to session
     session[:locale] = I18n.locale
   end
@@ -56,9 +57,19 @@ class ApplicationController < ActionController::Base
 
   def location_detected_locale
       location = request.location
-      return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code)
-      location.country_code.include?("-") ? location.country_code : location.country_code.downcase
+        if location.present? && location.country_code.present? && location.country_code == "GB"
+          return nil unless I18n.available_locales.include?(location.country_code.downcase)
+        elsif location.present? && location.region.present? && location.country_code == "British Columbia"
+          return nil unless I18n.available_locales.include?(location.country_code.region.downcase.split.join('_'))
+        elsif location.present? && location.country_code.present? && location.country_code == "Alberta"
+          return nil unless I18n.available_locales.include?(location.country_code.region.downcase)
+        else 
+          nil
+        end
+      # return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code.downcase)
+      # location.country_code.include?("-") ? location.country_code : location.country_code.downcase
   end
+
 
   def header_detected_locale
       return nil unless (request.env["HTTP_ACCEPT_LANGUAGE"] || "en").scan(/^[a-z]{2}/).first.present? && I18n.available_locales.include?((request.env["HTTP_ACCEPT_LANGUAGE"] || "en").scan(/^[a-z]{2}/).first)
