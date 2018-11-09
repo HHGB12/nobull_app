@@ -59,9 +59,9 @@ class ApplicationController < ActionController::Base
       location = request.location
         if location.present? && location.country_code.present? && location.country_code == "GB"
           return nil unless I18n.available_locales.include?(location.country_code.downcase)
-        elsif location.present? && location.region.present? && location.country_code == "British Columbia"
+        elsif location.present? && location.region.present? && location.region == "British Columbia"
           return nil unless I18n.available_locales.include?(location.country_code.region.downcase.split.join('_'))
-        elsif location.present? && location.country_code.present? && location.country_code == "Alberta"
+        elsif location.present? && location.country_code.present? && location.region == "Alberta"
           return nil unless I18n.available_locales.include?(location.country_code.region.downcase)
         else 
           nil

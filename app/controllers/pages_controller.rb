@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   layout "pages_layout", except: :dashboard
   before_action :authenticate_user!, only: :dashboard
+  before_action :get_detected_country
   skip_after_action :verify_authorized
   def dashboard
     @user = current_user
@@ -311,5 +312,22 @@ class PagesController < ApplicationController
                     site: "@richjdsmith",
                     creator: "@richjdsmith"
                   }
+  end
+
+  private 
+  def get_detected_country
+    @detected = detected_country
+  end
+  def detected_country
+    location = request.location
+      if location.present? && location.country_code.present? && location.country_code == "GB"
+        return nil unless I18n.available_locales.include?(location.country_code.downcase)
+      elsif location.present? && location.region.present? && location.region == "British Columbia"
+        return nil unless I18n.available_locales.include?(location.country_code.region.downcase.split.join('_'))
+      elsif location.present? && location.country_code.present? && location.region == "Alberta"
+        return nil unless I18n.available_locales.include?(location.country_code.region.downcase)
+      else 
+        nil
+      end
   end
 end
