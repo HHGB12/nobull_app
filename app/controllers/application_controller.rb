@@ -47,9 +47,10 @@ class ApplicationController < ActionController::Base
     # if all else fails, fall back to default
 
     # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
-    I18n.locale = params[:locale] || session[:locale] || location_detected_locale || I18n.default_locale
+    # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || I18n.default_locale
+    I18n.locale =  location_detected_locale || I18n.default_locale
     # save to session
-    session[:locale] = I18n.locale
+    # session[:locale] = I18n.locale
   end
 
   # these could potentially do with a bit of tidying up
