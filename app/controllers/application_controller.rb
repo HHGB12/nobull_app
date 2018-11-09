@@ -56,16 +56,15 @@ class ApplicationController < ActionController::Base
   # remember to return `nil` to indicate no match
 
   def location_detected_locale
-      location = request.location
-        if location.present? && location.country_code.present? && location.country_code == "GB"
-          return nil unless I18n.available_locales.include?(location.country_code.downcase)
-        elsif location.present? && location.region.present? && location.region == "British Columbia"
-          return nil unless I18n.available_locales.include?(location.country_code.region.downcase.split.join('_'))
-        elsif location.present? && location.country_code.present? && location.region == "Alberta"
-          return nil unless I18n.available_locales.include?(location.country_code.region.downcase)
-        else 
-          nil
-        end
+    if location.present? && location.country_code.present? && location.country_code == "GB"
+      return nil unless I18n.available_locales.include?(location.country_code.downcase.to_sym)
+    elsif location.present? && location.region.present? && location.region == "British Columbia"
+      return nil unless I18n.available_locales.include?(location.region.downcase.split.join('_').to_sym)
+    elsif location.present? && location.region.present? && location.region == "Alberta"
+      return nil unless I18n.available_locales.include?(location.region.downcase.to_sym)
+    else 
+      nil
+    end
       # return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code.downcase)
       # location.country_code.include?("-") ? location.country_code : location.country_code.downcase
   end
