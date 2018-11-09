@@ -1,6 +1,6 @@
 class IntegrationsController < ApplicationController
   before_action :set_integration, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :authorize_record
+  before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
 
   # GET /integrations/1
   # GET /integrations/1.json

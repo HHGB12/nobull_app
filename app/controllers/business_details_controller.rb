@@ -1,6 +1,6 @@
 class BusinessDetailsController < ApplicationController
   before_action :set_business_detail, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :authorize_record
+  before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
 
   # GET /business_details/1
   # GET /business_details/1.json
@@ -50,4 +50,5 @@ class BusinessDetailsController < ApplicationController
     def business_detail_params
       params.require(:business_detail).permit(:user_id, :business_address, :mailing_address, :city, :region, :postal_code, :physical_or_mailing, :other_address_info, :business_phone, :business_phone2, :business_phone3, :business_fax, :business_phone_info, :business_email_address, :business_email_address2, :is_complete)
     end
+    
 end

@@ -1,6 +1,6 @@
 class ServicesContentsController < ApplicationController
   before_action :set_services_content, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :authorize_record
+  before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
 
 
   # GET /services_contents/1

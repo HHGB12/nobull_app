@@ -1,6 +1,6 @@
 class ExtraPagesController < ApplicationController
   before_action :set_extra_pages, only: [:show, :edit, :update, :destroy, :edit_extra_pages]
-  before_action :authenticate_user!, :authorize_record
+  before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
 
   # GET /extra_pagess/1
   # GET /extra_pagess/1.json
@@ -50,5 +50,6 @@ class ExtraPagesController < ApplicationController
     def extra_pages_params
       params.require(:extra_page).permit(:user_id, :is_complete, :extra_page, :extra_page1, :extra_page2, :extra_page3, :extra_page4, :extra_page5, :extra_page6, logo_images: [], team_images: [], workspace_images: [], other_images: [] )
     end
+    
 end
 
