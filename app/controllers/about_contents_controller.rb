@@ -2,6 +2,7 @@ class AboutContentsController < ApplicationController
   before_action :set_about_content, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :authorize_record, :injectable_meta#from application_controller
 
+
   # GET /about_contents/1
   # GET /about_contents/1.json
   def show
