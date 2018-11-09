@@ -22,8 +22,3 @@ const application = Application.start()
 const context = require.context("controllers", true, /.js$/)
 application.load(definitionsFromContext(context))
 AOS.init();
-document.addEventListener('aos:in', ({
-  detail
-}) => {
-  console.log('animated in', detail);
-});
