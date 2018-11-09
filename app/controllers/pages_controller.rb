@@ -321,13 +321,16 @@ class PagesController < ApplicationController
   def detected_country
     location = request.location
       if location.present? && location.country_code.present? && location.country_code == "GB"
-        return nil unless I18n.available_locales.include?(location.country_code.downcase)
+        location.country_code.downcase
+        # return nil unless I18n.available_locales.include?(location.country_code.downcase)
       elsif location.present? && location.region.present? && location.region == "British Columbia"
-        return nil unless I18n.available_locales.include?(location.region.downcase.split.join('_'))
+        location.region.downcase.split.join('_')
+        # return nil unless I18n.available_locales.include?(location.region.downcase.split.join('_'))
       elsif location.present? && location.region.present? && location.region == "Alberta"
-        return nil unless I18n.available_locales.include?(location.region.downcase)
+        location.region.downcase
+        # return nil unless I18n.available_locales.include?(location.region.downcase)
       else 
-        nil
+        "Failed stuff"
       end
   end
 end
