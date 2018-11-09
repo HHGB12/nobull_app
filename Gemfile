@@ -36,6 +36,15 @@ gem 'meta-tags', '~> 2.10'
 # Adds a search engine sitemap for SEO - https://github.com/kjvarga/sitemap_generator
 gem 'sitemap_generator'
 
+# Analytics for my site - https://github.com/ankane/ahoy
+gem 'ahoy_matey'
+
+# Geo data to avoid api calls.
+gem 'maxminddb'
+
+# Used to generate the uid for ahoy to date_time
+gem 'druuid'
+
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 

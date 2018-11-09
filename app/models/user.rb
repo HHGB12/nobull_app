@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_one :services_content
   has_one :extra_page
   has_one :upload
+  has_many :visits, class_name: "Ahoy::Visit"
 
 
   after_create :create_about_content, :create_business_detail, :create_integration, :create_services_content, :create_extra_page, :create_upload
