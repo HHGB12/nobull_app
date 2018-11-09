@@ -48,7 +48,8 @@ class ApplicationController < ActionController::Base
 
     # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || header_detected_locale || I18n.default_locale
     # I18n.locale = params[:locale] || session[:locale] || location_detected_locale || I18n.default_locale
-    I18n.locale =  location_detected_locale || I18n.default_locale
+    # I18n.locale =  location_detected_locale || I18n.default_locale
+    I18n.locale =  location_detected_locale 
     # save to session
     # session[:locale] = I18n.locale
   end
@@ -67,7 +68,7 @@ class ApplicationController < ActionController::Base
       # return nil unless I18n.available_locales.include?(location.region.downcase.to_sym)
       location.region.downcase
     else 
-      nil
+      I18n.default_locale
     end
       # return nil unless location.present? && location.country_code.present? && I18n.available_locales.include?(location.country_code.downcase)
       # location.country_code.include?("-") ? location.country_code : location.country_code.downcase
