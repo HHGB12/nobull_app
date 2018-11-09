@@ -29,5 +29,11 @@ module NobullApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use Rack:tracker, I hope.
+    config.middleware.use(Rack::Tracker) do
+      handler :google_analytics, { tracker: 'UA-88374004-1' }
+      handler :facebook_pixel, { id: '294364997954689' }
+    end
   end
 end

@@ -14,4 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require direct_uploads
-//= require google_analytics

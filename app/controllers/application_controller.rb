@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_action :configure_sanitized_parameters, if: :devise_controller?
   after_action :verify_authorized, unless: :devise_controller?
-  after_action :track_action
+  after_action :track_action, :analytics_event
   
 
   # Used to set meta data in headers.
@@ -30,5 +30,11 @@ class ApplicationController < ActionController::Base
   end
   def track_action
     ahoy.track "Ran action", request.path_parameters
+  end
+
+  def analytics_event
+    tracker do |t|
+      t.google_analytics :parameter, { visit: 'yes' }
+    end
   end
 end
