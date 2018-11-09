@@ -323,9 +323,9 @@ class PagesController < ApplicationController
       if location.present? && location.country_code.present? && location.country_code == "GB"
         return nil unless I18n.available_locales.include?(location.country_code.downcase)
       elsif location.present? && location.region.present? && location.region == "British Columbia"
-        return nil unless I18n.available_locales.include?(location.country_code.region.downcase.split.join('_'))
-      elsif location.present? && location.country_code.present? && location.region == "Alberta"
-        return nil unless I18n.available_locales.include?(location.country_code.region.downcase)
+        return nil unless I18n.available_locales.include?(location.region.downcase.split.join('_'))
+      elsif location.present? && location.region.present? && location.region == "Alberta"
+        return nil unless I18n.available_locales.include?(location.region.downcase)
       else 
         nil
       end
