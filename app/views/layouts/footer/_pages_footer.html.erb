@@ -46,13 +46,14 @@
         </div>
       <% end %>
       <p class="text-center  mx-10 mt-4">
-        NoBull Software Co. is a small, family-owned web development company based in both
-        Salmon Arm, BC and Calgary, AB - both of which are in the beautiful country of Canada. 🇨🇦
+        NoBull Software Co. is a small, family-owned web development company focused
+        on selling only things we're proud of, at fair  and upfront prices.
+        <%= I18n.t :footer_based_from %>
+        <br>Thanks for dropping by our site! 😊
       </p>
       <p class="text-center  mx-10">
-        All prices listed on this site are in $CAD. 
+        All prices listed on this site are in <strong><%= I18n.t :locale_currency_used %></strong>
       </p>
-      <p class="text-center mx-10">Thanks for dropping by! 😊</p>
     </div>
     <div class="column col-4 col-sm-12 right">
       <div class="social-nav">
@@ -72,21 +73,18 @@
           <span class="social-text">Email</span> 
           <%= image_tag 'email_logo.svg', class: ' social-icon' %>
         <% end %>
-        <%= link_to 'tel:587-317-5922', class: 'social-link' do %>
-          <span class="social-text" id="after-span-phone">AB: +1-587-317-5922</span> 
-          <%= image_tag 'phone_logo.svg', class: ' social-icon' %>
-        <% end %>
-        <%= link_to 'tel:250-833-6512', class: 'social-link' do %>
-          <span class="social-text" id="after-span-phone">BC: +1-250-833-6521</span> 
+        <%= link_to "tel:#{I18n.t(:link_phone)}", class: 'social-link' do %>
+          <span class="social-text" id="after-span-phone"> <%= I18n.t :show_phone %></span> 
           <%= image_tag 'phone_logo.svg', class: ' social-icon' %>
         <% end %>
       </div>
     </div>
     
   </div>
+  <span class="text-center is-centered footer-I18n">You're currently seeing the <strong><%= I18n.t :current_locale %></strong> version of our site. You can change that here:</span>
+  <span class="text-center is-centered footer-I18n"><%= link_to '🇬🇧 - UK', url_for(locale: :gb) %> | <%= link_to '🏔🇨🇦 - BC', url_for(locale: :british_columbia) %> | <%= link_to '🤠🇨🇦 - Alberta', url_for(locale: :alberta) %> | <%= link_to '🌎 - The World', url_for(locale: :en) %></span>
   <span class="text-center is-centered" id="footer-copyright">Copyright <%= "#{Time.now.year}" %> - NoBull Software Co. </span>
-  <span class="text-center is-centered" id="footer-copyright"> <%= I18n.t :you_are_in %></span>
-  <span class="text-center is-centered" id="footer-copyright"> <%= I18n.locale %></span>
+
 
 </div>
 

@@ -137,6 +137,11 @@ body.pages_layout {
     }
 
     #footer-copyright {
+      font-size: $unit-2;
+      color: $light-color;
+    }
+
+    .footer-I18n {
       font-size: $unit-3;
       color: $light-color;
     }

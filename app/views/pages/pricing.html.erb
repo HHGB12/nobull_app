@@ -22,7 +22,7 @@
                   It's the best option for most businesses and probably all you need.
                 </p>
                 <h5 class="h4 text-center price">
-                  <%= t('basic_price') %> <br><span class="gst">(+GST)</span>
+                  <%= t('basic_price') %> <br><span class="gst">(<%=  I18n.t :tax_type  %>)</span>
                 </h5>
               </div>
               <div class="box-body">
@@ -47,7 +47,7 @@
                   It's a better option for bigger businesses or businesses focusing heavily on online marketing.
                 </p>
                 <h5 class="h4 text-center price">
-                  <%= t('fancy_price') %> <br><span class="gst">(+GST)</span>
+                  <%= t('fancy_price') %> <br><span class="gst">(<%=  I18n.t :tax_type  %>)</span>
                 </h5>
               </div>
 
@@ -73,7 +73,7 @@
                   It's more for businesses with specific use-case scenarios - like selling online.
                 </p>
                 <h5 class="h4 text-center price">
-                  <%= t('custom_price') %> <br><span class="gst">(+GST)</span>
+                  <%= t('custom_price') %> <br><span class="gst">(<%=  I18n.t :tax_type  %>)</span>
                 </h5>
               </div>
               <div class="box-body">
@@ -146,7 +146,7 @@
                   <%= image_tag 'plus.svg', class: 'img-responsive' %>
                 </div>
                 <h4 class="h5 text-center">Extra Page</h4>
-                <p class="text-center"><span class="extra-price">$150</span>/page</p>
+                <p class="text-center"><span class="extra-price"><%= I18n.t :extra_page_price %></span>/page</p>
               </div>
               <div class="box-body">
                 <p class="text-center">If you need more than the <em>Three Pages</em> included with <strong>A Website</strong> or more than the <em>Five Pages</em> that come with <strong>A Fancy Website</strong>, then this is the option for you.  </p>
@@ -160,9 +160,9 @@
                   <%= image_tag 'hosting.svg', class: 'img-responsive' %>
                 </div>
                 <h4 class="h5 text-center">Hosting</h4>
-                <p class="text-center mb-0"><span class="extra-price">$15</span>/month - managed</p>
+                <p class="text-center mb-0"><span class="extra-price"><%= I18n.t :hosting_managed_price %></span>/month - managed</p>
                 <p class="text-center mb-0">- Or -</p>
-                <p class="text-center mb-0"><span class="extra-price">$4</span>/month - unmanaged</p>
+                <p class="text-center mb-0"><span class="extra-price"><%= I18n.t :hosting_unmanaged_price %></span>/month - unmanaged</p>
               </div>
               <div class="box-body">
                 <p class="text-center">
@@ -179,7 +179,7 @@
                   <%= image_tag 'graphic-design.svg', class: 'img-responsive' %>
                 </div>
                 <h4 class="h5 text-center">Logo Redesign/Digitization</h4>
-                <p class="text-center mb-0"><span class="extra-price">$100</p>
+                <p class="text-center mb-0"><span class="extra-price"><%= I18n.t :logo_price %></p>
               </div>
               <div class="box-body">
                 <p class="text-center">
@@ -196,7 +196,7 @@
                   <%= image_tag 'advertising.svg', class: 'img-responsive' %>
                 </div>
                 <h4 class="h5 text-center">Digital Advertising Campaign</h4>
-                <p class="text-center mb-0"><span class="extra-price">10%</span> <br> of ad spend (or min $80) </p>
+                <p class="text-center mb-0"><span class="extra-price">10%</span> <br> of ad spend (or min <%= I18n.t :ad_price %>) </p>
               </div>
               <div class="box-body">
                 <p class="text-center">
@@ -215,7 +215,7 @@
                   </div>
                   <br>
                   <h4 class="h5 text-center">Hourly Work</h4>
-                  <p class="text-center mb-0"><span class="extra-price">$65/hr</p>
+                  <p class="text-center mb-0"><span class="extra-price"><%= I18n.t :hourly_price %>/hr</p>
               </div>
               <div class="box-body column col-8 col-sm-12 ">
                 <p>

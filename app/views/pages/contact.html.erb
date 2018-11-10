@@ -65,7 +65,7 @@
         </header>
         <div class="content" data-aos="fade-in" data-aos-duration="1000">
           <h3 class="h2 text-light text-center">Getting in Touch</h3>
-          <p class=" text-light text-center">NoBull Software Co. is registerd in and legally opperates out of Salmon Arm, BC, Canada.🇨🇦</p>
+          <p class=" text-light text-center"><%= I18n.t :contact_based_from_html %></p>
           <p class=" text-light text-center">Feel free to get in touch with us through whatever means you find easiest:</p>
         </div>
         
@@ -88,34 +88,20 @@
                 </div>
               </div>
             </div>
-            <div class="contact-method">
-              <h5 class="h5 is-flex-centered">Give us a call:</h5>
-              <div class="input-group is-flex-centered hide-sm" data-controller="clipboard" >
-                <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call BC # Now</a>
-                <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <div class="input-group is-flex-centered hide-sm my-1" data-controller="clipboard" >
+                <a href="tel:<%= I18n.t :link_phone %>" class="btn btn-primary input-group-btn">Call Now</a>
+                <input  class="form-input text-center" data-target="clipboard.source" type="text" value="<%= I18n.t :show_phone %>" readonly>
                 <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
               </div>
-              <div class="input-group is-flex-centered hide-sm mt-1" data-controller="clipboard" >
-                <a href="tel:587-317-5922" class="btn btn-primary input-group-btn">Call AB # Now</a>
-                <input  class="form-input text-center" data-target="clipboard.source" type="text" value="+1-587-317-5922" readonly>
-                <button class="btn input-group-btn" data-action="clipboard#copy">Copy to Clipboard</button>
-              </div>
-              <div class="form-group is-flex-centered show-sm" data-controller="clipboard" >
-                <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-250-833-6512" readonly>
+              <div class="form-group is-flex-centered show-sm my-1" data-controller="clipboard" >
+                <input class="form-input text-center" data-target="clipboard.source" type="text" value="<%= I18n.t :show_phone %>" readonly>
                 <div class="input-group is-flex-centered mt-1">
-                <a href="tel:2508336512" class="btn btn-primary input-group-btn">Call BC # Now</a>
-                <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
-                </div>
-              </div>
-              <div class="form-group is-flex-centered show-sm mt-1" data-controller="clipboard" >
-                <input class="form-input text-center" data-target="clipboard.source" type="text" value="+1-587-317-5922" readonly>
-                <div class="input-group is-flex-centered mt-1">
-                <a href="tel:5873175922" class="btn btn-primary input-group-btn">Call AB # Now</a>
+                <a href="tel:<%= I18n.t :link_phone %>" class="btn btn-primary input-group-btn">Call Now</a>
                 <button class="btn input-group-btn" data-action="clipboard#copy">Copy To Clipboard</button>
                 </div>
               </div>
             </div>
-            <div class="contact-method">
+            <div class="contact-method mt-4">
               <h5 class="h5 is-flex-centered">Check us out on:</h5>
               <div class=" is-flex-centered" >
                 <div class="social-icons">
@@ -145,13 +131,13 @@
               </div>
             </div>
             <div class="contact-method">
-              <h5 class="h5 is-flex-centered">Into snail mail? Sure, why not! 🐌📬:</h5>
+              <h5 class="h5 is-flex-centered">🐌Need to Mail us Something?📬</h5>
               <div class="address" >
                 <p class=" text-center"> <strong> NoBull Software Co.</strong></pclas>
-                <p class=" text-center">P.O. Box 1903</p>
-                <p class=" text-center">205-271 Ross St. NE.</p>
-                <p class=" text-center">Salmon Arm, BC, Canada</p>
-                <p class=" text-center">V1E 4P9</>
+                <p class=" text-center"><%= I18n.t :mail_l1 %></p>
+                <p class=" text-center"><%= I18n.t :mail_l2 %></p>
+                <p class=" text-center"><%= I18n.t :mail_l3 %></p>
+                <p class=" text-center"><%= I18n.t :mail_l4 %></>
               </div>
             </div>
           </div>
