@@ -416,8 +416,16 @@ body.pages.contact {
         color: $primary-color;
 
         span {
-          background-color: $light-color;
-          padding: 0.5rem 1rem;
+
+          &.l1 {
+            background-color: $light-color;
+            padding: 0.3rem 1rem;
+          }
+
+          &.l2 {
+            background-color: $light-color;
+            padding: 0.3rem 1rem;
+          }
         }
       }
     }
