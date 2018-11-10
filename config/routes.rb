@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'pages/why-we-hand-code', to: "pages#why_we_hand_code"
   get 'pages/keeping-prices-down', to: "pages#keeping_prices_down"
   get 'pages/referral-program', to: "pages#free_beer"
-  get 'pages/free_beer'
+  get 'pages/free-beer'
+  get 'freebeer', to: "pages#free_beer"
   devise_for :users
 end
