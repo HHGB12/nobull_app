@@ -22,3 +22,6 @@ alberta:
   mail_l2: "205-271 Ross St, NE"
   mail_l3: "Salmon Arm, BC, Canada"
   mail_l4:  "V1E 4P9"
+  footer_chat_link: "https://m.me/nobullco"
+  footer_chat_name: "FB Messenger"
+  footer_chat_logo: "messenger_logo_purple.svg"

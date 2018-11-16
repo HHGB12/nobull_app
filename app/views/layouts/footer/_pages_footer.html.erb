@@ -57,6 +57,18 @@
     </div>
     <div class="column col-4 col-sm-12 right">
       <div class="social-nav">
+        <%= link_to "#{I18n.t(:footer_chat_link)}", class: 'social-link' do %>
+          <span class="social-text" id="after-span-phone"> Message us on <%= I18n.t :footer_chat_name %></span> 
+          <%= image_tag "#{I18n.t(:footer_chat_logo)}", class: ' social-icon' %>
+        <% end %>
+        <%= link_to 'mailto:contact@nobullco.com', class: 'social-link' do %>
+          <span class="social-text">Email</span> 
+          <%= image_tag 'email_logo.svg', class: ' social-icon' %>
+        <% end %>
+        <%= link_to "tel:#{I18n.t(:link_phone)}", class: 'social-link' do %>
+          <span class="social-text" id="after-span-phone"> <%= I18n.t :show_phone %></span> 
+          <%= image_tag 'phone_logo.svg', class: ' social-icon' %>
+        <% end %>
         <%= link_to 'https://twitter.com/richjdsmith', class: 'social-link' do %>
           <span class="social-text">Twitter</span> 
           <%= image_tag 'twitter_logo.svg', class: ' social-icon' %>
@@ -68,14 +80,6 @@
         <%= link_to 'https://linkedin.com/company/nobullco', class: 'social-link' do %>
           <span class="social-text">LinkedIn</span> 
           <%= image_tag 'li_logo.svg', class: ' social-icon' %>
-        <% end %>
-        <%= link_to 'mailto:contact@nobullco.com', class: 'social-link' do %>
-          <span class="social-text">Email</span> 
-          <%= image_tag 'email_logo.svg', class: ' social-icon' %>
-        <% end %>
-        <%= link_to "tel:#{I18n.t(:link_phone)}", class: 'social-link' do %>
-          <span class="social-text" id="after-span-phone"> <%= I18n.t :show_phone %></span> 
-          <%= image_tag 'phone_logo.svg', class: ' social-icon' %>
         <% end %>
       </div>
     </div>

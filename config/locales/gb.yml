@@ -22,3 +22,6 @@ gb:
   mail_l2: "Warwick, Warwickshire"
   mail_l3: "United Kingdom"
   mail_l4:  "CV34 4UF"
+  footer_chat_name: "WhatsApp"
+  footer_chat_logo: "whatsapp_logo_purple.svg"
+  footer_chat_link: "https://wa.me/447503251189?text=Hey Rich%2C lets chat about NoBull!"
