@@ -64,6 +64,9 @@ gem 'pundit', '~> 2.0'
 # Administrate -  Used to add an admin dashboard - https://github.com/thoughtbot/administrate
 gem "administrate"
 
+# Postmark for transactional mail - Read more: https://github.com/wildbit/postmark-rails/blob/master/README.md
+gem 'postmark-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

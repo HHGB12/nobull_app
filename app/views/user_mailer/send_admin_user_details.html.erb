@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hey Rich</h1>
+    <p>
+      There appears to be a new signup on NoBullco.com
+    </p>
+    <p>
+      Bit of info about them:
+      <ol>
+        <li>Name: <%= @user.name %></li>
+        <li>Email Address: <%= @user.email %></li>
+        <li>Phone: <a href="tel:<%= @user.direct_phone_number %>"><%= @user.direct_phone_number %></a></li>
+        <li>Business: <%= @user.business_name %></li>
+        <% if @user.has_current_website? %>
+          <li>Current website: <a href="<%= @user.current_website %>"><%= @user.current_website %></a></li>
+        <% end %> 
+        <li>From: <%= @user.city %></li>
+      </ol>
+    </p>
+    <a href="https://www.nobullco.com/admin/users/<%= @user.id %>">Admin Page</a>
+    
+  </body>
+</html>

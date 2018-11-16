@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :visits, class_name: "Ahoy::Visit"
 
 
-  after_create :create_about_content, :create_business_detail, :create_integration, :create_services_content, :create_extra_page, :create_upload
+  after_create :create_about_content, :create_business_detail, :create_integration, :create_services_content, :create_extra_page, :create_upload, :new_user_email
 
   def create_about_content
     about_content = AboutContent.new
@@ -46,5 +46,9 @@ class User < ApplicationRecord
     upload.user_id = self.id
     upload.save!
   end
+  def new_user_email
+    UserMailer.send_admin_user_details(self.id).deliver_later
+  end
+  
 
 end
