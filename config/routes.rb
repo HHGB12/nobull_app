@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   
   
+  namespace :admin do
+      resources :users
+      resources :about_contents
+      resources :business_details
+      resources :extra_pages
+      resources :integrations
+      resources :services_contents
+      resources :uploads
+
+      root to: "users#index"
+    end
   resources :services_contents, only: [:update, :edit, :show]
   resources :extra_pages, only: [:update, :edit, :show]
   resources :uploads, only: [:update, :edit, :show]
@@ -8,10 +19,6 @@ Rails.application.routes.draw do
   resources :integrations, only: [:update, :edit, :show]
   resources :business_details, only: [:update, :edit, :show]
   resources :users, only: [:update, :destroy]
-  # namespace :admin do
-  #     resources :users
-  #   root to: "users#index"
-  # end
   authenticated :user do
     root to: "pages#dashboard"
   end
