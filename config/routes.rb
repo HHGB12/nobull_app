@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   resources :integrations, only: [:update, :edit, :show]
   resources :business_details, only: [:update, :edit, :show]
   resources :users, only: [:update, :destroy]
-  namespace :admin do
-      resources :users
-    root to: "users#index"
-  end
+  # namespace :admin do
+  #     resources :users
+  #   root to: "users#index"
+  # end
   authenticated :user do
     root to: "pages#dashboard"
   end

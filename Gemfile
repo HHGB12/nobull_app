@@ -62,7 +62,7 @@ gem 'devise'
 # Authorization - Pundit
 gem 'pundit', '~> 2.0'
 # Administrate -  Used to add an admin dashboard - https://github.com/thoughtbot/administrate
-gem "administrate"
+# gem "administrate"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
