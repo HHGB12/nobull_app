@@ -64,6 +64,9 @@ gem 'pundit', '~> 2.0'
 # Administrate -  Used to add an admin dashboard - https://github.com/thoughtbot/administrate
 gem "administrate"
 
+# Adds support for active sotrage - https://github.com/Dreamersoul/administrate-field-active_storage
+# gem 'administrate-field-active_storage'
+
 # Postmark for transactional mail - Read more: https://github.com/wildbit/postmark-rails/blob/master/README.md
 gem 'postmark-rails'
 

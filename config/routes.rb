@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resources :integrations
       resources :services_contents
       resources :uploads
+      resources :attachments
+      resources :blobs
 
       root to: "users#index"
     end

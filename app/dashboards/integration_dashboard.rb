@@ -40,8 +40,8 @@ class IntegrationDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :facebook_page_link,
-    :update_facebook_profile,
+    :updated_at,
+    :is_complete,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

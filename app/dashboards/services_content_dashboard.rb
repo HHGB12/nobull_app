@@ -26,8 +26,8 @@ class ServicesContentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :services,
-    :pricing,
+    :is_complete,
+    :updated_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -50,7 +50,7 @@ class ServicesContentDashboard < Administrate::BaseDashboard
     :user,
     :services,
     :pricing,
-    :other_info,
+    :updated_at,
     :is_complete,
   ].freeze
 

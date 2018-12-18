@@ -30,9 +30,9 @@ class UploadDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
-    :logo_images_attachments,
-    :logo_images_blobs,
-    :team_images_attachments,
+    :id,
+    :updated_at,
+    :is_complete,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -47,6 +47,10 @@ class UploadDashboard < Administrate::BaseDashboard
     :workspace_images_blobs,
     :other_images_attachments,
     :other_images_blobs,
+    :logo_images_attachments,
+    :team_images_attachments,
+    :workspace_images_attachments,
+    :other_images_attachments,
     :id,
     :is_complete,
     :created_at,
@@ -58,13 +62,13 @@ class UploadDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :logo_images_attachments,
-    :logo_images_blobs,
-    :team_images_attachments,
-    :team_images_blobs,
-    :workspace_images_attachments,
-    :workspace_images_blobs,
-    :other_images_attachments,
+    # :logo_images_attachments,
+    # :logo_images_blobs,
+    # :team_images_attachments,
+    # :team_images_blobs,
+    # :workspace_images_attachments,
+    # :workspace_images_blobs,
+    # :other_images_attachments,
     :other_images_blobs,
     :is_complete,
   ].freeze
@@ -75,4 +79,11 @@ class UploadDashboard < Administrate::BaseDashboard
   # def display_resource(upload)
   #   "Upload ##{upload.id}"
   # end
+  # permitted for has_many_attached
+  def permitted_attributes
+    super + [:logo_images_attachments => []]
+  #   super + [:team_images_attachments => []]
+  #   super + [:workspace_images_attachments => []]
+  #   super + [:other_images_attachments => []]
+  end
 end

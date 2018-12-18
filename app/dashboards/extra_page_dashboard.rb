@@ -30,8 +30,8 @@ class ExtraPageDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :extra_pages,
-    :extra_page1,
+    :updated_at,
+    :is_complete
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

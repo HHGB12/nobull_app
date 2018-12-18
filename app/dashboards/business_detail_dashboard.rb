@@ -36,8 +36,8 @@ class BusinessDetailDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :business_address,
-    :mailing_address,
+    :updated_at,
+    :is_complete,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

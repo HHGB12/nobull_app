@@ -30,15 +30,15 @@ class AboutContentDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :founder,
-    :founded,
+    :updated_at,
+    :is_complete,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
-    :id,
+    # :id,
     :founder,
     :founded,
     :about_us,
